@@ -9,8 +9,9 @@ const warn = (id: string, msg: string) => {
   console.log(`  ✗ [${id}] ${msg}`);
 };
 
-// İngilis mətndə olmamalı simvollar (kiril və s.) — səhv yazı tutucu.
-const NON_LATIN = /[Ѐ-ӿͰ-Ͽ]/; // Cyrillic + Greek
+// İngilis mətndə olmamalı simvollar — səhv yazı tutucu.
+// Kiril + Yunan + Azərbaycan/türk spesifik hərfləri (azNote-lar yoxlanmır).
+const NON_LATIN = /[Ѐ-ӿͰ-ϿəĞğİıŞşÇçÜüÖöÂâ]/;
 
 function checkQuiz(id: string, label: string, qs: QuizQuestion[]) {
   qs.forEach((q, i) => {
