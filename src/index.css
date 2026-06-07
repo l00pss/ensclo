@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Semantik rəng tokenləri — light (default) */
+  :root {
+    --canvas: 248 250 252; /* slate-50 */
+    --surface: 255 255 255; /* white */
+    --surface-2: 241 245 249; /* slate-100 */
+    --line: 226 232 240; /* slate-200 */
+    --fg: 15 23 42; /* slate-900 */
+    --muted: 100 116 139; /* slate-500 */
+    --faint: 148 163 184; /* slate-400 */
+    color-scheme: light;
+  }
+
+  /* Dark mode tokenləri */
+  .dark {
+    --canvas: 2 6 23; /* slate-950 */
+    --surface: 15 23 42; /* slate-900 */
+    --surface-2: 30 41 59; /* slate-800 */
+    --line: 30 41 59; /* slate-800 */
+    --fg: 226 232 240; /* slate-200 */
+    --muted: 148 163 184; /* slate-400 */
+    --faint: 100 116 139; /* slate-500 */
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-fg antialiased transition-colors;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+
+  /* WCAG: görünən fokus halqası (klaviatura naviqasiyası). */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2;
+    --tw-ring-offset-color: rgb(var(--canvas));
+  }
+
+  /* Hərəkət azaldılması üstünlüyü (a11y). */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-surface shadow-card;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
