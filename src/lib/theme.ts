@@ -16,6 +16,11 @@ import {
   Landmark,
   Coins,
   Languages,
+  Atom,
+  TrendingUp,
+  MessagesSquare,
+  Newspaper,
+  Building2,
 } from "lucide-react";
 import type { Level } from "../content/types";
 
@@ -66,13 +71,18 @@ const THEME_ICONS: Record<string, LucideIcon> = {
   Technology: Cpu,
   Education: GraduationCap,
   Culture: Drama,
-  Science: Brain,
+  Science: Atom,
   Animals: PawPrint,
   Space: Rocket,
   Nature: Mountain,
   History: Landmark,
   Money: Coins,
   Language: Languages,
+  Psychology: Brain,
+  Business: TrendingUp,
+  Communication: MessagesSquare,
+  Media: Newspaper,
+  Society: Building2,
 };
 
 export function themeIcon(theme: string): LucideIcon {
