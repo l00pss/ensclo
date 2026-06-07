@@ -1,15 +1,22 @@
-import { useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BookMarked,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   Flame,
   ListChecks,
+  Search,
   Zap,
 } from "lucide-react";
-import { LEVELS, getThemes, topics } from "../content";
+import { LEVELS, getThemes, topicMeta as topics } from "../content/catalog";
 import type { Level } from "../content/types";
+
+// Bir səhifədə göstərilən topic sayı — DOM düyün sayını sabit saxlayır,
+// ona görə ümumi topic sayı 10 000 olsa belə render donmur.
+const PAGE_SIZE = 24;
 import LevelBadge from "../components/LevelBadge";
 import ProgressRing from "../components/ProgressRing";
 import { LEVEL_META, themeIcon } from "../lib/theme";
@@ -25,12 +32,38 @@ function greeting(): string {
 export default function HomePage() {
   const [level, setLevel] = useState<Level | "all">("all");
   const [theme, setTheme] = useState<string>("all");
+  const [query, setQuery] = useState("");
+  const [page, setPage] = useState(1);
   const { state } = useProgress();
   const stats = useStats();
   const themes = useMemo(getThemes, []);
 
-  const filtered = topics.filter(
-    (t) => (level === "all" || t.level === level) && (theme === "all" || t.theme === theme),
+  // Yazarkən UI bloklanmasın deyə filtrləmə təxirə salınmış dəyər üzərində işləyir.
+  const deferredQuery = useDeferredValue(query);
+
+  const filtered = useMemo(() => {
+    const q = deferredQuery.trim().toLowerCase();
+    return topics.filter(
+      (t) =>
+        (level === "all" || t.level === level) &&
+        (theme === "all" || t.theme === theme) &&
+        (q === "" ||
+          t.title.toLowerCase().includes(q) ||
+          t.theme.toLowerCase().includes(q) ||
+          t.summary.toLowerCase().includes(q)),
+    );
+  }, [level, theme, deferredQuery]);
+
+  // Filtr və ya axtarış dəyişəndə 1-ci səhifəyə qayıt.
+  useEffect(() => {
+    setPage(1);
+  }, [level, theme, deferredQuery]);
+
+  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(page, pageCount);
+  const visible = useMemo(
+    () => filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+    [filtered, currentPage],
   );
 
   const continueTopic =
@@ -127,9 +160,26 @@ export default function HomePage() {
 
       {/* TOPICLƏR + FİLTERLƏR */}
       <section>
-        <h2 className="mb-4 font-display text-xl font-bold text-fg">All topics</h2>
+        <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+          <h2 className="font-display text-xl font-bold text-fg">All topics</h2>
+          <span className="text-sm text-faint tnum">{filtered.length} nəticə</span>
+        </div>
 
         <div className="mb-5 space-y-2.5">
+          <div className="relative">
+            <Search
+              size={16}
+              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-faint"
+            />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Topic axtar — başlıq, mövzu və ya təsvir…"
+              aria-label="Topic axtar"
+              className="w-full rounded-full border border-line bg-surface py-2.5 pl-9 pr-4 text-sm text-fg shadow-sm outline-none transition placeholder:text-faint focus:border-brand-400 focus:ring-1 focus:ring-brand-400"
+            />
+          </div>
           <PillRow
             label="Level"
             value={level}
@@ -140,7 +190,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((t, i) => {
+          {visible.map((t, i) => {
             const p = state.topics[t.id];
             const m = LEVEL_META[t.level];
             return (
@@ -169,10 +219,10 @@ export default function HomePage() {
                 <p className="mt-1 line-clamp-2 flex-1 text-sm text-muted">{t.summary}</p>
                 <div className="mt-4 flex items-center justify-between border-t border-line pt-3 text-xs text-faint">
                   <span className="inline-flex items-center gap-1">
-                    <BookMarked size={13} /> {t.vocabulary.length} words
+                    <BookMarked size={13} /> {t.vocabCount} words
                   </span>
                   <span className="inline-flex items-center gap-1">
-                    <ListChecks size={13} /> {t.quiz.length} quiz
+                    <ListChecks size={13} /> {t.quizCount} quiz
                   </span>
                 </div>
               </Link>
@@ -184,6 +234,32 @@ export default function HomePage() {
             </p>
           )}
         </div>
+
+        {pageCount > 1 && (
+          <div className="mt-6 flex items-center justify-center gap-2">
+            <button
+              type="button"
+              onClick={() => setPage((pg) => Math.max(1, pg - 1))}
+              disabled={currentPage === 1}
+              aria-label="Əvvəlki səhifə"
+              className="inline-flex items-center gap-1 rounded-xl border border-line bg-surface px-3 py-2 text-sm font-medium text-muted shadow-sm transition hover:bg-surface-2 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <ChevronLeft size={16} /> Əvvəlki
+            </button>
+            <span className="px-2 text-sm text-faint tnum">
+              {currentPage} / {pageCount}
+            </span>
+            <button
+              type="button"
+              onClick={() => setPage((pg) => Math.min(pageCount, pg + 1))}
+              disabled={currentPage === pageCount}
+              aria-label="Növbəti səhifə"
+              className="inline-flex items-center gap-1 rounded-xl border border-line bg-surface px-3 py-2 text-sm font-medium text-muted shadow-sm transition hover:bg-surface-2 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Növbəti <ChevronRight size={16} />
+            </button>
+          </div>
+        )}
       </section>
     </div>
   );

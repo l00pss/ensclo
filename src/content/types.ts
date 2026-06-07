@@ -2,8 +2,13 @@
 // Content data model for Ensclo
 //
 // Hər topic strukturlaşdırılmış data-dır ki, app onu avtomatik UI-yə,
-// flashcard-a və quiz-ə çevirə bilsin. Yeni topic əlavə etmək üçün sadəcə
-// bu tipə uyğun bir obyekt yaradıb content/index.ts-də siyahıya əlavə et.
+// flashcard-a və quiz-ə çevirə bilsin.
+//
+// Yeni topic əlavə etmək (3 addım):
+//   1. topics/ altında bu tipə uyğun fayl yarat (id = fayl adı).
+//   2. content/index.ts barrel-inə idxal et və siyahıya əlavə et.
+//   3. `npm run manifest` çağır (yüngül siyahını yenilə) — `npm run build`
+//      bunu onsuz da avtomatik edir.
 // ---------------------------------------------------------------------------
 
 export type Level = "B1" | "B2" | "C1";
@@ -81,4 +86,21 @@ export interface Topic {
   writing: { task: string; minWords?: number };
   /** Lüğət + qrammatika üzrə qarışıq quiz. */
   quiz: QuizQuestion[];
+}
+
+/**
+ * Yüngül topic metadatası — siyahı, filtr və statistikalar üçün.
+ * Tam `Topic`-i (oxu mətni, quiz, lüğət…) yükləmədən minlərlə topic-i
+ * göstərə bilmək üçün `scripts/generate-manifest.ts` build vaxtı yaradır.
+ */
+export interface TopicMeta {
+  id: string;
+  level: Level;
+  title: string;
+  theme: string;
+  summary: string;
+  /** `vocabulary.length` — kartda "N words" göstərmək üçün. */
+  vocabCount: number;
+  /** `quiz.length` — kartda "N quiz" göstərmək üçün. */
+  quizCount: number;
 }

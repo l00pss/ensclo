@@ -1,4 +1,8 @@
-import type { Level, Topic } from "./types";
+// ⚠️ BUILD-ONLY barrel — bütün topic-ləri STATİK idxal edir.
+// App bunu idxal ETMƏMƏLİDİR (yoxsa kod bölmə pozulur). Yalnız Node
+// skriptləri üçündür: `scripts/generate-manifest.ts` və `validate-content.ts`.
+// App tərəfi: `./catalog` (metadata + lazy loader) idxal et.
+import type { Topic } from "./types";
 import { b1Travel } from "./topics/b1-travel";
 import { b1Chocolate } from "./topics/b1-chocolate";
 import { b1Dreams } from "./topics/b1-dreams";
@@ -49,13 +53,3 @@ export const topics: Topic[] = [
   b2AncientWonders,
   c1Environment,
 ];
-
-export const LEVELS: Level[] = ["B1", "B2", "C1"];
-
-export function getTopic(id: string): Topic | undefined {
-  return topics.find((t) => t.id === id);
-}
-
-export function getThemes(): string[] {
-  return Array.from(new Set(topics.map((t) => t.theme))).sort();
-}

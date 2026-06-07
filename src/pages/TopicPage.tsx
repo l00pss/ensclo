@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   ArrowLeft,
@@ -14,7 +14,7 @@ import {
   Target,
   type LucideIcon,
 } from "lucide-react";
-import { getTopic } from "../content";
+import { loadTopic, metaById } from "../content/catalog";
 import type { Topic } from "../content/types";
 import LevelBadge from "../components/LevelBadge";
 import Flashcards from "../components/Flashcards";
@@ -35,9 +35,32 @@ const TABS: { id: Tab; label: string; icon: LucideIcon }[] = [
 
 export default function TopicPage() {
   const { id } = useParams();
-  const topic = id ? getTopic(id) : undefined;
+  // undefined = yüklənir, null = tapılmadı, Topic = hazır.
+  const [topic, setTopic] = useState<Topic | null | undefined>(undefined);
   const [tab, setTab] = useState<Tab>("lesson");
   const { state, setCompleted, recordQuiz, toggleWord } = useProgress();
+
+  // id dəyişəndə həmin dərsin tam məzmununu lazy yüklə (öz chunk-ından).
+  useEffect(() => {
+    let ignore = false;
+    setTopic(undefined);
+    setTab("lesson");
+    if (!id) {
+      setTopic(null);
+      return;
+    }
+    loadTopic(id).then((t) => {
+      if (!ignore) setTopic(t ?? null);
+    });
+    return () => {
+      ignore = true;
+    };
+  }, [id]);
+
+  // Yüklənərkən — metadatadan başlığı dərhal göstər, məzmun arxada gəlir.
+  if (topic === undefined) {
+    return <TopicSkeleton title={id ? metaById.get(id)?.title : undefined} />;
+  }
 
   if (!topic) {
     return (
@@ -171,6 +194,40 @@ export default function TopicPage() {
             <WritingBlock topic={topic} />
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+// Dərs məzmunu (öz chunk-ı) yüklənənə qədər göstərilən skelet.
+function TopicSkeleton({ title }: { title?: string }) {
+  return (
+    <div className="space-y-6">
+      <Link
+        to="/"
+        className="inline-flex items-center gap-1 text-sm font-medium text-muted hover:text-brand-600"
+      >
+        <ArrowLeft size={16} /> Bütün topiclər
+      </Link>
+      <header className="overflow-hidden rounded-2xl border border-line bg-surface shadow-card">
+        <div className="h-1.5 bg-surface-2" aria-hidden />
+        <div className="p-5 sm:p-6">
+          {title ? (
+            <h1 className="font-display text-2xl font-bold tracking-tight text-fg sm:text-3xl">
+              {title}
+            </h1>
+          ) : (
+            <div className="h-8 w-2/3 animate-pulse rounded-lg bg-surface-2" />
+          )}
+          <div className="mt-3 h-4 w-1/2 animate-pulse rounded bg-surface-2" />
+        </div>
+      </header>
+      <div className="grid place-items-center rounded-2xl border border-line bg-surface p-12 shadow-card">
+        <span
+          className="h-6 w-6 animate-spin rounded-full border-2 border-line border-t-brand-600"
+          role="status"
+          aria-label="Yüklənir"
+        />
       </div>
     </div>
   );

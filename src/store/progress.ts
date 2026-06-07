@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { topics } from "../content";
+import { topicMeta } from "../content/catalog";
 
 // ---------------------------------------------------------------------------
 // Progres + geymifikasiya — hələlik localStorage.
@@ -156,18 +156,18 @@ export function useProgress() {
 export function useStats() {
   const { state } = useProgress();
   return useMemo(() => {
-    const completed = topics.filter((t) => state.topics[t.id]?.completed).length;
-    const wordsLearned = topics.reduce(
+    const completed = topicMeta.filter((t) => state.topics[t.id]?.completed).length;
+    const wordsLearned = topicMeta.reduce(
       (sum, t) => sum + (state.topics[t.id]?.learnedWords?.length ?? 0),
       0,
     );
-    const totalWords = topics.reduce((sum, t) => sum + t.vocabulary.length, 0);
+    const totalWords = topicMeta.reduce((sum, t) => sum + t.vocabCount, 0);
     // Sadə "level" sistemi: hər 100 XP = 1 level.
     const level = Math.floor(state.xp / 100) + 1;
     const xpIntoLevel = state.xp % 100;
     return {
       completed,
-      totalTopics: topics.length,
+      totalTopics: topicMeta.length,
       wordsLearned,
       totalWords,
       xp: state.xp,
