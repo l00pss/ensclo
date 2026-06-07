@@ -9,6 +9,13 @@ import {
   Drama,
   UtensilsCrossed,
   BookOpen,
+  Brain,
+  PawPrint,
+  Rocket,
+  Mountain,
+  Landmark,
+  Coins,
+  Languages,
 } from "lucide-react";
 import type { Level } from "../content/types";
 
@@ -59,6 +66,13 @@ const THEME_ICONS: Record<string, LucideIcon> = {
   Technology: Cpu,
   Education: GraduationCap,
   Culture: Drama,
+  Science: Brain,
+  Animals: PawPrint,
+  Space: Rocket,
+  Nature: Mountain,
+  History: Landmark,
+  Money: Coins,
+  Language: Languages,
 };
 
 export function themeIcon(theme: string): LucideIcon {
