@@ -76,7 +76,7 @@ export const b1Dreams: Topic = {
     title: "The science of dreams",
     text: `Every night, while you are sleeping, your brain creates strange little films called dreams. You might fly over a city, talk to someone famous, or run away from a monster. But why do we dream at all? The truth is that nobody knows for certain, and dreams are still one of the biggest mysteries in science.
 
-Scientists have several ideas. One theory says that dreams may help the brain organise and store memories. During the day, we collect a huge amount of information, and at night the brain might decide what to keep and what to forget. This could be why students who sleep well often remember their lessons better.
+Scientists have several ideas. One theory says that dreams may help the brain organise and store memories. During the day, we collect a huge amount of information, and at night the brain might decide which memory to keep and which to forget. This could be why students who sleep well often remember their lessons better.
 
 Another idea is that dreams could be a kind of practice. When you imagine running from danger in a nightmare, your brain may be training you to react quickly in real life. Some scientists even believe that dreams help us solve problems: you go to bed worried about something, and in the morning the answer might suddenly appear.
 

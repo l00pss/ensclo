@@ -78,7 +78,7 @@ export const b1Inventions: Topic = {
 
 One of the most important inventions was the printing press, which was developed in Germany in the 15th century. Before this, books were written slowly by hand, so only rich people owned them. After the printing press was built, books were produced quickly and cheaply, and knowledge spread across the world.
 
-Electricity was another huge step. The electric light bulb was improved in the 19th century, and suddenly homes and streets could be lit at night. Soon, many other devices were powered by electricity, from radios to washing machines.
+The discovery of electricity was another huge step. The electric light bulb was improved in the 19th century, and suddenly homes and streets could be lit at night. Soon, many other devices were powered by electricity, from radios to washing machines.
 
 Perhaps the invention that changed daily life the most is the telephone. It was invented in 1876, and for the first time people could talk to each other across long distances. Today, this simple idea has been developed into the modern smartphone, a tiny computer that is carried by billions of people.
 

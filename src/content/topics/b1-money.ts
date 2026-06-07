@@ -78,7 +78,7 @@ export const b1Money: Topic = {
 
 In the beginning, people simply traded. If a farmer had a lot of wheat but no shoes, he looked for someone who had some shoes but needed food. This system worked, but it had many problems. What happened if you wanted bread, but the baker didn't want any of your wheat? Trading took a lot of time and didn't always succeed.
 
-To solve this, people began to use special objects as money. In some parts of the world, shells were used; in others, salt or even animals. Later, people made the first coins from metal, because metal was strong, easy to carry and worth a fixed amount. For the first time, you could save a few coins and spend them whenever you wanted.
+To solve this, people began to use special objects as money. In some parts of the world, shells were used; in others, salt or even animals. Later, people made the first coins from metal, because metal was strong, easy to carry and worth a fixed amount. For the first time, you could save a few coins and spend them whenever you wanted, and a person who collected enough of them could become wealthy.
 
 Paper money came much later, followed by banks, cards and digital payments. Now, many people carry very little cash, and some carry none at all. In a few countries, you can live for weeks without touching a single coin. Money has changed enormously — but its purpose is still the same: to make trading between people quick and easy.`,
     questions: [

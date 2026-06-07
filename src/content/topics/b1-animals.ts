@@ -78,7 +78,7 @@ export const b1Animals: Topic = {
 
 Take the axolotl, a weird little creature from Mexico. It looks like it is always smiling, and it has an amazing skill: if it loses a leg, it can simply grow a new one. Few animals in the world are stranger than this.
 
-Then there is the bee hummingbird, the smallest bird on the planet. It is tinier than many insects and weighs less than a coin, yet it can fly faster than your eyes can follow. Being so small is dangerous, but it helps the bird hide from larger predators.
+Then there is the bee hummingbird, the smallest bird on the planet. It is tinier than many insects and weighs less than a coin, yet it can fly faster than your eyes can follow. Being so tiny is dangerous, but it also helps the small bird hide from larger predators.
 
 Some animals are strange because they are deadly. The poison dart frog is brighter and more colourful than most frogs, but it is also one of the most poisonous animals on Earth. Its bright colours are a warning: "Don't touch me!"
 
