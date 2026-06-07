@@ -19,9 +19,9 @@
       // Flash-of-wrong-theme qarşısını al — React mount olmadan tətbiq et.
       (function () {
         try {
-          var s = localStorage.getItem("ensclo.theme");
-          var dark = s ? s === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-          if (dark) document.documentElement.classList.add("dark");
+          // Default light: yalnız istifadəçi açıq şəkildə dark seçibsə tətbiq et.
+          if (localStorage.getItem("ensclo.theme") === "dark")
+            document.documentElement.classList.add("dark");
         } catch (e) {}
       })();
     </script>

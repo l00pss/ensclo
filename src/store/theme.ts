@@ -12,7 +12,8 @@ function getInitial(): ThemeMode {
   } catch {
     /* keç */
   }
-  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  // Default: light tema (sistem dark olsa belə). İstifadəçi toggle ilə dəyişə bilər.
+  return "light";
 }
 
 function apply(mode: ThemeMode) {
