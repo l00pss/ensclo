@@ -120,6 +120,7 @@ export type ConnectorFunction =
   | "contrast"
   | "cause"
   | "result"
+  | "purpose"
   | "sequence"
   | "example"
   | "comparison"
@@ -140,6 +141,8 @@ export interface Connector {
   level: Level;
   /** İngiliscə qısa məna/izah. */
   meaning: string;
+  /** İfadənin qısa Azərbaycanca TƏRCÜMƏSİ, məs. "üstəlik, əlavə olaraq". */
+  azMeaning: string;
   /** Təbii nümunə cümlə — `phrase` cümlənin içində GERÇƏK işlənməlidir. */
   example: string;
   register?: Register;
@@ -149,7 +152,7 @@ export interface Connector {
   synonyms?: string[];
   /** Tez-tez edilən səhv, məs. "despite ≠ although". */
   pitfall?: string;
-  /** Qısa Azərbaycanca qeyd. */
+  /** Əlavə Azərbaycanca İSTİFADƏ qeydi (tərcümə yox — o, `azMeaning`-dədir). */
   azNote?: string;
 }
 

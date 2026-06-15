@@ -19,6 +19,7 @@ import {
   Megaphone,
   Quote,
   GitBranch,
+  Target,
   type LucideIcon,
 } from "lucide-react";
 import type { ConnectorFunction, ConnectorGroup, Level } from "./types";
@@ -27,6 +28,7 @@ import { addition } from "./connectors/addition";
 import { contrast } from "./connectors/contrast";
 import { cause } from "./connectors/cause";
 import { result } from "./connectors/result";
+import { purpose } from "./connectors/purpose";
 import { sequence } from "./connectors/sequence";
 import { example } from "./connectors/example";
 import { comparison } from "./connectors/comparison";
@@ -49,15 +51,16 @@ export const FUNCTION_META: Record<
   contrast: { label: "Contrast", azLabel: "Ziddiyyət", icon: Scale, order: 2 },
   cause: { label: "Cause / Reason", azLabel: "Səbəb", icon: CircleHelp, order: 3 },
   result: { label: "Result / Effect", azLabel: "Nəticə", icon: MoveRight, order: 4 },
-  sequence: { label: "Sequence", azLabel: "Ardıcıllıq", icon: ListOrdered, order: 5 },
-  example: { label: "Giving examples", azLabel: "Nümunə", icon: Lightbulb, order: 6 },
-  comparison: { label: "Comparison", azLabel: "Müqayisə", icon: Equal, order: 7 },
-  clarification: { label: "Clarifying", azLabel: "Aydınlaşdırma", icon: RefreshCw, order: 8 },
-  conclusion: { label: "Concluding", azLabel: "Yekunlaşdırma", icon: Flag, order: 9 },
-  opinion: { label: "Opinion", azLabel: "Fikir bildirmə", icon: MessageCircle, order: 10 },
-  emphasis: { label: "Emphasis", azLabel: "Vurğu", icon: Megaphone, order: 11 },
-  attribution: { label: "Reporting views", azLabel: "Başqasının fikri", icon: Quote, order: 12 },
-  condition: { label: "Condition", azLabel: "Şərt", icon: GitBranch, order: 13 },
+  purpose: { label: "Purpose", azLabel: "Məqsəd", icon: Target, order: 5 },
+  sequence: { label: "Sequence", azLabel: "Ardıcıllıq", icon: ListOrdered, order: 6 },
+  example: { label: "Giving examples", azLabel: "Nümunə", icon: Lightbulb, order: 7 },
+  comparison: { label: "Comparison", azLabel: "Müqayisə", icon: Equal, order: 8 },
+  clarification: { label: "Clarifying", azLabel: "Aydınlaşdırma", icon: RefreshCw, order: 9 },
+  conclusion: { label: "Concluding", azLabel: "Yekunlaşdırma", icon: Flag, order: 10 },
+  opinion: { label: "Opinion", azLabel: "Fikir bildirmə", icon: MessageCircle, order: 11 },
+  emphasis: { label: "Emphasis", azLabel: "Vurğu", icon: Megaphone, order: 12 },
+  attribution: { label: "Reporting views", azLabel: "Başqasının fikri", icon: Quote, order: 13 },
+  condition: { label: "Condition", azLabel: "Şərt", icon: GitBranch, order: 14 },
 };
 
 /** Bütün qruplar — FUNCTION_META sırasına görə düzülür. */
@@ -66,6 +69,7 @@ export const connectorGroups: ConnectorGroup[] = [
   contrast,
   cause,
   result,
+  purpose,
   sequence,
   example,
   comparison,

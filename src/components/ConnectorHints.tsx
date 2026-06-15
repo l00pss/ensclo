@@ -52,6 +52,7 @@ export default function ConnectorHints({
               {samples.map((c) => (
                 <span
                   key={c.phrase}
+                  title={c.azMeaning}
                   className="rounded-md bg-surface px-1.5 py-0.5 text-xs text-muted ring-1 ring-inset ring-line"
                 >
                   {c.phrase}

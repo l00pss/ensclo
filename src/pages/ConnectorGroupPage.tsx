@@ -168,6 +168,9 @@ function ConnectorCard({ c }: { c: Connector }) {
         <p className="font-display text-lg font-semibold text-fg">{c.phrase}</p>
         <LevelBadge level={c.level} />
       </div>
+      <p className="mt-1 text-sm font-semibold text-brand-600 dark:text-brand-400">
+        🇦🇿 {c.azMeaning}
+      </p>
       {reg && (
         <span className={`mt-1.5 inline-flex w-fit rounded-md px-1.5 py-0.5 text-xs font-medium ${reg.className}`}>
           {reg.label}

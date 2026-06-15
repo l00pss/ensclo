@@ -58,6 +58,7 @@ for (const g of connectorGroups) {
     if (phrases.has(c.phrase)) warn(g.id, `duplicate phrase "${c.phrase}"`);
     phrases.add(c.phrase);
     if (!c.meaning?.trim()) warn(g.id, `"${c.phrase}": missing meaning`);
+    if (!c.azMeaning?.trim()) warn(g.id, `"${c.phrase}": missing azMeaning (AZ translation)`);
     if (!c.example?.trim()) warn(g.id, `"${c.phrase}": missing example`);
 
     // İfadə öz nümunəsində gerçəkdən işlənməlidir (text-first / gap-fill üçün).
