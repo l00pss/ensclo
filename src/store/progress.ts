@@ -81,6 +81,38 @@ function touchStreak(state: ProgressState): ProgressState {
   return { ...state, streak, lastStudyDay: today };
 }
 
+// --- Geymifikasiya sabitləri & saf köməkçilər (React-dən asılı deyil) ----------
+
+/** Topic ilk dəfə tamamlananda verilən XP. */
+const XP_TOPIC_COMPLETE = 50;
+/** Bağlayıcı qrupu ilk dəfə tamamlananda verilən XP. */
+const XP_CONNECTOR_GROUP_COMPLETE = 30;
+/** Quiz nəticəsindən (faiz) qazanılan XP. */
+const quizXp = (scorePercent: number) => Math.round(scorePercent / 2);
+
+/** Entity record-una patch tətbiq et; entry yoxdursa {completed:false} ilə yaradılır. */
+function upsertEntity<T extends { completed: boolean }>(
+  entities: Record<string, T>,
+  id: string,
+  patch: Partial<T>,
+): Record<string, T> {
+  const current = (entities[id] ?? { completed: false }) as T;
+  return { ...entities, [id]: { ...current, ...patch } };
+}
+
+/** Entity-ni `completed` işarələ; `firstTime` = ilk dəfə tamamlanırsa (XP üçün). */
+function completeEntity<T extends { completed: boolean }>(
+  entities: Record<string, T>,
+  id: string,
+  completed: boolean,
+): { entities: Record<string, T>; firstTime: boolean } {
+  const current = (entities[id] ?? { completed: false }) as T;
+  return {
+    entities: { ...entities, [id]: { ...current, completed } },
+    firstTime: completed && !current.completed,
+  };
+}
+
 export function useProgress() {
   const [state, setState] = useState<ProgressState>(read);
 
@@ -102,10 +134,7 @@ export function useProgress() {
 
   const patchTopic = useCallback(
     (id: string, patch: Partial<TopicProgress>) =>
-      mutate((s) => {
-        const current: TopicProgress = s.topics[id] ?? { completed: false };
-        return { ...s, topics: { ...s.topics, [id]: { ...current, ...patch } } };
-      }),
+      mutate((s) => ({ ...s, topics: upsertEntity(s.topics, id, patch) })),
     [mutate],
   );
 
@@ -119,44 +148,32 @@ export function useProgress() {
   const setCompleted = useCallback(
     (id: string, completed: boolean) =>
       mutate((s) => {
-        const current: TopicProgress = s.topics[id] ?? { completed: false };
-        const wasCompleted = current.completed;
-        let next: ProgressState = {
-          ...s,
-          topics: { ...s.topics, [id]: { ...current, completed } },
-        };
-        // İlk dəfə tamamlananda +50 XP (təkrar işarələmədə deyil).
-        if (completed && !wasCompleted) next = touchStreak({ ...next, xp: next.xp + 50 });
-        return next;
+        const { entities, firstTime } = completeEntity(s.topics, id, completed);
+        const next: ProgressState = { ...s, topics: entities };
+        // İlk dəfə tamamlananda XP (təkrar işarələmədə deyil).
+        return firstTime ? touchStreak({ ...next, xp: next.xp + XP_TOPIC_COMPLETE }) : next;
       }),
     [mutate],
   );
 
   const recordQuiz = useCallback(
     (id: string, score: number) =>
-      mutate((s) => {
-        const current: TopicProgress = s.topics[id] ?? { completed: false };
-        // Quiz başına XP = nəticənin yarısı (max 50), gündə streak.
-        const gained = Math.round(score / 2);
-        return touchStreak({
+      mutate((s) =>
+        touchStreak({
           ...s,
-          xp: s.xp + gained,
-          topics: { ...s.topics, [id]: { ...current, lastQuizScore: score } },
-        });
-      }),
+          xp: s.xp + quizXp(score),
+          topics: upsertEntity(s.topics, id, { lastQuizScore: score }),
+        }),
+      ),
     [mutate],
   );
 
   const toggleWord = useCallback(
     (id: string, word: string) =>
       mutate((s) => {
-        const current: TopicProgress = s.topics[id] ?? { completed: false };
-        const set = new Set(current.learnedWords ?? []);
-        set.has(word) ? set.delete(word) : set.add(word);
-        return {
-          ...s,
-          topics: { ...s.topics, [id]: { ...current, learnedWords: [...set] } },
-        };
+        const learned = new Set(s.topics[id]?.learnedWords ?? []);
+        learned.has(word) ? learned.delete(word) : learned.add(word);
+        return { ...s, topics: upsertEntity(s.topics, id, { learnedWords: [...learned] }) };
       }),
     [mutate],
   );
@@ -164,30 +181,25 @@ export function useProgress() {
   /** Bağlayıcı qrupunun practice nəticəsini yaz (+XP = nəticənin yarısı). */
   const recordConnectorQuiz = useCallback(
     (groupId: string, score: number) =>
-      mutate((s) => {
-        const current: ConnectorProgress = s.connectors[groupId] ?? { completed: false };
-        const gained = Math.round(score / 2);
-        return touchStreak({
+      mutate((s) =>
+        touchStreak({
           ...s,
-          xp: s.xp + gained,
-          connectors: { ...s.connectors, [groupId]: { ...current, lastScore: score } },
-        });
-      }),
+          xp: s.xp + quizXp(score),
+          connectors: upsertEntity(s.connectors, groupId, { lastScore: score }),
+        }),
+      ),
     [mutate],
   );
 
-  /** Bağlayıcı qrupunu "öyrənildi" işarələ — ilk dəfə +30 XP. */
+  /** Bağlayıcı qrupunu "öyrənildi" işarələ — ilk dəfə XP. */
   const setConnectorGroupDone = useCallback(
     (groupId: string, completed: boolean) =>
       mutate((s) => {
-        const current: ConnectorProgress = s.connectors[groupId] ?? { completed: false };
-        const wasCompleted = current.completed;
-        let next: ProgressState = {
-          ...s,
-          connectors: { ...s.connectors, [groupId]: { ...current, completed } },
-        };
-        if (completed && !wasCompleted) next = touchStreak({ ...next, xp: next.xp + 30 });
-        return next;
+        const { entities, firstTime } = completeEntity(s.connectors, groupId, completed);
+        const next: ProgressState = { ...s, connectors: entities };
+        return firstTime
+          ? touchStreak({ ...next, xp: next.xp + XP_CONNECTOR_GROUP_COMPLETE })
+          : next;
       }),
     [mutate],
   );

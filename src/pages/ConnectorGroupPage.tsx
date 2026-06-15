@@ -11,8 +11,11 @@ import { getConnectorGroup, FUNCTION_META } from "../content/connectors";
 import type { Connector, Level, Register } from "../content/types";
 import { LEVELS } from "../content/catalog";
 import LevelBadge from "../components/LevelBadge";
+import FilterPills from "../components/FilterPills";
 import Quiz from "../components/Quiz";
 import { useProgress } from "../store/progress";
+
+const LEVEL_OPTIONS: (Level | "all")[] = ["all", ...LEVELS];
 
 const REGISTER_META: Record<Register, { label: string; className: string }> = {
   neutral: {
@@ -108,27 +111,7 @@ export default function ConnectorGroupPage() {
       </header>
 
       {/* SƏVİYYƏ FİLTRİ */}
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-faint">Level</span>
-        {(["all", ...LEVELS] as const).map((lv) => {
-          const active = level === lv;
-          return (
-            <button
-              key={lv}
-              type="button"
-              onClick={() => setLevel(lv)}
-              aria-pressed={active}
-              className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${
-                active
-                  ? "bg-brand-600 text-white shadow-sm"
-                  : "bg-surface text-muted ring-1 ring-inset ring-line hover:bg-surface-2"
-              }`}
-            >
-              {lv === "all" ? "All" : lv}
-            </button>
-          );
-        })}
-      </div>
+      <FilterPills label="Level" value={level} options={LEVEL_OPTIONS} onChange={setLevel} />
 
       {/* BAĞLAYICI KARTLARI */}
       <div className="grid gap-3 sm:grid-cols-2">

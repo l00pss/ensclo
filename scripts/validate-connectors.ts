@@ -1,30 +1,10 @@
 // Connector məzmununun cross-check validatoru — struktur və ardıcıllıq səhvləri.
 // İşlət: npm run validate:connectors
 import { connectorGroups, FUNCTION_META } from "../src/content/connectors";
-import type { ConnectorFunction, QuizQuestion } from "../src/content/types";
+import type { ConnectorFunction } from "../src/content/types";
+import { checkQuiz, createReporter, NON_LATIN, report } from "./validate-shared";
 
-let problems = 0;
-const warn = (id: string, msg: string) => {
-  problems++;
-  console.log(`  ✗ [${id}] ${msg}`);
-};
-
-// İngilis sahələrində olmamalı simvollar (azNote/azDescription yoxlanmır).
-const NON_LATIN = /[Ѐ-ӿͰ-ϿəĞğİıŞşÇçÜüÖöÂâ]/;
-
-function checkQuiz(id: string, qs: QuizQuestion[]) {
-  qs.forEach((q, i) => {
-    const tag = `practice Q${i + 1}`;
-    if (q.type === "multiple-choice") {
-      if (!Array.isArray(q.options) || q.options.length < 2) warn(id, `${tag}: <2 options`);
-      if (typeof q.answer !== "number" || q.answer < 0 || q.answer >= q.options.length)
-        warn(id, `${tag}: answer index ${q.answer} out of range`);
-      if (new Set(q.options).size !== q.options.length) warn(id, `${tag}: duplicate options`);
-    } else if (q.type === "gap-fill") {
-      if (!q.answer || !q.answer.trim()) warn(id, `${tag}: empty answer`);
-    }
-  });
-}
+const { warn, count } = createReporter();
 
 // "not only ... but also" → "not only"; "first / firstly" → "first";
 // "that is (to say)" → "that is" — nümunədə axtarmaq üçün baş hissəni çıxar.
@@ -68,16 +48,13 @@ for (const g of connectorGroups) {
 
     // qeyri-latın simvol yoxlaması (İngilis sahələrində)
     for (const blob of [c.phrase, c.meaning, c.example, c.position ?? "", ...(c.synonyms ?? [])]) {
-      if (NON_LATIN.test(blob))
-        warn(g.id, `non-Latin char in English text: "${blob}"`);
+      if (NON_LATIN.test(blob)) warn(g.id, `non-Latin char in English text: "${blob}"`);
     }
   }
 
-  checkQuiz(g.id, g.practice);
+  checkQuiz(warn, g.id, "practice", g.practice);
 }
 
 const total = connectorGroups.reduce((n, g) => n + g.connectors.length, 0);
-console.log(
-  `\n${problems === 0 ? "✅ No structural problems found" : `⚠️  ${problems} problem(s) found`} across ${connectorGroups.length} groups / ${total} connectors.`,
-);
+report(count(), `across ${connectorGroups.length} groups / ${total} connectors.`);
 process.exit(0);

@@ -20,6 +20,7 @@ import type { Level } from "../content/types";
 const PAGE_SIZE = 24;
 import LevelBadge from "../components/LevelBadge";
 import ProgressRing from "../components/ProgressRing";
+import FilterPills from "../components/FilterPills";
 import { LEVEL_META, themeIcon } from "../lib/theme";
 import { useProgress, useStats } from "../store/progress";
 
@@ -205,13 +206,13 @@ export default function HomePage() {
               className="w-full rounded-full border border-line bg-surface py-2.5 pl-9 pr-4 text-sm text-fg shadow-sm outline-none transition placeholder:text-faint focus:border-brand-400 focus:ring-1 focus:ring-brand-400"
             />
           </div>
-          <PillRow
+          <FilterPills
             label="Level"
             value={level}
             onChange={(v) => setLevel(v as Level | "all")}
             options={["all", ...LEVELS]}
           />
-          <PillRow label="Theme" value={theme} onChange={setTheme} options={["all", ...themes]} />
+          <FilterPills label="Theme" value={theme} onChange={setTheme} options={["all", ...themes]} />
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -307,40 +308,3 @@ function HeroStat({ icon, value, label }: { icon: React.ReactNode; value: string
   );
 }
 
-function PillRow({
-  label,
-  value,
-  onChange,
-  options,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  options: string[];
-}) {
-  return (
-    <div className="flex flex-wrap items-center gap-2">
-      <span className="mr-1 w-12 shrink-0 text-xs font-semibold uppercase tracking-wide text-faint">
-        {label}
-      </span>
-      {options.map((o) => {
-        const active = value === o;
-        return (
-          <button
-            key={o}
-            type="button"
-            onClick={() => onChange(o)}
-            aria-pressed={active}
-            className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${
-              active
-                ? "bg-brand-600 text-white shadow-sm"
-                : "bg-surface text-muted ring-1 ring-inset ring-line hover:bg-surface-2"
-            }`}
-          >
-            {o === "all" ? "All" : o}
-          </button>
-        );
-      })}
-    </div>
-  );
-}

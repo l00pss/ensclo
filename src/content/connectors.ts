@@ -22,7 +22,7 @@ import {
   Target,
   type LucideIcon,
 } from "lucide-react";
-import type { ConnectorFunction, ConnectorGroup, Level } from "./types";
+import type { ConnectorFunction, ConnectorGroup } from "./types";
 
 import { addition } from "./connectors/addition";
 import { contrast } from "./connectors/contrast";
@@ -90,10 +90,6 @@ export function getConnectorGroup(id: string): ConnectorGroup | undefined {
   return groupById.get(id as ConnectorFunction);
 }
 
-export function isConnectorFunction(id: string): id is ConnectorFunction {
-  return groupById.has(id as ConnectorFunction);
-}
-
 /** Lesson-da "bu task üçün faydalı bağlayıcılar" — istehsala (yazı/danışıq) yönəlik default dəst. */
 export const DEFAULT_WRITING_FUNCTIONS: ConnectorFunction[] = [
   "opinion",
@@ -103,12 +99,6 @@ export const DEFAULT_WRITING_FUNCTIONS: ConnectorFunction[] = [
   "sequence",
   "conclusion",
 ];
-
-/** Verilmiş səviyyə üçün (və ondan aşağı) bağlayıcıları süz — kademeli açılım. */
-export function connectorsForLevel(group: ConnectorGroup, level: Level): typeof group.connectors {
-  const rank: Record<Level, number> = { B1: 1, B2: 2, C1: 3 };
-  return group.connectors.filter((c) => rank[c.level] <= rank[level]);
-}
 
 /** Ümumi bağlayıcı sayı (dashboard üçün). */
 export const totalConnectors = connectorGroups.reduce((n, g) => n + g.connectors.length, 0);

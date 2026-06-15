@@ -1,33 +1,9 @@
 // Məzmun cross-check validatoru — struktur və ardıcıllıq səhvlərini tapır.
 // İşlət: npx esbuild ... | node  (aşağıdakı bash əmrinə bax)
 import { topics } from "../src/content/index";
-import type { QuizQuestion } from "../src/content/types";
+import { checkQuiz, createReporter, NON_LATIN, report } from "./validate-shared";
 
-let problems = 0;
-const warn = (id: string, msg: string) => {
-  problems++;
-  console.log(`  ✗ [${id}] ${msg}`);
-};
-
-// İngilis mətndə olmamalı simvollar — səhv yazı tutucu.
-// Kiril + Yunan + Azərbaycan/türk spesifik hərfləri (azNote-lar yoxlanmır).
-const NON_LATIN = /[Ѐ-ӿͰ-ϿəĞğİıŞşÇçÜüÖöÂâ]/;
-
-function checkQuiz(id: string, label: string, qs: QuizQuestion[]) {
-  qs.forEach((q, i) => {
-    const tag = `${label} Q${i + 1}`;
-    if (q.type === "multiple-choice") {
-      if (!Array.isArray(q.options) || q.options.length < 2)
-        warn(id, `${tag}: <2 options`);
-      if (typeof q.answer !== "number" || q.answer < 0 || q.answer >= q.options.length)
-        warn(id, `${tag}: answer index ${q.answer} out of range (0..${q.options.length - 1})`);
-      // duplicate options
-      if (new Set(q.options).size !== q.options.length) warn(id, `${tag}: duplicate options`);
-    } else if (q.type === "gap-fill") {
-      if (!q.answer || !q.answer.trim()) warn(id, `${tag}: empty answer`);
-    }
-  });
-}
+const { warn, count } = createReporter();
 
 function textHas(text: string, word: string): boolean {
   // baş sözü normalize et: "to grind" -> "grind"
@@ -62,8 +38,8 @@ for (const tp of topics) {
   }
 
   // qrammatika məsələləri
-  checkQuiz(tp.id, "quiz", tp.quiz);
-  checkQuiz(tp.id, "reading", tp.reading.questions);
+  checkQuiz(warn, tp.id, "quiz", tp.quiz);
+  checkQuiz(warn, tp.id, "reading", tp.reading.questions);
 
   // qeyri-latın simvol yoxlaması (İngilis sahələrində)
   const englishBlobs = [
@@ -88,5 +64,5 @@ for (const tp of topics) {
 const ids = topics.map((t) => t.id);
 if (new Set(ids).size !== ids.length) warn("global", "duplicate topic id(s)");
 
-console.log(`\n${problems === 0 ? "✅ No structural problems found" : `⚠️  ${problems} problem(s) found`} across ${topics.length} topics.`);
+report(count(), `across ${topics.length} topics.`);
 process.exit(0);
