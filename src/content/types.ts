@@ -104,3 +104,63 @@ export interface TopicMeta {
   /** `quiz.length` — kartda "N quiz" göstərmək üçün. */
   quizCount: number;
 }
+
+// ---------------------------------------------------------------------------
+// Connectors / linking words (Bağlayıcılar)
+//
+// Topic-lərdən FƏRQLİ olaraq bunlar bir mövzuya bağlı deyil — bütün mətnlərin
+// içindən keçən, FUNKSİYAYA görə qruplanmış istinad qaynağıdır (addition,
+// contrast, ...). Data azdır və sərhədlidir, ona görə lazy-load/manifest YOX —
+// `connectors.ts` barrel-i hamısını birbaşa (eager) idxal edir.
+// ---------------------------------------------------------------------------
+
+/** Bağlayıcının funksiyası — qruplaşmanın açarı. */
+export type ConnectorFunction =
+  | "addition"
+  | "contrast"
+  | "cause"
+  | "result"
+  | "sequence"
+  | "example"
+  | "comparison"
+  | "clarification"
+  | "conclusion"
+  | "opinion"
+  | "emphasis"
+  | "attribution"
+  | "condition";
+
+/** Üslub registri — B2/C1-də "what's more" (informal) ≠ "furthermore" (academic). */
+export type Register = "neutral" | "formal" | "informal" | "academic";
+
+/** Bir bağlayıcı ifadə. */
+export interface Connector {
+  /** İfadənin özü, məs. "in addition". */
+  phrase: string;
+  level: Level;
+  /** İngiliscə qısa məna/izah. */
+  meaning: string;
+  /** Təbii nümunə cümlə — `phrase` cümlənin içində GERÇƏK işlənməlidir. */
+  example: string;
+  register?: Register;
+  /** Qrammatik mövqe, məs. "Cümlə başı, sonra vergül". */
+  position?: string;
+  /** Yaxın mənalı alternativlər (söz ailəsi). */
+  synonyms?: string[];
+  /** Tez-tez edilən səhv, məs. "despite ≠ although". */
+  pitfall?: string;
+  /** Qısa Azərbaycanca qeyd. */
+  azNote?: string;
+}
+
+/** Bir funksiya qrupu (= addition, contrast, ...). Bir fayl = bir qrup. */
+export interface ConnectorGroup {
+  id: ConnectorFunction;
+  /** İngiliscə: bu funksiya nə vaxt işlənir. */
+  description: string;
+  /** Azərbaycanca qısa izah. */
+  azDescription: string;
+  connectors: Connector[];
+  /** Qrup üzrə tapşırıq (mövcud `Quiz` komponenti ilə işlənir). */
+  practice: QuizQuestion[];
+}

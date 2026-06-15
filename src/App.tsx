@@ -1,5 +1,5 @@
-import { Link, Outlet } from "react-router-dom";
-import { BookOpenText, Flame, Moon, Sun, Zap } from "lucide-react";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import { BookOpenText, Flame, Moon, Spline, Sun, Zap } from "lucide-react";
 import { useStats } from "./store/progress";
 import { useTheme } from "./store/theme";
 
@@ -37,6 +37,31 @@ function Header() {
             </span>
           </span>
         </Link>
+
+        <nav className="flex items-center gap-1">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              `rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                isActive ? "bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300" : "text-muted hover:bg-surface-2 hover:text-fg"
+              }`
+            }
+          >
+            Topics
+          </NavLink>
+          <NavLink
+            to="/connectors"
+            className={({ isActive }) =>
+              `inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                isActive ? "bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300" : "text-muted hover:bg-surface-2 hover:text-fg"
+              }`
+            }
+          >
+            <Spline size={15} />
+            <span className="hidden sm:inline">Connectors</span>
+          </NavLink>
+        </nav>
 
         <div className="flex items-center gap-1.5 sm:gap-2.5">
           <Stat

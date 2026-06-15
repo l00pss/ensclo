@@ -19,6 +19,7 @@ import type { Topic } from "../content/types";
 import LevelBadge from "../components/LevelBadge";
 import Flashcards from "../components/Flashcards";
 import Quiz from "../components/Quiz";
+import ConnectorHints from "../components/ConnectorHints";
 import { LEVEL_META, themeIcon } from "../lib/theme";
 import { useProgress } from "../store/progress";
 
@@ -192,6 +193,7 @@ export default function TopicPage() {
           <div>
             <SpeakingBlock topic={topic} />
             <WritingBlock topic={topic} />
+            <ConnectorHints />
           </div>
         )}
       </div>
@@ -264,6 +266,7 @@ function LessonFlow({
           <div>
             <SpeakingBlock topic={topic} bare />
             <WritingBlock topic={topic} bare />
+            <ConnectorHints />
           </div>
         ),
       },

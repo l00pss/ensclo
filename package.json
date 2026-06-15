@@ -8,7 +8,8 @@
     "manifest": "esbuild scripts/generate-manifest.ts --bundle --platform=node --format=esm | node --input-type=module",
     "build": "npm run manifest && tsc -b && vite build",
     "preview": "vite preview",
-    "validate": "esbuild scripts/validate-content.ts --bundle --platform=node --format=esm | node --input-type=module"
+    "validate": "esbuild scripts/validate-content.ts --bundle --platform=node --format=esm | node --input-type=module",
+    "validate:connectors": "esbuild scripts/validate-connectors.ts --bundle --platform=node --format=esm | node --input-type=module"
   },
   "dependencies": {
     "lucide-react": "^1.17.0",

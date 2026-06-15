@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { topicMeta } from "../content/catalog";
+import { connectorGroups } from "../content/connectors";
 
 // ---------------------------------------------------------------------------
 // Progres + geymifikasiya — hələlik localStorage.
@@ -17,8 +18,17 @@ export interface TopicProgress {
   learnedWords?: string[];
 }
 
+/** Bağlayıcı (connector) qrupu üzrə proqres. */
+export interface ConnectorProgress {
+  completed: boolean;
+  /** Sonuncu practice nəticəsi (faiz). */
+  lastScore?: number;
+}
+
 export interface ProgressState {
   topics: Record<string, TopicProgress>;
+  /** Bağlayıcı qrupları üzrə proqres (açar = ConnectorFunction id-si). */
+  connectors: Record<string, ConnectorProgress>;
   /** Ümumi toplanmış XP. */
   xp: number;
   /** Cari ardıcıl gün sayı (streak). */
@@ -27,7 +37,9 @@ export interface ProgressState {
   lastStudyDay?: string;
 }
 
-const EMPTY: ProgressState = { topics: {}, xp: 0, streak: 0 };
+// Qeyd: köhnə saxlanmış state-də `connectors` olmaya bilər — `read()`-dəki
+// `{ ...EMPTY, ...parsed }` sayəsində default `{}` qalır (miqrasiya lazım deyil).
+const EMPTY: ProgressState = { topics: {}, connectors: {}, xp: 0, streak: 0 };
 
 function todayKey(): string {
   // Yerli tarix, gün dəqiqliyində.
@@ -149,7 +161,47 @@ export function useProgress() {
     [mutate],
   );
 
-  return { state, patchTopic, awardXp, setCompleted, recordQuiz, toggleWord };
+  /** Bağlayıcı qrupunun practice nəticəsini yaz (+XP = nəticənin yarısı). */
+  const recordConnectorQuiz = useCallback(
+    (groupId: string, score: number) =>
+      mutate((s) => {
+        const current: ConnectorProgress = s.connectors[groupId] ?? { completed: false };
+        const gained = Math.round(score / 2);
+        return touchStreak({
+          ...s,
+          xp: s.xp + gained,
+          connectors: { ...s.connectors, [groupId]: { ...current, lastScore: score } },
+        });
+      }),
+    [mutate],
+  );
+
+  /** Bağlayıcı qrupunu "öyrənildi" işarələ — ilk dəfə +30 XP. */
+  const setConnectorGroupDone = useCallback(
+    (groupId: string, completed: boolean) =>
+      mutate((s) => {
+        const current: ConnectorProgress = s.connectors[groupId] ?? { completed: false };
+        const wasCompleted = current.completed;
+        let next: ProgressState = {
+          ...s,
+          connectors: { ...s.connectors, [groupId]: { ...current, completed } },
+        };
+        if (completed && !wasCompleted) next = touchStreak({ ...next, xp: next.xp + 30 });
+        return next;
+      }),
+    [mutate],
+  );
+
+  return {
+    state,
+    patchTopic,
+    awardXp,
+    setCompleted,
+    recordQuiz,
+    toggleWord,
+    recordConnectorQuiz,
+    setConnectorGroupDone,
+  };
 }
 
 /** Dashboard üçün törəmə statistika. */
@@ -162,6 +214,9 @@ export function useStats() {
       0,
     );
     const totalWords = topicMeta.reduce((sum, t) => sum + t.vocabCount, 0);
+    const connectorGroupsDone = connectorGroups.filter(
+      (g) => state.connectors[g.id]?.completed,
+    ).length;
     // Sadə "level" sistemi: hər 100 XP = 1 level.
     const level = Math.floor(state.xp / 100) + 1;
     const xpIntoLevel = state.xp % 100;
@@ -170,6 +225,8 @@ export function useStats() {
       totalTopics: topicMeta.length,
       wordsLearned,
       totalWords,
+      connectorGroupsDone,
+      totalConnectorGroups: connectorGroups.length,
       xp: state.xp,
       streak: state.streak,
       level,
