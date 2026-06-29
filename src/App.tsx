@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { BookOpenText, Flame, Moon, Spline, Sun, Zap } from "lucide-react";
+import { BookOpenText, Flame, GraduationCap, Moon, Spline, Sun, Zap } from "lucide-react";
 import { useStats } from "./store/progress";
 import { useTheme } from "./store/theme";
 
@@ -60,6 +60,17 @@ function Header() {
           >
             <Spline size={15} />
             <span className="hidden sm:inline">Connectors</span>
+          </NavLink>
+          <NavLink
+            to="/grammar"
+            className={({ isActive }) =>
+              `inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                isActive ? "bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300" : "text-muted hover:bg-surface-2 hover:text-fg"
+              }`
+            }
+          >
+            <GraduationCap size={15} />
+            <span className="hidden sm:inline">Grammar</span>
           </NavLink>
         </nav>
 

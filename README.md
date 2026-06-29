@@ -47,6 +47,20 @@ Topic
 └── quiz[]        (gap-fill / multiple-choice qarışıq)
 ```
 
+## Grammar (Qrammatika) əlavə etmək
+
+Qrammatika **topic-dən asılı olmayan** müstəqil bölmədir (Connectors kimi —
+eager idxal, manifest/lazy-load yoxdur). Bir fayl = bir kateqoriya.
+
+1. `src/content/grammar/` içində kateqoriya faylına yeni `GrammarRule` əlavə et
+   (məs. `tenses.ts`). Tip üçün `src/content/types.ts` → `GrammarGroup`-a bax.
+2. Tamamilə yeni kateqoriya üçün: yeni fayl yarat, `GrammarCategory` tipinə
+   id əlavə et və `src/content/grammar.ts`-də `GRAMMAR_META` + `grammarGroups`-a
+   qeydiyyatdan keçir (ikon + sıra).
+
+Hər kateqoriyada qaydalar (`rules[]`) + `practice[]` quiz olur; səhifə, səviyyə
+filtri, kart və quiz avtomatik yaranır.
+
 ## GitHub Pages-ə deploy
 
 Layihə avtomatik deploy üçün hazırdır:

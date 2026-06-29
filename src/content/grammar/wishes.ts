@@ -1,0 +1,136 @@
+import type { GrammarGroup } from "../types";
+
+export const wishes: GrammarGroup = {
+  id: "wishes",
+  description: "Wishes and regrets express that reality is different from what we want. They use unreal (back-shifted) verb forms.",
+  azDescription: "Arzular va tessuf realligin istadiyimizdan ferqli oldugunu bildirir. Burada qeyri-real (geriye surusdurulmus) feil formalari islenir.",
+  rules: [
+    {
+      title: "wish + past simple (present wish)",
+      level: "B2",
+      explanation: "Use 'wish' with the past simple to talk about a present situation you want to be different. The meaning is present, but the verb looks past.",
+      azNote: "Indiki vaxti deyisdirmek istediyimizde 'wish + past simple' islenir. Mena indidir, feil kecmis gorunur.",
+      form: "subject + wish + (that) + subject + past simple",
+      examples: [
+        { en: "I wish I had more free time.", note: "but I do not have it now" },
+        { en: "She wishes she lived closer to work.", note: "present situation she dislikes" },
+      ],
+      pitfall: "Indiki arzuda Present yox, Past Simple islenir: 'I wish I have' yox, 'I wish I had'.",
+    },
+    {
+      title: "wish + past perfect (past regret)",
+      level: "B2",
+      explanation: "Use 'wish' with the past perfect to express regret about something in the past that you cannot change.",
+      azNote: "Kecmisle bagli tessuf ucun 'wish + past perfect' islenir. Artiq deyise bilmediyimiz seyler.",
+      form: "subject + wish + (that) + subject + had + past participle",
+      examples: [
+        { en: "I wish I had studied harder for the exam.", note: "but I did not, and I regret it" },
+        { en: "They wish they had not sold the house.", note: "regret about a past decision" },
+      ],
+      pitfall: "Kecmis tessufde Past Simple yox, Past Perfect lazimdir: 'I wish I studied' yox, 'I wish I had studied'.",
+    },
+    {
+      title: "wish + would (annoyance or change)",
+      level: "B2",
+      explanation: "Use 'wish' with 'would' to complain about an annoying habit or to want someone or something to change. We do not use 'would' for our own actions or for states.",
+      azNote: "Bir kesin adetinden sikayet va deyisiklik isteyi ucun 'wish + would'. Oz hereketin ve ya veziyyet (state) ucun islenmir.",
+      form: "subject + wish + (that) + subject + would + base verb",
+      examples: [
+        { en: "I wish you would stop interrupting me.", note: "annoying habit of another person" },
+        { en: "I wish it would stop raining.", note: "wanting a situation to change" },
+      ],
+      pitfall: "Oz hereketin ucun 'wish I would' demirik: 'I wish I would be rich' yox, 'I wish I were rich'.",
+    },
+    {
+      title: "if only (stronger wish)",
+      level: "B2",
+      explanation: "'if only' means the same as 'wish' but is more emphatic and emotional. It follows the same verb patterns: past simple for the present, past perfect for the past.",
+      azNote: "'if only' 'wish' ile eyni menadir, ancaq daha guclu va emosionaldir. Eyni feil qaydalarini izleyir.",
+      form: "if only + subject + past simple / past perfect",
+      examples: [
+        { en: "If only I knew the answer.", note: "strong present wish" },
+        { en: "If only we had left earlier.", note: "strong regret about the past" },
+      ],
+      pitfall: "'if only' da 'wish' kimi geriye surusdurme isteyir: 'If only I know' yox, 'If only I knew'.",
+    },
+    {
+      title: "would rather (preference)",
+      level: "B2",
+      explanation: "Use 'would rather' plus the base verb to talk about your own preference. To talk about what you want another person to do, use 'would rather' plus a past simple verb.",
+      azNote: "Oz secimin ucun 'would rather + base verb'. Basqasinin etmesini istediyin zaman 'would rather + past simple'.",
+      form: "I would rather + base verb / I would rather + someone + past simple",
+      examples: [
+        { en: "I would rather stay at home tonight.", note: "own preference, base verb" },
+        { en: "I would rather you came with me.", note: "preference about another person, past simple" },
+      ],
+      pitfall: "Basqasi ucun 'would rather you come' yox, 'would rather you came' deyilir.",
+    },
+    {
+      title: "wish + were for all persons",
+      level: "B2",
+      explanation: "After 'wish' (and 'if only'), we use 'were' instead of 'was' for all persons in careful or formal English, especially in fixed advice like 'If I were you'.",
+      azNote: "'wish' va 'if only' sonrasinda butun sexsler ucun 'was' yox 'were' islenir, xususile 'If I were you' kimi ifadelerde.",
+      form: "I / he / she / it + wish + ... + were",
+      examples: [
+        { en: "I wish I were taller.", note: "'were' with 'I'" },
+        { en: "She wishes she were here with us.", note: "'were' with 'she'" },
+      ],
+      pitfall: "Resmi dilde 'I wish I was' yox, 'I wish I were' daha dogrudur.",
+    },
+  ],
+  practice: [
+    {
+      type: "gap-fill",
+      prompt: "I wish I ___ taller. (present wish; be)",
+      answer: "were",
+      accept: ["was"],
+      explanation: "wish + past simple for a present wish; 'were' is used for all persons in careful English.",
+    },
+    {
+      type: "multiple-choice",
+      prompt: "I wish I ___ harder for the exam last year.",
+      options: ["studied", "had studied", "study", "would study"],
+      answer: 1,
+      explanation: "Regret about the past needs wish + past perfect: 'had studied'.",
+    },
+    {
+      type: "gap-fill",
+      prompt: "I wish you ___ stop interrupting me. (annoying habit)",
+      answer: "would",
+      explanation: "wish + would expresses annoyance about another person's habit: 'you would stop'.",
+    },
+    {
+      type: "multiple-choice",
+      prompt: "If only we ___ earlier, we would not have missed the train.",
+      options: ["left", "had left", "leave", "would leave"],
+      answer: 1,
+      explanation: "'if only' for a past regret uses the past perfect: 'had left'.",
+    },
+    {
+      type: "gap-fill",
+      prompt: "I wish I ___ more free time these days. (present; have)",
+      answer: "had",
+      explanation: "A present wish uses wish + past simple, so 'have' becomes 'had'.",
+    },
+    {
+      type: "multiple-choice",
+      prompt: "I would rather you ___ with me to the meeting.",
+      options: ["come", "came", "to come", "coming"],
+      answer: 1,
+      explanation: "When 'would rather' refers to another person, it takes the past simple: 'you came'.",
+    },
+    {
+      type: "multiple-choice",
+      prompt: "I would rather ___ at home tonight.",
+      options: ["stay", "stayed", "to stay", "staying"],
+      answer: 0,
+      explanation: "For your own preference, 'would rather' is followed by the base verb: 'stay'.",
+    },
+    {
+      type: "gap-fill",
+      prompt: "If only I ___ the answer to this question! (present; know)",
+      answer: "knew",
+      explanation: "'if only' with a present meaning uses the past simple: 'knew'.",
+    },
+  ],
+};

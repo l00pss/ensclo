@@ -167,3 +167,62 @@ export interface ConnectorGroup {
   /** Qrup üzrə tapşırıq (mövcud `Quiz` komponenti ilə işlənir). */
   practice: QuizQuestion[];
 }
+
+// ---------------------------------------------------------------------------
+// Grammar (Qrammatika) — müstəqil arayış bölməsi.
+//
+// Connectors kimi: data sərhədlidir və mövzuya bağlı deyil, ona görə eager
+// idxal — `grammar.ts` barrel-i bütün kateqoriyaları birbaşa gətirir. Topic-in
+// içindəki `GrammarFocus` bir dərsə bağlıdır; bu isə kateqoriyalara bölünmüş,
+// axtarıla bilən tam arayışdır. Bir fayl = bir kateqoriya.
+// ---------------------------------------------------------------------------
+
+/** Qrammatika kateqoriyası — qruplaşmanın açarı (bir fayl = bir kateqoriya). */
+export type GrammarCategory =
+  | "tenses"
+  | "articles"
+  | "quantifiers"
+  | "comparatives"
+  | "adjectives-adverbs"
+  | "questions"
+  | "modals"
+  | "habits"
+  | "gerund-infinitive"
+  | "passive"
+  | "causative"
+  | "conditionals"
+  | "wishes"
+  | "relative-clauses"
+  | "reported-speech"
+  | "prepositions"
+  | "phrasal-verbs"
+  | "advanced";
+
+/** Bir qrammatika qaydası (kateqoriya daxilində bir nöqtə). */
+export interface GrammarRule {
+  /** Qaydanın adı, məs. "Present Perfect". */
+  title: string;
+  level: Level;
+  /** İngiliscə izah — nə vaxt və niyə işlənir. */
+  explanation: string;
+  /** Azərbaycanca qısa izah (qrammatikada AZ qeyd çox faydalıdır). */
+  azNote: string;
+  /** Struktur/düstur, məs. "subject + have/has + past participle". */
+  form?: string;
+  /** Təbii nümunə cümlələr (lazım olsa qısa qeydlə). */
+  examples: { en: string; note?: string }[];
+  /** Tez-tez edilən səhv. */
+  pitfall?: string;
+}
+
+/** Bir qrammatika kateqoriyası. Bir fayl = bir kateqoriya. */
+export interface GrammarGroup {
+  id: GrammarCategory;
+  /** İngiliscə: bu kateqoriya nəyi əhatə edir. */
+  description: string;
+  /** Azərbaycanca qısa izah. */
+  azDescription: string;
+  rules: GrammarRule[];
+  /** Kateqoriya üzrə tapşırıq (mövcud `Quiz` komponenti ilə işlənir). */
+  practice: QuizQuestion[];
+}

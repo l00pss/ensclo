@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { topicMeta } from "../content/catalog";
 import { connectorGroups } from "../content/connectors";
+import { grammarGroups } from "../content/grammar";
 
 // ---------------------------------------------------------------------------
 // Progres + geymifikasiya — hələlik localStorage.
@@ -25,10 +26,15 @@ export interface ConnectorProgress {
   lastScore?: number;
 }
 
+/** Qrammatika kateqoriyası üzrə proqres (connector ilə eyni forma). */
+export type GrammarProgress = ConnectorProgress;
+
 export interface ProgressState {
   topics: Record<string, TopicProgress>;
   /** Bağlayıcı qrupları üzrə proqres (açar = ConnectorFunction id-si). */
   connectors: Record<string, ConnectorProgress>;
+  /** Qrammatika kateqoriyaları üzrə proqres (açar = GrammarCategory id-si). */
+  grammar: Record<string, GrammarProgress>;
   /** Ümumi toplanmış XP. */
   xp: number;
   /** Cari ardıcıl gün sayı (streak). */
@@ -39,7 +45,7 @@ export interface ProgressState {
 
 // Qeyd: köhnə saxlanmış state-də `connectors` olmaya bilər — `read()`-dəki
 // `{ ...EMPTY, ...parsed }` sayəsində default `{}` qalır (miqrasiya lazım deyil).
-const EMPTY: ProgressState = { topics: {}, connectors: {}, xp: 0, streak: 0 };
+const EMPTY: ProgressState = { topics: {}, connectors: {}, grammar: {}, xp: 0, streak: 0 };
 
 function todayKey(): string {
   // Yerli tarix, gün dəqiqliyində.
@@ -87,6 +93,8 @@ function touchStreak(state: ProgressState): ProgressState {
 const XP_TOPIC_COMPLETE = 50;
 /** Bağlayıcı qrupu ilk dəfə tamamlananda verilən XP. */
 const XP_CONNECTOR_GROUP_COMPLETE = 30;
+/** Qrammatika kateqoriyası ilk dəfə tamamlananda verilən XP. */
+const XP_GRAMMAR_GROUP_COMPLETE = 40;
 /** Quiz nəticəsindən (faiz) qazanılan XP. */
 const quizXp = (scorePercent: number) => Math.round(scorePercent / 2);
 
@@ -204,6 +212,32 @@ export function useProgress() {
     [mutate],
   );
 
+  /** Qrammatika kateqoriyasının practice nəticəsini yaz (+XP = nəticənin yarısı). */
+  const recordGrammarQuiz = useCallback(
+    (groupId: string, score: number) =>
+      mutate((s) =>
+        touchStreak({
+          ...s,
+          xp: s.xp + quizXp(score),
+          grammar: upsertEntity(s.grammar, groupId, { lastScore: score }),
+        }),
+      ),
+    [mutate],
+  );
+
+  /** Qrammatika kateqoriyasını "öyrənildi" işarələ — ilk dəfə XP. */
+  const setGrammarGroupDone = useCallback(
+    (groupId: string, completed: boolean) =>
+      mutate((s) => {
+        const { entities, firstTime } = completeEntity(s.grammar, groupId, completed);
+        const next: ProgressState = { ...s, grammar: entities };
+        return firstTime
+          ? touchStreak({ ...next, xp: next.xp + XP_GRAMMAR_GROUP_COMPLETE })
+          : next;
+      }),
+    [mutate],
+  );
+
   return {
     state,
     patchTopic,
@@ -213,6 +247,8 @@ export function useProgress() {
     toggleWord,
     recordConnectorQuiz,
     setConnectorGroupDone,
+    recordGrammarQuiz,
+    setGrammarGroupDone,
   };
 }
 
@@ -229,6 +265,9 @@ export function useStats() {
     const connectorGroupsDone = connectorGroups.filter(
       (g) => state.connectors[g.id]?.completed,
     ).length;
+    const grammarGroupsDone = grammarGroups.filter(
+      (g) => state.grammar[g.id]?.completed,
+    ).length;
     // Sadə "level" sistemi: hər 100 XP = 1 level.
     const level = Math.floor(state.xp / 100) + 1;
     const xpIntoLevel = state.xp % 100;
@@ -239,6 +278,8 @@ export function useStats() {
       totalWords,
       connectorGroupsDone,
       totalConnectorGroups: connectorGroups.length,
+      grammarGroupsDone,
+      totalGrammarGroups: grammarGroups.length,
       xp: state.xp,
       streak: state.streak,
       level,

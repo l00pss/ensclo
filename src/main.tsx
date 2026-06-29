@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import TopicPage from "./pages/TopicPage";
 import ConnectorsPage from "./pages/ConnectorsPage";
 import ConnectorGroupPage from "./pages/ConnectorGroupPage";
+import GrammarPage from "./pages/GrammarPage";
+import GrammarGroupPage from "./pages/GrammarGroupPage";
 import "./index.css";
 
 // HashRouter (URL-də #) — GitHub Pages-də server-side routing tələb etmir,
@@ -19,6 +21,8 @@ const router = createHashRouter([
       { path: "topic/:id", element: <TopicPage /> },
       { path: "connectors", element: <ConnectorsPage /> },
       { path: "connectors/:groupId", element: <ConnectorGroupPage /> },
+      { path: "grammar", element: <GrammarPage /> },
+      { path: "grammar/:groupId", element: <GrammarGroupPage /> },
     ],
   },
 ]);
