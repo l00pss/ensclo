@@ -84,6 +84,51 @@ export const fnSmalltalk: ReferenceGroup<FunctionalPhrase> = {
       example: "I have to run, but it was great catching up — let's grab a coffee soon!",
       register: "informal",
     },
+    {
+      phrase: "So, what do you do?",
+      level: "B1",
+      use: "to casually ask about someone's job when you first meet them",
+      azUse:
+        "Yeni tanış olduğun birisinin nə işlə məşğul olduğunu, peşəsini soruşmaq üçün işlədilən çox geniş yayılmış qeyri-rəsmi sualdır. 'So' sözü söhbətə təbii keçid yaradır və sualı yumşaq səsləndirir. Qonaqlıqlarda, tədbirlərdə və networking görüşlərində buz qırmaq üçün əla mövzudur, lakin çox rəsmi şəraitdə bir az birbaşa səslənə bilər.",
+      example: "So, what do you do? I work in software myself.",
+      register: "informal",
+    },
+    {
+      phrase: "Crazy weather we're having, isn't it?",
+      level: "B1",
+      use: "to break the ice by commenting on the weather",
+      azUse:
+        "Tanımadığın və ya az tanıdığın birisi ilə söhbətə başlamaq üçün hava haqqında şərh edən klassik small talk ifadəsidir. İngilis dilində hava həmişə təhlükəsiz, neytral mövzudur və susqunluğu doldurmaq üçün işlədilir. Çox səmimi və qeyri-rəsmi tonu var; növbədə, liftdə və ya avtobus dayanacağında yad adamla rahat söz açmaq üçün uyğundur.",
+      example: "Crazy weather we're having, isn't it? It was sunny an hour ago.",
+      register: "informal",
+    },
+    {
+      phrase: "I'd love to hear more about that.",
+      level: "B2",
+      use: "to show genuine interest and encourage someone to keep talking",
+      azUse:
+        "Həmsöhbətinin dediyi bir şeyə səmimi maraq göstərmək və onu danışmağa davam etməyə həvəsləndirmək üçün işlədilir. Bu ifadə qarşı tərəfə onu diqqətlə dinlədiyini və mövzunun sənə maraqlı olduğunu hiss etdirir. Neytral tonu var, həm dostyana söhbətdə, həm də yarı-rəsmi iş tanışlıqlarında nəzakətli və mehriban səslənir.",
+      example: "You backpacked across Asia? I'd love to hear more about that.",
+      register: "neutral",
+    },
+    {
+      phrase: "I won't keep you any longer.",
+      level: "C1",
+      use: "to politely signal that you are about to end the conversation",
+      azUse:
+        "Söhbəti nəzakətlə bitirmək istədiyini, qarşı tərəfin vaxtını daha çox almaq istəmədiyini bildirmək üçün işlədilən incə ifadədir. Birbaşa 'getməliyəm' deməkdən daha zərif və düşüncəlidir, çünki diqqəti qarşı tərəfin məşğulluğuna yönəldir. Yarı-rəsmi və nəzakətli tonu var, həm iş, həm də sosial mühitdə hörmətlə vidalaşmaq üçün uyğundur.",
+      example: "Anyway, I won't keep you any longer — it was lovely chatting with you.",
+      register: "formal",
+    },
+    {
+      phrase: "We should hang out sometime.",
+      level: "B2",
+      use: "to suggest meeting up again in a relaxed, informal way",
+      azUse:
+        "Yeni tanış olduğun və ya söhbətindən zövq aldığın birisi ilə gələcəkdə yenidən görüşmək təklifini rahat şəkildə bildirmək üçün işlədilir. 'Hang out' birlikdə vaxt keçirmək, gəzmək mənasında qeyri-rəsmi ifadədir. Çox səmimi və dostyana tonu var, ona görə yaşıdlarla, dostlarla işlənir; rəsmi iş münasibətlərində bunun yerinə daha nəzakətli formalar seçilir.",
+      example: "I had a great time talking with you — we should hang out sometime!",
+      register: "informal",
+    },
   ],
   practice: [
     {

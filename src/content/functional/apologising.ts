@@ -85,6 +85,51 @@ export const fnApologising: ReferenceGroup<FunctionalPhrase> = {
       example: "\"Sorry, I think I gave you the wrong file.\" \"No harm done — I've got the right one now.\"",
       register: "informal",
     },
+    {
+      phrase: "Please accept my sincere apologies.",
+      level: "C1",
+      use: "a very formal apology used in business emails and official letters",
+      azUse:
+        "Çox rəsmi və nəzakətli üzr ifadəsidir; əsasən işgüzar e-poçtlarda, rəsmi məktublarda və müştərilərə yazılı müraciətlərdə işlədilir. \"Sincere\" sözü üzrünüzün səmimi və ürəkdən olduğunu vurğulayır. Gündəlik danışıqda bir az ağır səslənə bilər, ona görə yazılı və rəsmi kontekst üçün daha uyğundur.",
+      example: "Please accept my sincere apologies for any inconvenience this may have caused.",
+      register: "formal",
+    },
+    {
+      phrase: "My bad.",
+      level: "B1",
+      use: "a very casual way to admit a small mistake among friends",
+      azUse:
+        "Çox qeyri-rəsmi və yüngül bir ifadədir; kiçik bir səhvi etiraf edərkən dostlar arasında işlədilir. Söhbəti gərginləşdirmədən, rahat tonda \"mənim səhvim\" demək üçün istifadə olunur. Rəsmi situasiyalarda və ya tanımadığınız adamlarla danışarkən uyğun deyil, çünki çox gündəlik səslənir.",
+      example: "My bad — I thought the meeting was at three, not two.",
+      register: "informal",
+    },
+    {
+      phrase: "I didn't mean to upset you.",
+      level: "B2",
+      use: "to explain that hurting or upsetting someone was not your intention",
+      azUse:
+        "Kimisə incitməyin və ya narahat etməyin niyyətinizdə olmadığını izah etmək üçün işlədilir. Bu ifadə üzr istəyərkən səmimiyyət göstərir, çünki səhvinizin qəsdən olmadığını vurğulayırsınız. Həm gündəlik münasibətlərdə, həm də iş yerində kiminsə hisslərinə toxunanda işlənə bilər.",
+      example: "I didn't mean to upset you — I was only trying to help.",
+      register: "neutral",
+    },
+    {
+      phrase: "It's completely understandable.",
+      level: "B2",
+      use: "a kind way to respond to an apology by showing you sympathise with the person",
+      azUse:
+        "Kimsə üzr istəyəndə ona anlayışla yanaşdığınızı bildirmək üçün işlədilən mehriban cavabdır. Qarşı tərəfə vəziyyətin başa düşülən olduğunu deyib onu rahatladır və günahkar hiss etməsinin qarşısını alır. Həm qeyri-rəsmi, həm də iş söhbətlərində nəzakətli ton yaratmaq üçün uyğundur.",
+      example: "\"Sorry, I was stuck in traffic.\" \"It's completely understandable, don't worry.\"",
+      register: "neutral",
+    },
+    {
+      phrase: "These things happen.",
+      level: "C1",
+      use: "a reassuring way to accept an apology by treating the mistake as normal",
+      azUse:
+        "Səhvi adi və qaçılmaz bir şey kimi qəbul edib qarşı tərəfi rahatlatmaq üçün işlədilən ifadədir. Üzrü asanlıqla qəbul etdiyinizi və bunu böyütmədiyinizi göstərir. Adətən qeyri-rəsmi və yumşaq iş situasiyalarında işlənir; çox ciddi və rəsmi məqamlar üçün bir az laqeyd səslənə bilər.",
+      example: "\"I'm really sorry I broke the glass.\" \"These things happen — it's fine.\"",
+      register: "neutral",
+    },
   ],
   practice: [
     {

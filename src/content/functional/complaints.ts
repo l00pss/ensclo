@@ -85,6 +85,51 @@ export const fnComplaints: ReferenceGroup<FunctionalPhrase> = {
         "Please accept our sincere apologies for the inconvenience — we are taking steps to make sure this does not happen again.",
       register: "formal",
     },
+    {
+      phrase: "I'd like to make a formal complaint.",
+      level: "C1",
+      use: "to state explicitly that you want your complaint recorded officially",
+      azUse:
+        "Şikayətinizin sadəcə söhbət deyil, rəsmi qaydada qeydə alınmasını istədiyinizi bildirmək üçün işlədilən ifadədir. \"formal\" sözü məsələnin ciddi olduğunu və adi narazılıqdan fərqli olaraq yazılı prosedur tələb etdiyini vurğulayır. Adətən bank, dövlət idarəsi və ya iri şirkətlərlə problem yaşadıqda, məsələni sənədləşdirmək istədiyiniz hallarda deyilir.",
+      example: "If this can't be resolved today, I'd like to make a formal complaint.",
+      register: "formal",
+    },
+    {
+      phrase: "Could you tell me what exactly went wrong?",
+      level: "B2",
+      use: "to ask a complaining customer for details so you can understand the problem",
+      azUse:
+        "Şikayət edən adamdan problemin təfərrüatlarını öyrənmək, nəyin səhv getdiyini dəqiqləşdirmək üçün verilən nəzakətli sualdır. \"exactly\" sözü konkret məlumat istədiyinizi göstərir və vəziyyəti düzgün başa düşməyə kömək edir. Müştəri xidmətində işləyən şəxs məsələni həll etməzdən əvvəl faktları aydınlaşdırmaq üçün bu sualı verir.",
+      example: "I'm sorry you're unhappy — could you tell me what exactly went wrong?",
+      register: "neutral",
+    },
+    {
+      phrase: "I expect a full refund.",
+      level: "B2",
+      use: "to state firmly what compensation you want as a result of the problem",
+      azUse:
+        "Yaşanan problemə görə pulunuzun tam geri qaytarılmasını qətiyyətlə tələb etmək üçün işlədilən ifadədir. \"expect\" feili burada gözlənti yox, möhkəm tələb bildirir, ona görə tonu ciddidir. Məhsul və ya xidmət tamamilə qüsurlu olduqda, kompensasiya tələbinizi açıq qoymaq istədiyiniz hallarda işlədilir.",
+      example: "The product was faulty from day one, so I expect a full refund.",
+      register: "neutral",
+    },
+    {
+      phrase: "Thank you for bringing this to our attention.",
+      level: "C1",
+      use: "a polite, professional way to acknowledge a customer's complaint",
+      azUse:
+        "Müştərinin şikayətini peşəkar və minnətdar tonda qəbul etmək üçün işlədilən rəsmi ifadədir. Narazılığı problem kimi yox, şirkətin daha yaxşı olması üçün faydalı geri-bildirim kimi dəyərləndirir. E-poçtlarda, rəsmi cavablarda və müştəri xidmətində gərginliyi azaldıb hörmətli təəssürat yaratmaq üçün geniş işlədilir.",
+      example: "Thank you for bringing this to our attention — we'll look into it immediately.",
+      register: "formal",
+    },
+    {
+      phrase: "There seems to be a bit of a problem with this.",
+      level: "B1",
+      use: "a gentle, indirect way to point out that something is wrong",
+      azUse:
+        "Bir şeyin səhv olduğunu çox yumşaq və dolayı yolla bildirmək üçün işlədilən gündəlik ifadədir. \"seems to be\" və \"a bit of\" hissələri narazılığı kobudlaşdırmadan, mehriban tonda çatdırır. Tanıdığınız adamlarla və ya münaqişədən qaçmaq istədiyiniz adi situasiyalarda şikayəti incə şəkildə başlatmaq üçün çox uyğundur.",
+      example: "Sorry to bother you, but there seems to be a bit of a problem with this bill.",
+      register: "informal",
+    },
   ],
   practice: [
     {

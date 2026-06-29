@@ -86,6 +86,51 @@ export const fnRequests: ReferenceGroup<FunctionalPhrase> = {
         "If you have any further questions, please don't hesitate to contact me.",
       register: "formal",
     },
+    {
+      phrase: "Is there any chance you could ...?",
+      level: "B2",
+      use: "to ask for a favour in a casual but slightly hopeful way",
+      azUse:
+        "Bir az ümidvar, lakin rahat tonla kömək və ya lütf istəmək üçün işlənir; \"Bir ehtimal varmı ki...?\" mənasını verir və qarşı tərəfə \"yox\" demək üçün asanlıqla yer qoyur. Çox zaman dostlar, tanışlar arasında, bəzən isə işdə yumşaq xahis kimi istifadə olunur. Cavabın müsbət olub-olmayacağına əmin olmadığın hallarda təbii səslənir.",
+      example: "Is there any chance you could cover my shift on Saturday?",
+      register: "informal",
+    },
+    {
+      phrase: "I'd be grateful if you could ...",
+      level: "C1",
+      use: "to make a formal, courteous request in writing",
+      azUse:
+        "Rəsmi və nəzakətli yazışmalarda, xüsusən e-poçtlarda istifadə olunan ifadədir; \"...etsəniz minnətdar olaram\" mənasını verir və qarşı tərəfə hörmət göstərir. Şərt cümləsi (if you could) və \"grateful\" sözü xahişi həm yumşaq, həm də peşəkar göstərir. Müştərilərə, müdirə və ya az tanıdığın rəsmi şəxslərə yazanda çox uyğundur.",
+      example: "I'd be grateful if you could confirm your attendance by Friday.",
+      register: "formal",
+    },
+    {
+      phrase: "Let me give you a hand with ...",
+      level: "B1",
+      use: "to actively offer to help with a specific task",
+      azUse:
+        "Konkret bir işdə fəal şəkildə kömək təklif etmək üçün işlənən qeyri-rəsmi ifadədir; \"give you a hand\" idiomatik olaraq \"sənə kömək etmək\" deməkdir, ona görə hərfi tərcümə yanlışdır. \"Let me...\" hissəsi təklifi mehriban və könüllü göstərir, sanki sən özün irəli atılırsan. Dostlar, ailə və kollegalar arasında təbii səslənir.",
+      example: "You've got a lot to carry — let me give you a hand with those bags.",
+      register: "informal",
+    },
+    {
+      phrase: "Would you be so kind as to ...?",
+      level: "C1",
+      use: "a very formal and polite way to make a request",
+      azUse:
+        "Çox rəsmi və yüksək nəzakətli xahis formasıdır; \"Zəhmət olmasa, ... etmək lütfkarlığını göstərərdinizmi?\" kimi tərcümə oluna bilər. Gündəlik danışıqda nadirən, lakin rəsmi məktublarda, mərasimlərdə və ya xüsusi hörmət göstərmək istədiyin hallarda işlənir. Bəzən qeyri-rəsmi mühitdə kinayəli (sarkastik) çalarla da işlədilə bilər, ona görə kontekstə diqqət etmək lazımdır.",
+      example: "Would you be so kind as to forward this email to the rest of the team?",
+      register: "formal",
+    },
+    {
+      phrase: "Just let me know if you need anything.",
+      level: "B1",
+      use: "to offer open-ended help and signal availability",
+      azUse:
+        "Qarşı tərəfə açıq şəkildə kömək təklif etmək və \"hər an hazıram\" mesajını vermək üçün işlənir; \"Nəyə ehtiyacın olsa, sadəcə de\" mənasını daşıyır. Həm dostyana, həm də nisbətən rəsmi mühitdə işlənə bilər və mehriban, dəstəkləyici səslənir. Çox vaxt söhbətin və ya görüşün sonunda, kömək lazım ola biləcəyini bildirmək üçün istifadə olunur.",
+      example: "I'll be in the office all day, so just let me know if you need anything.",
+      register: "neutral",
+    },
   ],
   practice: [
     {

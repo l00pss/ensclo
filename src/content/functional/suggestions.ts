@@ -85,6 +85,51 @@ export const fnSuggestions: ReferenceGroup<FunctionalPhrase> = {
         "If I might make a suggestion, we could postpone the launch until the testing is finished.",
       register: "formal",
     },
+    {
+      phrase: "Let's...",
+      level: "B1",
+      use: "to suggest doing something together in a quick, enthusiastic way",
+      azUse:
+        "Birlikdə nəsə etməyi tez və həvəslə təklif etmək üçün ən sadə yoldur; ardınca həmişə feilin əsas forması gəlir ('Let's go', 'Let's start'). 'Let us'-un qısaldılmış formasıdır və danışıqda demək olar ki, həmişə qısa şəkildə işlənir. Çox qeyri-rəsmi və canlı səsləndiyi üçün dostlar, ailə və komanda yoldaşları arasında təbii görünür, rəsmi yığıncaqda isə bir az təsadüfi qala bilər.",
+      example: "Let's take a short break and continue after lunch.",
+      register: "informal",
+    },
+    {
+      phrase: "You might want to...",
+      level: "B2",
+      use: "to give advice gently, without sounding pushy",
+      azUse:
+        "Kiməsə nə etməyin yaxşı olacağını çox yumşaq və təzyiqsiz şəkildə bildirmək üçün işlənir; 'You should…'-dan daha incə səslənir, çünki qərarı qarşı tərəfin öz əlinə buraxır. 'Might' burada ehtiyat və nəzakət qatır, ona görə həssas mövzularda və ya yeni tanış olduğun adamla danışarkən faydalıdır. Həm dostcasına, həm də işgüzar söhbətlərdə rahat işlənir.",
+      example: "You might want to back up your files before updating the system.",
+      register: "neutral",
+    },
+    {
+      phrase: "What if we...?",
+      level: "B2",
+      use: "to float a possible idea and invite the other person to consider it",
+      azUse:
+        "Mümkün bir fikri ortaya atıb qarşı tərəfi onu birlikdə düşünməyə dəvət etmək üçün işlənir; ardınca adətən indiki zamanda feil gəlir ('What if we tried…'). Beyin fırtınası, plan qurma və komanda müzakirələrində xüsusən faydalıdır, çünki təklifi qəti qərar kimi yox, açıq variant kimi təqdim edir. Neytral tona malikdir, ona görə həm dostlar arası, həm də iş mühitində təbii səslənir.",
+      example: "What if we moved the meeting to Friday so everyone can join?",
+      register: "neutral",
+    },
+    {
+      phrase: "I would recommend...",
+      level: "C1",
+      use: "to give a confident, professional recommendation",
+      azUse:
+        "Peşəkar və özünə inamlı şəkildə tövsiyə vermək üçün işlənir; ardınca isim, -ing forması və ya '(that) you…' cümləsi gələ bilər. Rəsmi e-poçtlarda, hesabatlarda, müştəri görüşlərində və ekspert rəyi bildirərkən çox uyğundur, çünki ciddi və etibarlı təsir bağışlayır. 'I'd suggest…'-dən bir qədər daha qəti və nüfuzlu səslənir, ona görə təcrübənə əsaslanan fikir bildirəndə xüsusən yerinə düşür.",
+      example: "I would recommend reviewing the figures with the finance team before the presentation.",
+      register: "formal",
+    },
+    {
+      phrase: "Perhaps you could consider...",
+      level: "C1",
+      use: "a very tactful, formal way to put forward an option",
+      azUse:
+        "Bir variantı çox nəzakətli, diplomatik və ehtiyatlı şəkildə irəli sürmək üçün işlənir; 'perhaps' və 'could' birlikdə fikri olduqca yumşaldır. Yüksək rəsmi üslubdur və adətən yazılı işgüzar yazışmalarda, rəsmi müzakirələrdə və ya həssas vəziyyətlərdə, qarşı tərəfi incitmədən təklif verəndə işlənir. Gündəlik dostcasına söhbətlərdə isə həddən artıq rəsmi və uzaq səslənə bilər.",
+      example: "Perhaps you could consider outsourcing the design work to meet the deadline.",
+      register: "formal",
+    },
   ],
   practice: [
     {

@@ -84,6 +84,51 @@ export const fnCertainty: ReferenceGroup<FunctionalPhrase> = {
       example: "In all probability, the project will be delayed by a few weeks.",
       register: "formal",
     },
+    {
+      phrase: "There's no doubt about it.",
+      level: "B2",
+      use: "to emphasise that something is completely certain, with no room for doubt",
+      azUse:
+        "Bir şeyin tamamilə doğru və şübhəsiz olduğunu qətiyyətlə vurğulamaq üçün işlənir — \"buna heç bir şübhə yoxdur\", \"yüz faiz belədir\" mənasını verir. Adətən fikrini gücləndirmək, dinləyicini inandırmaq üçün cümlənin əvvəlinde və ya sonunda deyilir: \"There's no doubt about it — she's the best candidate\". Həm rəsmi, həm gündəlik söhbətdə işlənir və natiqin tam əmin olduğunu göstərir.",
+      example: "There's no doubt about it: this is the best decision we've made all year.",
+      register: "neutral",
+    },
+    {
+      phrase: "It's highly unlikely.",
+      level: "B2",
+      use: "to say there is a very small probability that something will happen",
+      azUse:
+        "Bir şeyin baş vermə ehtimalının çox az olduğunu bildirmək üçün işlənir — \"çox az ehtimal var\", \"demək olar ki, mümkün deyil\" mənasını verir. \"Highly\" sözü burada ehtimalın nə qədər aşağı olduğunu gücləndirir. Rəsmi və yarı-rəsmi kontekstdə, xüsusən proqnoz, analiz və hesabatlarda təbii səslənir; ardınca \"that\" gələ bilər: \"It's highly unlikely that they'll agree\".",
+      example: "It's highly unlikely that the flight will leave on time in this weather.",
+      register: "formal",
+    },
+    {
+      phrase: "I wouldn't bet on it.",
+      level: "C1",
+      use: "an informal, idiomatic way to say you think something probably won't happen",
+      azUse:
+        "Bir şeyin çətin baş verəcəyini qeyri-rəsmi, deyim şəkilde bildirmək üçün işlənir — hərfi mənası \"buna mərc qoymazdım\", məcazi mənası isə \"buna çox güvənmə\", \"elə bilmirəm olsun\" deməkdir. Çox vaxt kiminsə nikbin gözləntisinə şübhə ilə cavab kimi deyilir: \"Do you think he'll pay you back? — I wouldn't bet on it\". Səmimi, bir az da yumoristik səslənir, ona görə dostlar və iş yoldaşları arasında işlənir.",
+      example: "\"Maybe the boss will give us a bonus this year.\" \"I wouldn't bet on it.\"",
+      register: "informal",
+    },
+    {
+      phrase: "Chances are ...",
+      level: "B1",
+      use: "an informal way to say something is quite probable",
+      azUse:
+        "Bir şeyin böyük ehtimalla baş verəcəyini gündəlik, qeyri-rəsmi şəkilde bildirmək üçün işlənir — \"çox güman ki\", \"böyük ehtimalla\" mənasını verir. Cümlənin əvvəlinde gəlir və ardınca adi cümlə qurulur: \"Chances are they're already home\". Söhbətdə nikbin, lakin qəti olmayan təxmin vermək üçün rahat və təbii ifadədir.",
+      example: "Chances are she's stuck in traffic, so let's wait a few more minutes.",
+      register: "informal",
+    },
+    {
+      phrase: "As far as I know, ...",
+      level: "B1",
+      use: "to give information you believe is true while admitting you might not have the full picture",
+      azUse:
+        "Bildiyin qədər doğru olan, lakin tam əmin olmadığın məlumatı ehtiyatla bildirmək üçün işlənir — \"bildiyim qədər\", \"mənim bildiyimə görə\" mənasını verir. Bu ifadə natiqi sonradan səhv çıxsa məsuliyyətdən qoruyur, çünki o, hər şeyi bilmədiyini etiraf edir. Həm rəsmi, həm qeyri-rəsmi kontekstdə işlənir və adətən cümlənin əvvəlinde, ardınca vergül qoyulur.",
+      example: "As far as I know, the office is closed on Monday, but you should double-check.",
+      register: "neutral",
+    },
   ],
   practice: [
     {

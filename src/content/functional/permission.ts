@@ -84,6 +84,51 @@ export const fnPermission: ReferenceGroup<FunctionalPhrase> = {
       example: "Sorry, I'm afraid that's not allowed — this is a non-smoking area.",
       register: "formal",
     },
+    {
+      phrase: "Would it be possible for me to ...?",
+      level: "B2",
+      use: "a very polite, formal way to ask permission, often for bigger requests",
+      azUse:
+        "İcazə istəməyin çox nəzakətli və rəsmi yoludur; \"...mənim üçün mümkün olardımı?\" mənasını verir və adətən bir qədər böyük və ya narahatlıq yarada biləcək xahişlər üçün işlənir. Müdir, müştəri və ya az tanıdığın rəsmi şəxslərlə danışanda çox uyğundur, çünki xahişi dolayı və yumşaq şəkildə çatdırır. Strukturdan sonra məsdər (to + fel) gəlir, ona görə \"Would it be possible for me to leave...\" deyilir.",
+      example: "Would it be possible for me to start an hour later on Fridays?",
+      register: "formal",
+    },
+    {
+      phrase: "Would you mind if I ...?",
+      level: "C1",
+      use: "a polite, tentative way to ask permission, very common in conversation",
+      azUse:
+        "\"Do you mind if I...?\" ifadəsinin daha nəzakətli və ehtiyatlı variantıdır; \"would\" sözü xahişi daha yumşaq və fərziyyəli edir. Diqqət: bu strukturdan sonra fel keçmiş zamanda gəlir (Would you mind if I opened...), baxmayaraq ki söhbət indidən gedir. İcazə vermək üçün cavab yenə \"No, not at all\" olur, çünki sual hərfi mənada \"narahat olardınızmı?\" deməkdir; həm rəsmi, həm yarı-rəsmi mühitdə təbii səslənir.",
+      example: "Would you mind if I turned the music down a little?",
+      register: "neutral",
+    },
+    {
+      phrase: "Feel free to ...",
+      level: "B1",
+      use: "to give permission in a warm, relaxed way, inviting someone to do something",
+      azUse:
+        "İcazəni isti və rahat şəkildə vermək, hətta qarşı tərəfi həvəsləndirmək üçün işlənir; \"çəkinmə, rahat ol və et\" mənasını daşıyır. Dostlar, qonaqlar və kollegalarla çox təbii səslənir və adamı sərbəst hiss etdirir. Strukturdan sonra məsdər (to + fel) gəlir, məsələn \"Feel free to help yourself\".",
+      example: "Feel free to help yourself to anything in the fridge.",
+      register: "informal",
+    },
+    {
+      phrase: "I don't see why not.",
+      level: "B2",
+      use: "to give permission in a relaxed way, suggesting there's no reason to refuse",
+      azUse:
+        "İcazəni rahat şəkildə, \"rədd etmək üçün heç bir səbəb görmürəm\" mənasında vermək üçün işlənir; sərbəst tərcüməsi \"olar, niyə olmasın\" deməkdir. Tam həvəsli \"of course\" qədər güclü deyil, daha çox sakit razılıq bildirir, ona görə qeyri-rəsmi və yarı-rəsmi söhbətlərə uyğundur. Cavab kimi tək başına işlənə bilər və mehriban, açıq səslənir.",
+      example: "\"Can I bring my dog along?\" \"I don't see why not.\"",
+      register: "neutral",
+    },
+    {
+      phrase: "Unfortunately, that's against our policy.",
+      level: "B2",
+      use: "to refuse permission formally by referring to official rules or policy",
+      azUse:
+        "İcazəni rəsmi şəkildə rədd etmək və səbəbi şəxsi yox, qurumun qaydalarına bağlamaq üçün işlənir; \"təəssüf ki, bu bizim qaydalarımıza ziddir\" mənasını verir. \"Unfortunately\" üzr və narahatlıq bildirərək cavabı yumşaldır, \"our policy\" isə məsuliyyəti rəsmi qaydalara yıxdığı üçün rədd şəxsi qəbul edilmir. İş yerində, otel, bank və ya müştəri xidmətlərində danışanda çox uyğundur.",
+      example: "Unfortunately, that's against our policy — we can't offer refunds after 30 days.",
+      register: "formal",
+    },
   ],
   practice: [
     {

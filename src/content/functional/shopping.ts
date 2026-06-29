@@ -89,6 +89,56 @@ export const fnShopping: ReferenceGroup<FunctionalPhrase> = {
         "I'm afraid I have a complaint about the service I received yesterday.",
       register: "formal",
     },
+    {
+      phrase: "Have you got this in a smaller size?",
+      level: "B1",
+      use: "to ask a shop assistant whether an item is available in another size",
+      azUse:
+        "Geyim və ya ayaqqabı mağazasında bir əşyanın daha kiçik (və ya başqa) ölçüsünün olub-olmadığını soruşmaq üçün işlənir; \"Have you got...?\" Britaniya ingiliscəsində \"Do you have...?\" deməyin gündəlik, qeyri-rəsmi formasıdır. Sonda \"a smaller size\" əvəzinə \"a bigger size\", \"another colour\" və ya konkret ölçü də deyə bilərsən. Mehriban və təbii səslənir, gündəlik alış-verişdə ən çox işlənən strukturlardandır.",
+      example:
+        "I really like this jacket, but it's a bit tight. Have you got this in a smaller size?",
+      register: "informal",
+    },
+    {
+      phrase: "How much is this altogether?",
+      level: "B1",
+      use: "to ask for the total price of several items together",
+      azUse:
+        "Kassada və ya satıcı ilə danışarkən bir neçə əşyanın ümumi qiymətini soruşmaq üçün işlənir; \"altogether\" burada \"hamısı birlikdə, cəmi\" mənasını verir. Tək bir əşyanın qiymətini soruşmaq üçün sadəcə \"How much is this?\" deyilir, \"altogether\" isə cəmi vurğulayır. Qısa və praktik ifadədir, bazarda, mağazada və kafedə rahatlıqla işlənir.",
+      example:
+        "I'll take the bread, the cheese, and two coffees. How much is this altogether?",
+      register: "neutral",
+    },
+    {
+      phrase: "Is service included?",
+      level: "B2",
+      use: "to ask whether a tip or service charge is already part of the restaurant bill",
+      azUse:
+        "Restoranda hesabı ödəməzdən əvvəl xidmət haqqının (\"service charge\" və ya bəxşişin) artıq hesaba daxil olub-olmadığını soruşmaq üçün işlənir; bu, əlavə bəxşiş qoymalı olub-olmadığını bilmək üçün vacibdir. Nəzakətli və ölçülü səslənir, ofisiantı utandırmadan dəqiqləşdirmə imkanı verir. Bir çox ölkədə hesabın altında \"service\" yazılır, ona görə bu sual səyahət edərkən çox faydalıdır.",
+      example:
+        "Thank you, that was a lovely meal. Is service included, or should we leave a tip?",
+      register: "neutral",
+    },
+    {
+      phrase: "Would it be possible to speak to the manager?",
+      level: "C1",
+      use: "to politely request to talk to someone in charge, often when handling a problem",
+      azUse:
+        "Bir problemi həll edə bilməyən işçi ilə danışdıqdan sonra məsuliyyət daşıyan şəxslə (menecerlə) danışmaq üçün çox nəzakətli xahiş kimi işlənir; \"Would it be possible to...?\" strukturu \"Can I...?\"-dən daha rəsmi və yumşaqdır. Bu ifadə təzyiq və ya təhdid kimi səslənmədən vəziyyəti yuxarı səviyyəyə daşımağa imkan verir. Şikayət, geri qaytarma və ya ciddi narazılıq hallarında ən uyğun rəsmi formadır.",
+      example:
+        "I understand this isn't your decision. Would it be possible to speak to the manager?",
+      register: "formal",
+    },
+    {
+      phrase: "I was overcharged for this.",
+      level: "B2",
+      use: "to point out that you were made to pay more than the correct price",
+      azUse:
+        "Səndən düzgün qiymətdən çox pul alındığını bildirmək üçün işlənir; \"overcharge\" \"həddən artıq, lazım olandan çox pul tələb etmək\" deməkdir. Bu ifadə qətiyyətli, lakin kobud olmayan tonda səhvi göstərməyə imkan verir və adətən çeklə (\"receipt\") birlikdə deyilir. Müştəri xidmətində və ya kassada problemi aydın və mədəni şəkildə qaldırmaq üçün uyğundur.",
+      example:
+        "Excuse me, I think I was overcharged for this — the label said it was on sale.",
+      register: "neutral",
+    },
   ],
   practice: [
     {

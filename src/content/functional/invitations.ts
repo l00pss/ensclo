@@ -85,6 +85,51 @@ export const fnInvitations: ReferenceGroup<FunctionalPhrase> = {
         "I'd really like to, but unfortunately I have a prior commitment that evening.",
       register: "formal",
     },
+    {
+      phrase: "Why don't you join us?",
+      level: "B1",
+      use: "a warm, friendly way to invite someone to be part of a group activity",
+      azUse:
+        "Kimisə artıq planlaşdırılmış bir qrup fəaliyyətinə qoşulmağa səmimi və dostcasına dəvət etmək üçün işlənir; sual formasında olsa da, əslində mehriban bir təklifdir. Sözün açılışı 'Why don't you…?' burada təzyiq deyil, isti bir dəvət çaları daşıyır, ona görə qarşı tərəf özünü istənilən hiss edir. Daha çox qeyri-rəsmi və yarı-rəsmi mühitlərə, dostlar və tanış həmkarlarla söhbətə uyğundur; rəsmi dəvətdə isə 'Would you like to join us?' daha münasibdir.",
+      example: "We're going to the cinema tonight — why don't you join us?",
+      register: "informal",
+    },
+    {
+      phrase: "It would be a pleasure to have you.",
+      level: "C1",
+      use: "a formal, gracious way to invite someone and make them feel welcome",
+      azUse:
+        "Kimisə çox nəzakətli və zərif şəkildə dəvət etmək, eyni zamanda onun iştirakının sənin üçün şərəf olduğunu vurğulamaq üçün işlənir. Bu ifadə xüsusilə rəsmi tədbirlərdə, iş yeməklərində və ya hörmətli qonaqları dəvət edərkən uyğundur, çünki həm incəlik, həm də səmimi qonaqpərvərlik bildirir. Gündəlik dostcasına söhbətdə bir az təmtəraqlı səsləndiyinə görə orada daha sadə 'You're welcome to come along' işlətmək təbii qalır.",
+      example: "Our conference is next month, and it would be a pleasure to have you.",
+      register: "formal",
+    },
+    {
+      phrase: "I really appreciate the invite, but I'll have to pass this time.",
+      level: "B2",
+      use: "a friendly yet clear way to decline while thanking the person",
+      azUse:
+        "Dəvəti rədd edərkən əvvəlcə minnətdarlıq bildirmək, sonra isə bu dəfə qatıla bilməyəcəyini aydın amma mehriban şəkildə demək üçün işlənir; 'I'll have to pass' yumşaq bir imtina ifadəsidir. 'Invite' burada 'invitation'-un qeyri-rəsmi formasıdır, ona görə bu cümlə dostlar və tanış həmkarlar arasında daha təbii səslənir. Təşəkkürlə imtananı birləşdirdiyi üçün qarşı tərəfi incitmir və münasibəti zədələmir.",
+      example: "I really appreciate the invite, but I'll have to pass this time — work is hectic.",
+      register: "informal",
+    },
+    {
+      phrase: "Let me check my schedule and get back to you.",
+      level: "B2",
+      use: "a polite way to delay your answer to an invitation without refusing outright",
+      azUse:
+        "Dəvətə dərhal 'hə' və ya 'yox' demək əvəzinə, cavabı nəzakətlə təxirə salmaq və vaxtını yoxladıqdan sonra xəbər verəcəyini bildirmək üçün işlənir. Bu ifadə həm rəsmi, həm qeyri-rəsmi mühitə uyğundur və qarşı tərəfə özünü rədd edilmiş hiss etdirmədən sənə düşünmək vaxtı qazandırır. Xüsusən iş mühitində və ya plansız anlarda çox faydalıdır, çünki səni tələsik söz verməkdən qoruyur.",
+      example: "Thanks for asking — let me check my schedule and get back to you tomorrow.",
+      register: "neutral",
+    },
+    {
+      phrase: "We'd be honoured if you could attend.",
+      level: "C1",
+      use: "a very formal, respectful way to invite someone to an important event",
+      azUse:
+        "Kimisə mühüm və rəsmi bir tədbirə son dərəcə hörmətlə dəvət etmək üçün işlənir; 'honoured' sözü qarşı tərəfin iştirakına böyük dəyər verdiyini bildirir. Bu ifadə rəsmi dəvətnamələrdə, toy, mükafat mərasimi və ya yüksək vəzifəli şəxslərə müraciətdə xüsusən uyğundur, çünki həddən artıq nəzakətli və təmkinli səslənir. Gündəlik və ya dostcasına dəvətlərdə bunu işlətmək süni görünər, ona görə orada daha sadə ifadələr seçmək lazımdır.",
+      example: "We'd be honoured if you could attend the opening ceremony as our guest.",
+      register: "formal",
+    },
   ],
   practice: [
     {

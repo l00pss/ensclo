@@ -84,6 +84,51 @@ export const fnSympathy: ReferenceGroup<FunctionalPhrase> = {
       example: "I'm so sorry you're going through this. If there's anything I can do, just let me know.",
       register: "neutral",
     },
+    {
+      phrase: "Wishing you all the best in this new chapter.",
+      level: "B2",
+      use: "a warm, slightly formal way to send good wishes when someone starts something new",
+      azUse:
+        "Kiminsə həyatında yeni bir mərhələyə — yeni iş, evlilik, başqa şəhərə köçmək, təqaüdə çıxmaq — başlayanda xoş arzular göndərmək üçün işlənir; \"bu yeni mərhələdə sənə hər xeyiri arzulayıram\" deməkdir. \"New chapter\" (yeni fəsil) ifadəsi həyatın yeni dövrünü obrazlı şəkildə bildirir və ifadəyə isti, ürəkdən gələn bir ton qatır. Həm kartlarda, həm yazılı mesajlarda, həm də az tanıdığın peşəkar şəxslərə uyğun gəlir; rəsmi ilə səmimi arasında balanslı, hörmətli səslənir.",
+      example: "Congratulations on your retirement — wishing you all the best in this new chapter.",
+      register: "neutral",
+    },
+    {
+      phrase: "You should be really proud of yourself.",
+      level: "B2",
+      use: "to congratulate someone by encouraging them to recognise their own achievement",
+      azUse:
+        "Kiminsə qazandığı uğuru təbrik edərkən, eyni zamanda onu öz nailiyyəti ilə fəxr etməyə təşviq etmək üçün işlənir — \"həqiqətən özünlə fəxr etməlisən\" deməkdir. Sadə təbrikdən fərqli olaraq, bu ifadə diqqəti qarşı tərəfin zəhmətinə və əməyinə yönəldir, ona görə daha dəstəkləyici və ürəkləndirici səslənir. Dostlara, ailə üzvlərinə, tələbələrə və ya komanda yoldaşlarına yarışan qeyri-rəsmi və mehriban tonu var; bir az daha böyük və ya təcrübəli birinə deyiləndə də səmimi qəbul olunur.",
+      example: "You finished the marathon on your first try? You should be really proud of yourself.",
+      register: "informal",
+    },
+    {
+      phrase: "My thoughts are with you and your family during this difficult time.",
+      level: "C1",
+      use: "a formal, compassionate expression of sympathy during a period of grief or hardship",
+      azUse:
+        "Kiminsə ağır itki, xəstəlik və ya çətin dövr keçirdiyini biləndə rəsmi və şəfqətli şəkildə həmrəylik bildirmək üçün işlənir — \"bu çətin günlərdə düşüncələrim səninlə və ailənlədir\" deməkdir. \"My thoughts are with you\" qəlibi birbaşa \"sorry\" deməkdən daha incə və təntənəlidir, ona görə rəsmi məktublarda, başsağlığı kartlarında və iş mühitində geniş işlənir. Tanış olmayan və ya hörmət tələb edən şəxslərə də uyğun gəlir; soyuq yox, hörmətli və mehriban bir ton yaradır.",
+      example: "I was so saddened to hear the news. My thoughts are with you and your family during this difficult time.",
+      register: "formal",
+    },
+    {
+      phrase: "Take all the time you need.",
+      level: "B1",
+      use: "to reassure someone going through grief or stress that there is no pressure to recover quickly",
+      azUse:
+        "Yas, stress və ya çətin vəziyyət yaşayan birinə tələsmədən, lazım olduğu qədər vaxt götürə biləcəyini bildirmək üçün işlənir — \"nə qədər vaxt lazımdırsa, götür\" deməkdir. Bu ifadə qarşı tərəfin üzərindən təzyiqi götürür və onun hisslərinə hörmət etdiyini, tələsdirmədiyini göstərir. Həm dostlara, həm həmkarlara, həm də işçiyə deyilə bilər; mehriban, anlayışlı və qayğıkeş bir ton daşıyır, başsağlığı və ya dəstək sözlərindən sonra təbii səslənir.",
+      example: "Don't worry about the deadline right now — take all the time you need.",
+      register: "neutral",
+    },
+    {
+      phrase: "That's fantastic news — you must be over the moon!",
+      level: "C1",
+      use: "an enthusiastic, idiomatic way to celebrate someone's exciting good news",
+      azUse:
+        "Kiminsə çox sevindirici xəbərinə coşqulu və səmimi reaksiya vermək üçün işlənir — \"əla xəbərdir, yəqin sevincdən uçursan!\" mənasını verir. \"Over the moon\" idiomu \"həddən artıq xoşbəxt, sevincdən özünə yer tapa bilməyən\" deməkdir və ifadəyə canlı, danışıq dilinə xas bir ton qatır. Dostlar və yaxınlarla qeyri-rəsmi mühitdə təbii səslənir; çox rəsmi və ya işgüzar yazışmada bu qədər coşqulu idiom bir az yüngül qala bilər, ona görə əsasən səmimi münasibətlərdə işlədilir.",
+      example: "You got into your dream university? That's fantastic news — you must be over the moon!",
+      register: "informal",
+    },
   ],
   practice: [
     {

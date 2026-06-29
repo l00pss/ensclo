@@ -84,6 +84,51 @@ export const fnLikes: ReferenceGroup<FunctionalPhrase> = {
       example: "I can't stand people who are late for everything.",
       register: "informal",
     },
+    {
+      phrase: "If it were up to me, I'd ...",
+      level: "C1",
+      use: "to express a personal preference while acknowledging the decision isn't only yours",
+      azUse:
+        "Qərarın yalnız sənə bağlı olmadığını etiraf edərək öz şəxsi üstünlüyünü nəzakətli şəkilde bildirmək üçün işlənən ifadədir — \"mənlik olsaydı\", \"məndən asılı olsaydı\" mənasını verir. Şərti cümlə qurluşu fikri yumşaldır və başqalarının da rəyi olduğunu nəzərə alır, ona görə müzakirələrdə və iş yerində çox uyğun gəlir. Ardınca \"would\"-lu cümlə gəlir: \"If it were up to me, I'd choose the quieter venue\".",
+      example: "If it were up to me, I'd start the meeting an hour later.",
+      register: "formal",
+    },
+    {
+      phrase: "I much prefer ... to ...",
+      level: "B2",
+      use: "to emphasise a clear, strong preference between two specific things",
+      azUse:
+        "İki konkret şey arasında güclü və aydın üstünlüyü vurğulamaq üçün işlənir — \"qat-qat üstün tuturam\", \"çox daha çox xoşlayıram\" mənasını verir. \"Much\" sözü üstünlüyü gücləndirir və adi \"I prefer\"-dən daha qətiyyətli səslənir. Diqqət: müqayisədə \"than\" yox, \"to\" işlənir və ardınca isim ya da -ing formalı feil gəlir: \"I much prefer reading to watching TV\".",
+      example: "I much prefer working from home to commuting every day.",
+      register: "neutral",
+    },
+    {
+      phrase: "I'm dying to ...",
+      level: "B2",
+      use: "an informal, very enthusiastic way to say you really want to do something",
+      azUse:
+        "Bir şeyi etmək üçün böyük səbirsizlik və həvəs bildirmək üçün işlənən qeyri-rəsmi, emosional ifadədir — \"ölürəm ki\", \"can atıram\", \"lap həvəslənmişəm\" mənasını verir. Hərfi \"ölmək\" mənası yoxdur, sadəcə arzunun çox güclü olduğunu mübaliğəli şəkilde göstərir. Ardınca \"to\"-lu feil gəlir və yalnız dostlar arasında, qeyri-rəsmi söhbətdə işlət: \"I'm dying to see that film\".",
+      example: "I'm dying to try that new ramen place everyone's talking about.",
+      register: "informal",
+    },
+    {
+      phrase: "I have a soft spot for ...",
+      level: "C1",
+      use: "to say you have a special, often sentimental, fondness for something or someone",
+      azUse:
+        "Bir şeyə və ya kimisə xüsusi, çox vaxt hissi və ürəkdən gələn zəiflik duyduğunu bildirmək üçün işlənən idiomatik ifadədir — \"zəif yerim var\", \"ürəyimde xüsusi yeri var\" mənasını verir. Adətən məntiqdən çox emosiyaya əsaslanan, izah etməsi çətin bir bağlılığı təsvir edir. İsti və səmimi tona malikdir; ardınca \"for\" və isim gəlir: \"I have a soft spot for stray cats\".",
+      example: "I have a soft spot for old black-and-white films.",
+      register: "neutral",
+    },
+    {
+      phrase: "I wouldn't say no to ...",
+      level: "B1",
+      use: "a light, polite way to accept or hint that you'd welcome something",
+      azUse:
+        "Bir təklifi yüngül və nəzakətli şəkilde qəbul etdiyini, yaxud bir şeyi məmnuniyyətlə istədiyini eyhamla bildirmək üçün işlənir — \"yox deməzdim\", \"pis olmazdı\" mənasını verir. İnkarla qurulan bu ifadə birbaşa \"yes, I want it\" deməkdən daha təvazökar və zarafatyana səslənir. Çox vaxt yemək-içmək təklifinə yumşaq razılıq kimi işlənir: \"I wouldn't say no to a cup of tea\".",
+      example: "I wouldn't say no to a second slice of that cake.",
+      register: "informal",
+    },
   ],
   practice: [
     {

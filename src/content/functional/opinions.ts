@@ -88,6 +88,53 @@ export const fnOpinions: ReferenceGroup<FunctionalPhrase> = {
       example: "I'd go for the blue one. What do you think?",
       register: "neutral",
     },
+    {
+      phrase: "The way I see it, ...",
+      level: "B2",
+      use: "to introduce your interpretation of a situation, often in conversation",
+      azUse:
+        "Bir vəziyyəti öz baxışına görə şərh edərkən işlənir — \"mənim gördüyüm kimi\", \"mənim anladığıma görə\" mənasını verir. Adətən danışıq dilində, problemin necə həll olunacağını və ya nəyin baş verdiyini izah edəndə təbii səslənir. Bir qədər qeyri-rəsmidir, ona görə dostlarla və ya rahat iş söhbətlərində daha çox uyğun gəlir, nəinki rəsmi essedə.",
+      example:
+        "The way I see it, we have two choices: cut costs or raise prices.",
+      register: "informal",
+    },
+    {
+      phrase: "I would argue that ...",
+      level: "C1",
+      use: "to present a reasoned opinion you are ready to defend, common in academic writing",
+      azUse:
+        "Fikrini əsaslandırılmış, müzakirəyə hazır bir mövqe kimi təqdim etmək üçün işlənir — \"iddia edərdim ki\", \"belə hesab edirəm ki\" mənasını daşıyır. Xüsusən akademik yazıda, esselərdə və rəsmi debatlarda fikrini dəlillərlə müdafiə edəcəyini göstərmək üçün uyğundur. Tonu intellektual və ölçülü olduğu üçün gündəlik söhbətdə bir az ağır səslənə bilər.",
+      example:
+        "I would argue that economic growth alone does not guarantee social progress.",
+      register: "academic",
+    },
+    {
+      phrase: "To be honest, ...",
+      level: "B1",
+      use: "to introduce a frank, sometimes blunt opinion in casual speech",
+      azUse:
+        "Səmimi, bəzən birbaşa fikri yumşaltmaq və ya ona giriş vermək üçün işlənir — \"düzünü desəm\", \"açığı\" mənasını verir. Çox qeyri-rəsmidir və gündəlik söhbətdə, xüsusən kiminsə xoşuna gəlməyə biləcək bir şey deyəndə işlənir. Rəsmi yazıda istifadə etmə; söhbətdə isə fikri daha səmimi və insani göstərir.",
+      example: "To be honest, I didn't really enjoy the concert.",
+      register: "informal",
+    },
+    {
+      phrase: "Don't you think (that) ...?",
+      level: "B2",
+      use: "to invite agreement while gently suggesting your own opinion",
+      azUse:
+        "Öz fikrini bildirərkən eyni zamanda qarşı tərəfi razılaşmağa dəvet etmək üçün işlənir — \"elə düşünmürsən ki?\", \"sənceə də belə deyil?\" mənasını verir. Sual formasında olduğu üçün fikri yumşaq və nəzakətli təqdim edir, sanki birgə razılığa gəlməyi təklif edirsən. Həm söhbətdə, həm də yumşaq tonlu yazışmada işlənə bilər.",
+      example: "Don't you think we should wait until we have more information?",
+      register: "neutral",
+    },
+    {
+      phrase: "Where do you stand on ...?",
+      level: "C1",
+      use: "to ask formally for someone's position on an issue",
+      azUse:
+        "Kiminsə bir məsələ ilə bağlı mövqeyini rəsmi və ciddi şəkilde soruşmaq üçün işlənir — \"bu məsələdə mövqeyin nədir?\" mənasını verir. Adətən mübahisəli və ya ciddi mövzularda, iclaslarda, müsahibələrdə və ya siyasi söhbətlərdə istifadə olunur. \"What do you think?\"-dən daha rəsmi və konkretdir, çünki qarşı tərəfdən aydın bir tərəf tutmasını gözləyir.",
+      example: "Where do you stand on the proposed changes to the tax system?",
+      register: "formal",
+    },
   ],
   practice: [
     {

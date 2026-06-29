@@ -84,6 +84,51 @@ export const fnThanking: ReferenceGroup<FunctionalPhrase> = {
       example: "\"Thank you for fixing my laptop.\" \"Don't mention it — it only took a minute.\"",
       register: "informal",
     },
+    {
+      phrase: "Cheers!",
+      level: "B1",
+      use: "a casual, mainly British way to say thanks in everyday situations",
+      azUse:
+        "Əsasən Britaniya İngiliscəsində işlədilən çox rahat və dostyana təşəkkür sözüdür; mənası sadəcə \"sağ ol\" kimidir. Dostlarla, tanışlarla, kafedə və ya kiçik bir yardım üçün uyğundur, lakin rəsmi iş yazışmalarında işlətməyin. Diqqət edin ki, eyni söz badə qaldırarkən (sağlıq deyəndə) də işlənir, ona görə kontekstə fikir verin.",
+      example: "\"Here's your change.\" \"Cheers!\"",
+      register: "informal",
+    },
+    {
+      phrase: "Thanks a million.",
+      level: "B2",
+      use: "an enthusiastic, informal way to thank someone warmly",
+      azUse:
+        "Coşğulu və qeyri-rəsmi təşəkkür ifadəsidir; sözün həqiqi mənasında \"milyon dəfə sağ ol\" deməkdir və adi \"thanks\"-dən daha mehriban səslənir. Kimsə sizə real fayda verən bir kömək edəndə istifadə edilir. Dostlar və yaxın iş yoldaşları arasında təbii səslənir, lakin çox rəsmi mühitdə yersiz ola bilər.",
+      example: "Thanks a million for covering my shift — you really saved me.",
+      register: "informal",
+    },
+    {
+      phrase: "It's my pleasure.",
+      level: "B2",
+      use: "a warm, polite way to respond to thanks, showing you were happy to help",
+      azUse:
+        "Təşəkkürə isti və nəzakətli cavabdır; mənası \"məmnuniyyətlə, mənim üçün xoş oldu\" kimidir. Köməyin sizi yormadığını, əksinə xoşunuza gəldiyini bildirir, ona görə xüsusilə mehriban səslənir. Həm iş mühitində (xidmət sahəsində tez-tez), həm də gündəlik söhbətlərdə rahat işlədilir.",
+      example: "\"Thank you for showing me around the office.\" \"It's my pleasure.\"",
+      register: "formal",
+    },
+    {
+      phrase: "Not at all.",
+      level: "B2",
+      use: "a polite, modest way to respond to thanks, meaning it was no trouble",
+      azUse:
+        "Təşəkkürə nəzakətli və təvazökar cavabdır; mənası \"dəyməz, heç bir çətinliyi olmadı\" kimidir. \"No problem\"-dən bir az daha rəsmi və incə səslənir, ona görə həm iş yerində, həm də nəzakətli situasiyalarda uyğundur. Köməyin sizin üçün yük olmadığını mehriban tərzdə bildirir.",
+      example: "\"Thanks for taking the time to explain everything.\" \"Not at all.\"",
+      register: "formal",
+    },
+    {
+      phrase: "Many thanks for your prompt reply.",
+      level: "C1",
+      use: "a formal, written way to thank someone for responding quickly, common in emails",
+      azUse:
+        "Rəsmi yazışmalarda, xüsusən e-poçtlarda işlədilən nəzakətli təşəkkür ifadəsidir; \"prompt reply\" tez verilən cavab deməkdir. Kiminsə sizə cəld cavab verdiyini qiymətləndirdiyinizi peşəkar tonda bildirir. Adətən iş və işgüzar məktublarda istifadə olunur, gündəlik danışıq dilinə isə çox rəsmi səslənir.",
+      example: "Many thanks for your prompt reply; the updated figures are exactly what we needed.",
+      register: "formal",
+    },
   ],
   practice: [
     {

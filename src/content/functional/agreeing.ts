@@ -85,6 +85,51 @@ export const fnAgreeing: ReferenceGroup<FunctionalPhrase> = {
       example: "\"This is the best film ever made.\" \"No way! It was so boring.\"",
       register: "informal",
     },
+    {
+      phrase: "That's a fair point.",
+      level: "B1",
+      use: "to acknowledge that someone has made a reasonable, valid argument",
+      azUse:
+        "Qarşı tərəfin dediyinin ağlabatan və ədalətli olduğunu etiraf etmək üçün işlənir — \"haqlı, doğru fikirdir\" mənasını verir. Tam razılaşmaqdan fərqli olaraq, sadəcə fikrin məntiqli olduğunu nəzakətlə tanıyırsan, çox vaxt öz fikrini əlavə etməzdən əvvəl. Həm iş yerində, həm gündəlik söhbətdə təbii və mehriban səslənir, ona görə geniş işlədilir.",
+      example: "\"We should test it before launching.\" \"That's a fair point.\"",
+      register: "neutral",
+    },
+    {
+      phrase: "I'm with you on that.",
+      level: "B1",
+      use: "to show informal, friendly support for someone's opinion or plan",
+      azUse:
+        "Kiminsə fikrini və ya planını dəstəklədiyini qeyri-rəsmi, dostcasına şəkildə bildirmək üçün işlənir — \"mən də səninləyəm, eyni fikirdəyəm\" mənasında. Hərfən \"bu məsələdə səninləyəm\" deməkdir və komanda ruhu, həmrəylik çaları daşıyır. Dostlar arasında və rahat iş mühitində işlədilir, çox rəsmi yığıncaqlarda isə yersiz səslənə bilər.",
+      example: "\"Let's split the bill equally.\" \"I'm with you on that.\"",
+      register: "informal",
+    },
+    {
+      phrase: "I'm not so sure about that.",
+      level: "B2",
+      use: "to express mild doubt or soft disagreement without rejecting the idea outright",
+      azUse:
+        "Bir fikirlə tam razı olmadığını, amma kəskin şəkildə rədd etmədən, ehtiyatla şübhə bildirmək üçün işlənir — \"o qədər də əmin deyiləm\" mənasını verir. Birbaşa \"yanlışsan\" deməkdən qaçaraq etirazı çox yumşaq formada çatdırır, ona görə nəzakətli sayılır. İclaslarda və gündəlik söhbətlərdə fikir ayrılığına yumşaq başlanğıc vermək üçün əlverişlidir.",
+      example: "\"Prices will definitely drop next month.\" \"I'm not so sure about that.\"",
+      register: "neutral",
+    },
+    {
+      phrase: "With all due respect, I have to disagree.",
+      level: "C1",
+      use: "to disagree firmly but very politely in formal or professional settings",
+      azUse:
+        "Rəsmi və işgüzar mühitdə qətiyyətlə, amma çox nəzakətlə razı olmadığını bildirmək üçün işlənir — \"bütün hörmətimlə, razılaşa bilmirəm\" mənasını verir. \"With all due respect\" hissəsi etirazdan əvvəl qarşı tərəfə hörmət göstərir və sonra gələn fikir ayrılığını mədəni şəkildə yumşaldır. Yüksək vəzifəli və ya hörmətli adamla fikir ayrılığını bildirərkən savadlı və peşəkar təəssürat yaradır.",
+      example: "With all due respect, I have to disagree with the proposed budget cuts.",
+      register: "formal",
+    },
+    {
+      phrase: "Couldn't have said it better myself.",
+      level: "B2",
+      use: "to enthusiastically agree by praising how well someone expressed an idea",
+      azUse:
+        "Kiminsə bir fikri çox yaxşı ifadə etdiyini tərifləyərək həvəslə razılaşmaq üçün işlənir — \"mən özüm də bundan yaxşı deyə bilməzdim\" mənasını verir. Sadəcə razılaşmaqdan əlavə, qarşı tərəfin sözlərini dəyərləndirib ona iltifat edirsən. Qeyri-rəsmi və mehriban söhbətlərdə təbii səslənir, çox vaxt başqasının dediyini tam dəstəklədiyini vurğulamaq üçün deyilir.",
+      example: "\"Honesty matters more than talent.\" \"Couldn't have said it better myself.\"",
+      register: "neutral",
+    },
   ],
   practice: [
     {

@@ -85,6 +85,52 @@ export const fnDirections: ReferenceGroup<FunctionalPhrase> = {
         "Proceed along the main corridor until you reach the second set of doors.",
       register: "formal",
     },
+    {
+      phrase: "It's the second turning on the right.",
+      level: "B2",
+      use: "to identify exactly which turn someone should take by counting",
+      azUse:
+        "Yol göstərərkən dönəcəyin yeri saymaqla dəqiq bildirmək üçün işlənir: 'first/second/third turning on the right/left' — sağda (və ya solda) birinci/ikinci/üçüncü dönüş. Bu üsul küçə adını bilmədikdə çox faydalıdır, çünki qarşı tərəf sadəcə dönüşləri sayaraq düzgün yeri tapır. Neytral səslənir və həm gündəlik, həm də bir az rəsmi söhbətdə rahat işlənir; çaşqınlığın qarşısını almaq üçün 'on the right' hissəsini mütləq aydın deyin.",
+      example: "Keep going down this road and it's the second turning on the right.",
+      register: "neutral",
+    },
+    {
+      phrase: "You can't miss it.",
+      level: "B1",
+      use: "to reassure someone that a place is very easy to find",
+      azUse:
+        "Kiməsə yol göstərəndən sonra həmin yerin tapılmasının çox asan olduğuna, onu mütləq görəcəyinə əmin etmək üçün işlənən idiomatik ifadədir; hərfi tərcüməsi 'onu qaçıra bilməzsən' olsa da, mənası 'tapmamağın mümkün deyil' deməkdir. Çox vaxt yol təriflərinin sonunda, qarşı tərəfi sakitləşdirmək üçün deyilir ('…it's the big red building, you can't miss it'). Səmimi və qeyri-rəsmi səsləndiyi üçün dostlar və yad adamlarla gündəlik söhbətdə təbii görünür.",
+      example: "It's the tallest building on the street, you can't miss it.",
+      register: "informal",
+    },
+    {
+      phrase: "Head towards the...",
+      level: "B2",
+      use: "to tell someone to walk or drive in the direction of a landmark",
+      azUse:
+        "Kiməsə hansısa nişanə və ya istinad nöqtəsinin (körpü, qüllə, çay) istiqamətində hərəkət etməyi demək üçün işlənir; 'head' burada 'getmək, üz tutmaq' mənasındadır ('Head towards the river' — çaya tərəf get). Dəqiq küçə adı əvəzinə görünən böyük bir obyekti istiqamət kimi göstərmək istəyəndə çox faydalıdır. Neytraldır və həm piyada, həm də sürücü üçün yol göstərəndə təbii işlənir; adətən ardınca 'and then…' ilə növbəti addım gəlir.",
+      example: "Head towards the cathedral and you'll find the café on your left.",
+      register: "neutral",
+    },
+    {
+      phrase: "Once you've done that, ...",
+      level: "B2",
+      use: "to move on to the next step after the previous one is finished",
+      azUse:
+        "Təlimat verərkən bir addım tamamlandıqdan sonra növbəti addıma keçidi bildirmək üçün işlənir: 'Once you've done that, …' — 'bunu edəndən sonra, …'. Addımlar arasında aydın əlaqə yaratdığı üçün resept, qaydalar və ya texniki göstərişləri izah edərkən çox faydalıdır. Neytraldır və 'after that' ifadəsinə yaxındır, lakin əvvəlki addımın bitməsini bir az daha çox vurğulayır; mərhələli izahlarda ardıcıllığı qarışdırmamağa kömək edir.",
+      example: "Enter your password. Once you've done that, click the green button.",
+      register: "neutral",
+    },
+    {
+      phrase: "Kindly refer to the ... before proceeding.",
+      level: "C1",
+      use: "a formal way to tell someone to consult a resource before continuing",
+      azUse:
+        "Davam etməzdən əvvəl kiməsə hansısa mənbəyə (təlimat, sxem, sənəd) müraciət etməyi rəsmi və nəzakətli şəkildə bildirmək üçün işlənir; 'kindly' ifadəni daha nəzakətli, 'refer to' isə 'baxmaq, müraciət etmək' mənasında rəsmi səsləndirir. Əsasən yazılı təlimatlarda, istifadəçi bələdçilərində və ya rəsmi e-poçtlarda rast gəlinir. Gündəlik danışıqda bir az rəsmi səslənə bilər; orada 'have a look at the… first' daha təbii olar.",
+      example:
+        "Kindly refer to the safety diagram before proceeding to the next stage.",
+      register: "formal",
+    },
   ],
   practice: [
     {

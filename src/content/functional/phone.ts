@@ -88,6 +88,56 @@ export const fnPhone: ReferenceGroup<FunctionalPhrase> = {
         "Good morning. I'm calling regarding the position you advertised on your website.",
       register: "formal",
     },
+    {
+      phrase: "Sorry, I think you've got the wrong number.",
+      level: "B1",
+      use: "to tell a caller they have dialled the wrong person or place",
+      azUse:
+        "Zəng edən şəxsin səhv nömrə yığdığını nəzakətlə bildirmək üçün işlənir. 'Sorry' sözü tonu yumşaldır, ona görə qarşı tərəf özünü pis hiss etmir; gündəlik, dostyana registri var. Adətən qısa izahla tamamlanır, məsələn burada belə bir adamın olmadığını deyirsən.",
+      example:
+        "Sorry, I think you've got the wrong number — there's no one called David here.",
+      register: "informal",
+    },
+    {
+      phrase: "Could you speak up a little, please?",
+      level: "B1",
+      use: "to politely ask the other person to talk more loudly",
+      azUse:
+        "Telefonda qarşı tərəfin səsi yavaş gələndə, bir az ucadan danışmasını nəzakətlə xahiş etmək üçün işlənir. 'a little' və 'please' xahişi daha yumşaq və hörmətli edir, ona görə həm iş, həm də şəxsi zənglərdə uyğundur. Bağlantı və ya səs problemi olduqda çox faydalıdır.",
+      example:
+        "Sorry, the line isn't very clear — could you speak up a little, please?",
+      register: "neutral",
+    },
+    {
+      phrase: "Let me put you through to the right department.",
+      level: "C1",
+      use: "to say you are transferring the caller to another person or section",
+      azUse:
+        "Zəngi düzgün şöbəyə və ya məsul şəxsə yönləndirdiyini bildirmək üçün işlənən rəsmi iş ifadəsidir. 'put you through' frazal feli telefonda 'birləşdirmək, yönləndirmək' mənasını verir və peşəkar registr yaradır. Adətən böyük şirkətlərin və ya çağrı mərkəzlərinin işçiləri tərəfindən deyilir.",
+      example:
+        "You'll need to speak to our sales team — let me put you through to the right department.",
+      register: "formal",
+    },
+    {
+      phrase: "Could you spell that for me, please?",
+      level: "B2",
+      use: "to ask the caller to say a name or word letter by letter",
+      azUse:
+        "Telefonda eşitdiyin adı və ya sözü hərf-hərf təkrarlamağı xahiş etmək üçün işlənir, çünki üzü görmədən bəzi səsləri qarışdırmaq asandır. Nəzakətli və neytral tonu var; mesaj götürəndə və ya məlumat qeyd edəndə xüsusilə faydalıdır. Səhvlərin qarşısını almaq və dəqiqlik üçün vacib ifadədir.",
+      example:
+        "I'll just write your name down — could you spell that for me, please?",
+      register: "neutral",
+    },
+    {
+      phrase: "I'm sorry, you're breaking up — I can't hear you very well.",
+      level: "B2",
+      use: "to say the connection is poor and the voice keeps cutting out",
+      azUse:
+        "Mobil əlaqə zəif olduqda və qarşı tərəfin səsi kəsilə-kəsilə gəldikdə işlənir. 'break up' frazal feli burada 'rabitənin kəsilməsi, səsin parçalanması' deməkdir və gündəlik, qeyri-rəsmi tonu var. Çox vaxt yenidən zəng etmək təklifi ilə davam etdirilir, məsələn sonra yenidən cəhd edəcəyini deyirsən.",
+      example:
+        "I'm sorry, you're breaking up — I can't hear you very well. Let me call you back.",
+      register: "informal",
+    },
   ],
   practice: [
     {

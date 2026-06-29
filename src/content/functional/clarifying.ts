@@ -91,6 +91,56 @@ export const fnClarifying: ReferenceGroup<FunctionalPhrase> = {
         "Just to make sure I've got this right, we're meeting the client at nine, not ten?",
       register: "formal",
     },
+    {
+      phrase: "Do you mean ... or ...?",
+      level: "B1",
+      use: "to clarify which of two possible options the speaker intends",
+      azUse:
+        "Qarşı tərəfin sözü iki cür başa düşülə biləndə hansını nəzərdə tutduğunu dəqiqləşdirmək üçün işlədilir. İki seçimi açıq şəkildə qarşı-qarşıya qoyaraq qarşı tərəfə birini seçmək imkanı verir və qarışıqlığı tez aradan qaldırır. Neytral registrdə olduğu üçün həm iş, həm də gündəlik söhbətdə rahat işlənir.",
+      example:
+        "Do you mean we leave today or tomorrow? I want to book the right ticket.",
+      register: "neutral",
+    },
+    {
+      phrase: "Sorry, I'm not sure I follow.",
+      level: "B2",
+      use: "to politely admit you are losing track of what someone is explaining",
+      azUse:
+        "Kiminsə izahını izləyə bilmədikdə və ya fikrin gedişatını itirdikdə nəzakətlə bunu etiraf etmək üçün işlədilir. 'Follow' burada 'başa düşmək, ardınca getmək' mənasındadır, ona görə də ifadə təqsiri qarşı tərəfə yükləmir. Mülayim və hörmətli səsləndiyindən həm iclaslarda, həm də gündəlik söhbətdə təhlükəsiz işlənir.",
+      example:
+        "Sorry, I'm not sure I follow. Could you go back to the part about the budget?",
+      register: "neutral",
+    },
+    {
+      phrase: "Are you saying that ...?",
+      level: "B2",
+      use: "to check a possibly surprising or important implication of what was said",
+      azUse:
+        "Qarşı tərəfin sözlərindən çıxan, bəzən gözlənilməz və ya mühüm bir nəticəni təsdiqləmək üçün işlədilir. 'Yəni sən deyirsən ki...?' mənasını verir və adətən bir az təəccüb və ya diqqət çaları daşıyır. Tonundan asılı olaraq həm neytral, həm də bir az çaşqınlıq ifadə edə bilər, ona görə işlədərkən səs ahənginə fikir vermək lazımdır.",
+      example:
+        "Are you saying that the project has been cancelled completely?",
+      register: "neutral",
+    },
+    {
+      phrase: "Would you mind explaining that again?",
+      level: "B2",
+      use: "a very polite way to ask someone to explain something one more time",
+      azUse:
+        "Bir şeyi yenidən izah etməsini xahiş edərkən xüsusilə nəzakətli və hörmətli səslənmək üçün işlədilir. 'Would you mind' quruluşu xahişi çox yumşaldır və sıxıntı yaratmadığınızı göstərir. Rəsmi şəraitdə, müştərilərlə və ya tanımadığınız adamlarla danışıqda idealdır.",
+      example:
+        "Would you mind explaining that again? I want to make sure I set it up correctly.",
+      register: "formal",
+    },
+    {
+      phrase: "Let me see if I've understood you correctly.",
+      level: "C1",
+      use: "an advanced way to introduce a careful restatement to confirm understanding",
+      azUse:
+        "Qarşı tərəfin dediklərini diqqətlə yenidən ifadə etməzdən əvvəl 'sizi düzgün anlayıb-anlamadığıma baxım' deyərək söhbəti çərçivəyə salmaq üçün işlədilən səlis ifadədir. Danışanı düşüncəli və məsuliyyətli göstərir və qarşı tərəfə düzəliş etmək imkanı yaradır. Peşəkar müzakirələrdə, danışıqlarda və mürəkkəb mövzularda dəqiqliyi vurğulamaq üçün uyğundur.",
+      example:
+        "Let me see if I've understood you correctly: you need both reports approved before the deadline.",
+      register: "academic",
+    },
   ],
   practice: [
     {

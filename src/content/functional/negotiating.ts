@@ -85,6 +85,51 @@ export const fnNegotiating: ReferenceGroup<FunctionalPhrase> = {
         "Could we possibly come to an arrangement that suits both of our teams?",
       register: "formal",
     },
+    {
+      phrase: "Let me put it this way.",
+      level: "B1",
+      use: "to rephrase your point more clearly or persuasively",
+      azUse:
+        "Fikrini başqa, daha aydın və ya daha inandırıcı sözlərlə yenidən izah etmək istəyəndə işlənir; qarşı tərəf səni tam başa düşməyəndə söhbəti yumşaq şəkildə yenidən qurmağa kömək edir. Həm dostcasına söhbətlərdə, həm də iş danışıqlarında rahat səslənən neytral bir keçid ifadəsidir. Mövqeyini sıfırdan deyil, yeni bir bucaqdan təqdim edib qarşı tərəfi inandırmaq üçün təbii bir vasitədir.",
+      example: "Let me put it this way: if we wait, we'll lose the contract.",
+      register: "neutral",
+    },
+    {
+      phrase: "I'm afraid that's out of the question.",
+      level: "B2",
+      use: "to firmly but politely refuse something as impossible",
+      azUse:
+        "Bir təklifin və ya tələbin qətiyyən mümkün olmadığını nəzakətli, lakin qəti şəkildə bildirmək üçün işlənir; 'out of the question' 'söhbət belə ola bilməz', yəni tamamilə qeyri-mümkün deməkdir. 'I'm afraid' əvvəlinə əlavə olunaraq rədd cavabını daha yumşaq və hörmətli edir, ona görə rəsmi danışıqlara və müştəri ilə söhbətlərə uyğundur. Sərhədini aydın qoyarkən münasibəti pozmamaq üçün incə bir ifadədir.",
+      example: "Lowering the price by half? I'm afraid that's out of the question.",
+      register: "formal",
+    },
+    {
+      phrase: "If you can do X, then I can do Y.",
+      level: "B2",
+      use: "to offer a conditional trade-off in a negotiation",
+      azUse:
+        "Danışıqda şərtli güzəşt təklif etmək üçün işlənir: 'sən bunu etsən, mən də bunu edərəm' məntiqi ilə qarşılıqlı mübadilə qurur. Hər iki tərəfin nə verib nə alacağını aydın göstərdiyi üçün razılaşmanı irəli aparan praktik və neytral bir formuladır. Həm bazarlıqda, həm də iş müqavilələrində öz təklifini qarşı tərəfin addımına bağlamaq üçün çox işlədilir.",
+      example: "If you can pay upfront, then I can give you a ten percent discount.",
+      register: "neutral",
+    },
+    {
+      phrase: "Let's not lose sight of the bigger picture.",
+      level: "C1",
+      use: "to refocus a negotiation on the main goal rather than small details",
+      azUse:
+        "Danışıq xırda detallarda ilişib qalanda diqqəti yenidən əsas məqsədə yönəltmək üçün işlənir; 'the bigger picture' 'ümumi mənzərə', yəni ən vacib hədəf deməkdir. Söhbəti kiçik mübahisələrdən uzaqlaşdırıb hər iki tərəfin ortaq marağını xatırlatdığı üçün gərginliyi azaldır. Yüksək səviyyəli, peşəkar üsluba aiddir və iş yığıncaqlarında liderlik tonu verən nəzakətli bir ifadədir.",
+      example: "We can argue about wording later — let's not lose sight of the bigger picture.",
+      register: "formal",
+    },
+    {
+      phrase: "Take it or leave it.",
+      level: "B2",
+      use: "to present a final offer with no room for further negotiation",
+      azUse:
+        "Son təklifini irəli sürüb daha güzəşt olmayacağını bildirmək üçün işlənir; 'ya qəbul et, ya da imtina et' mənasını verir və danışığa nöqtə qoyur. Olduqca sərt və qeyri-rəsmi səslənir, ona görə diqqətlə işlədilməlidir — yanlış yerdə deyilsə kobud təsir bağışlaya bilər. Adətən bazarlıqda və ya təzyiq altında son sözünü demək istəyəndə canlı danışıqda işlənir.",
+      example: "This is my best price — take it or leave it.",
+      register: "informal",
+    },
   ],
   practice: [
     {

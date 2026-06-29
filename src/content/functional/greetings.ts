@@ -84,6 +84,51 @@ export const fnGreetings: ReferenceGroup<FunctionalPhrase> = {
       example: "Anyway, I'd better head off. See you around, Tom!",
       register: "informal",
     },
+    {
+      phrase: "Long time no see!",
+      level: "B1",
+      use: "a friendly greeting for someone you haven't seen in a while",
+      azUse:
+        "Uzun müddət görmədiyin bir adamla qarşılaşanda işlədilən səmimi, qeyri-rəsmi salamlaşma ifadəsidir — 'çoxdandır görüşmürük' mənasında. Adətən dostlar, köhnə tanışlar və ya iş yoldaşları ilə təsadüfən rastlaşanda istifadə olunur və xoş təəssürat, sevinc bildirir. Tonu çox rahat olduğu üçün rəsmi görüşlərə uyğun gəlmir; orada 'It's been a while since we last met' kimi ölçülü variant daha münasibdir.",
+      example: "Aysel! Long time no see! How have you been?",
+      register: "informal",
+    },
+    {
+      phrase: "I don't think we've met.",
+      level: "B2",
+      use: "a polite way to start a conversation with someone you haven't been introduced to",
+      azUse:
+        "Hələ rəsmi şəkildə tanış olmadığın bir adamla söhbətə nəzakətlə başlamaq üçün işlədilən ifadədir — 'deyəsən, tanış deyilik' mənasında. Adətən tədbirlərdə, görüşlərdə və ya məclislərdə özünü təqdim etməyə təbii keçid yaratmaq üçün deyilir və ardınca adın söylənir. Tonu yarı-rəsmidir və həm peşəkar, həm də sosial mühitdə rahat işlədilə bilər.",
+      example: "Hi, I don't think we've met. I'm Leyla, from the marketing team.",
+      register: "neutral",
+    },
+    {
+      phrase: "It was a pleasure meeting you.",
+      level: "B2",
+      use: "a polite way to say goodbye after meeting someone for the first time",
+      azUse:
+        "Kiminləsə ilk dəfə tanış olduqdan sonra vidalaşarkən işlədilən nəzakətli ifadədir — 'sizinlə tanış olmaq xoş oldu' mənasında. Keçmiş zaman ('was') işləndiyi üçün görüşün sonunda, ayrılarkən deyilir və hörmət, məmnunluq bildirir. Tonu rəsmi-nəzakətlidir, ona görə iş tanışlıqlarında, müsahibələrdən sonra və ya peşəkar tədbirlərdə xüsusilə uyğundur.",
+      example: "It was a pleasure meeting you, Mr. Khan. I hope we can work together soon.",
+      register: "formal",
+    },
+    {
+      phrase: "I'll let you go.",
+      level: "C1",
+      use: "a tactful way to signal that you are ending a conversation politely",
+      azUse:
+        "Söhbəti nəzakətlə bitirmək istədiyini incə şəkildə bildirmək üçün işlədilən ifadədir — 'səni daha çox saxlamayım, get işinə bax' mənasında. Qarşı tərəfin vaxtına hörmət etdiyini göstərir və söhbəti kobudcasına kəsmədən, yumşaq şəkildə yekunlaşdırmağa imkan verir. Tonu yarı-rəsmi-neytraldır; həm telefon danışıqlarında, həm də üzbəüz görüşlərdə nəzakətli bağlayış kimi işlədilir.",
+      example: "Well, I'll let you go — I know you're busy. Let's catch up soon!",
+      register: "neutral",
+    },
+    {
+      phrase: "May I have a word?",
+      level: "C1",
+      use: "a polite, formal way to ask to speak with someone briefly",
+      azUse:
+        "Kiminləsə qısa müddət, adətən təklikdə danışmaq icazəsi istəmək üçün işlədilən nəzakətli, rəsmi ifadədir — 'sizinlə bir kəlmə danışa bilərəmmi?' mənasında. Çox vaxt ciddi və ya həssas bir mövzunu müzakirə etməzdən əvvəl, iş mühitində rəhbər və ya həmkarla işlədilir. Tonu rəsmi və hörmətli olduğu üçün gündəlik, dostyana söhbətdə bir az ağır səslənə bilər; orada 'Can I talk to you for a sec?' daha təbiidir.",
+      example: "Excuse me, Ms. Aliyeva, may I have a word? It's about tomorrow's meeting.",
+      register: "formal",
+    },
   ],
   practice: [
     {

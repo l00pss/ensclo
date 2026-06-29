@@ -84,6 +84,51 @@ export const fnEmail: ReferenceGroup<FunctionalPhrase> = {
       example: "Best regards,\nSarah Johnson",
       register: "formal",
     },
+    {
+      phrase: "I apologise for the delay in replying to your email.",
+      level: "B2",
+      use: "a polite way to acknowledge a late response before continuing your message",
+      azUse:
+        "Emaila gec cavab verdiyini nəzakətli şəkildə etiraf etmək üçün işlənir; 'emailinizə gec cavab verdiyim üçün üzr istəyirəm' mənasını verir. Bu ifadə qarşı tərəfə hörmət göstərir və gecikməyə görə peşəkar tərzdə üzrxahlıq edir. Rəsmi və işgüzar yazışmada, xüsusən vaxtında cavab verə bilmədiyin hallarda istifadə olunur; amerikan ingiliscəsində 'apologize' kimi yazılır.",
+      example: "I apologise for the delay in replying to your email; I have been out of the office.",
+      register: "formal",
+    },
+    {
+      phrase: "I am writing to follow up on ...",
+      level: "B2",
+      use: "a formal opening to refer back to a previous email or conversation that needs a response",
+      azUse:
+        "Əvvəlki email və ya söhbətə qayıdıb cavab və ya nəticə soruşmaq üçün işlənən rəsmi açılışdır; \"follow up\" 'izləmək, davam etdirmək' deməkdir. Adətən əvvəl yazdığın, lakin hələ cavab almadığın bir məsələni nəzakətli şəkildə xatırlatmaq üçün istifadə olunur. İşgüzar registrdir və təkidli görünmədən qarşı tərəfi yumşaq xatırlatmağa imkan verir.",
+      example: "I am writing to follow up on my previous email about the project deadline.",
+      register: "formal",
+    },
+    {
+      phrase: "Could you please let me know ...",
+      level: "B1",
+      use: "a polite, neutral way to ask someone for information or a decision",
+      azUse:
+        "Kimsədən məlumat və ya qərar barədə nəzakətli şəkildə soruşmaq üçün işlənir; 'zəhmət olmasa, mənə bildirə bilərsinizmi' mənasını verir. Birbaşa 'Tell me' demək əvəzinə bu ifadə xahişi yumşaldır və həm rəsmi, həm yarı-rəsmi yazışmaya uyğun gəlir. Neytral registrdir, ona görə həm həmkar, həm də müştəri ilə yazışmada təhlükəsizdir.",
+      example: "Could you please let me know whether the meeting time still works for you?",
+      register: "neutral",
+    },
+    {
+      phrase: "I would like to draw your attention to ...",
+      level: "C1",
+      use: "a formal way to highlight an important point or detail you want the reader to notice",
+      azUse:
+        "Oxucunun diqqətini vacib bir məqama və ya detala yönəltmək üçün işlənən rəsmi ifadədir; 'diqqətinizi ... cəlb etmək istərdim' mənasını verir. Adətən vacib şərt, son tarix və ya nəzərdən qaçırıla biləcək bir məsələni vurğulamaq üçün istifadə olunur. Çox rəsmi və işgüzar registrdir; hüquqi və rəsmi sənədlərdə də tez-tez rast gəlinir.",
+      example: "I would like to draw your attention to clause 4 of the contract.",
+      register: "formal",
+    },
+    {
+      phrase: "Thank you in advance for your assistance.",
+      level: "B2",
+      use: "a polite closing that thanks the reader before they help with your request",
+      azUse:
+        "Qarşı tərəf hələ kömək etməmişdən əvvəl, gələcək köməyə görə əvvəlcədən təşəkkür etmək üçün işlənən nəzakətli bağlanış ifadəsidir; 'köməyinizə görə əvvəlcədən təşəkkür edirəm' mənasını verir. Bu, xahişdən sonra müsbət və hörmətli təəssürat yaradır. Rəsmi və işgüzar emaillərdə, xüsusən nədənsə kömək istədikdən sonra geniş istifadə olunur.",
+      example: "Thank you in advance for your assistance with this matter.",
+      register: "formal",
+    },
   ],
   practice: [
     {
