@@ -103,6 +103,96 @@ export const topicMeta: TopicMeta[] = [
     "quizCount": 5
   },
   {
+    "id": "b1-street-food",
+    "level": "B1",
+    "title": "Street Food Around the World",
+    "theme": "Food",
+    "summary": "Explore street food in different countries and learn to use quantifiers with countable and uncountable nouns.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-sport",
+    "level": "B1",
+    "title": "The World of Sport",
+    "theme": "Sport",
+    "summary": "Explore why people love sport, and learn to compare things with comparatives and superlatives.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-hobbies",
+    "level": "B1",
+    "title": "Hobbies and Free Time",
+    "theme": "Lifestyle",
+    "summary": "Talk about what you do for fun, and learn the difference between the present simple (habits and routines) and the present continuous (actions happening now), plus 'like/love/enjoy/hate + -ing'.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-fashion",
+    "level": "B1",
+    "title": "Clothes and Fashion",
+    "theme": "Fashion",
+    "summary": "Talk about clothes and style, and learn the correct order of adjectives before a noun together with this, that, these and those.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-family",
+    "level": "B1",
+    "title": "Family and Relationships",
+    "theme": "Relationships",
+    "summary": "Talk about family life and learn to use the present perfect with 'for' and 'since' to describe how long relationships have lasted.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-weather",
+    "level": "B1",
+    "title": "Weather and Seasons",
+    "theme": "Nature",
+    "summary": "Learn to describe weather and the four seasons, and talk about the future with 'will' for predictions and 'be going to' for plans and evidence-based predictions.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-homes",
+    "level": "B1",
+    "title": "Homes Around the World",
+    "theme": "Lifestyle",
+    "summary": "Explore different kinds of homes around the world, and learn to describe rooms with 'there is / there are' and prepositions of place.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-human-body",
+    "level": "B1",
+    "title": "The Human Body and Health",
+    "theme": "Health",
+    "summary": "Learn how the main parts of the body work, and practise giving advice and stating rules with 'should / shouldn't' and 'must / mustn't'.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-smartphones",
+    "level": "B1",
+    "title": "Smartphones and Apps",
+    "theme": "Technology",
+    "summary": "Learn how people use smartphones and apps every day, and practise the present perfect with 'just', 'already' and 'yet' to talk about recent actions and results.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b1-school",
+    "level": "B1",
+    "title": "School Days",
+    "theme": "Education",
+    "summary": "Talk about your school memories and learn to use the past simple (regular and irregular verbs) with time expressions like 'yesterday', 'ago', 'last year' and 'when'.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
     "id": "b2-work",
     "level": "B2",
     "title": "Work & Career",
@@ -202,11 +292,191 @@ export const topicMeta: TopicMeta[] = [
     "quizCount": 5
   },
   {
+    "id": "b2-social-media",
+    "level": "B2",
+    "title": "Social Media and Society",
+    "theme": "Media",
+    "summary": "Explore how social media shapes modern life, and learn to describe processes and effects with the passive voice.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-mental-health",
+    "level": "B2",
+    "title": "Mental Health and Wellbeing",
+    "theme": "Health",
+    "summary": "Explore how to protect your mental health, and learn to use gerunds and infinitives after different verbs and prepositions.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-remote-work",
+    "level": "B2",
+    "title": "The Future of Work",
+    "theme": "Work",
+    "summary": "Explore how technology is reshaping where and how we work, and learn to talk about the future with will, be going to, present continuous and the future continuous.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-renewable-energy",
+    "level": "B2",
+    "title": "Renewable Energy",
+    "theme": "Environment",
+    "summary": "Explore how clean power could reshape our world, and learn to make predictions about the future of energy with modal verbs (may, might, could, will, can).",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-space-exploration",
+    "level": "B2",
+    "title": "Space Exploration",
+    "theme": "Space",
+    "summary": "Explore the story of space travel and learn to choose between the present perfect and the past simple depending on whether a time is finished or still connected to now.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-memory",
+    "level": "B2",
+    "title": "The Brain and Memory",
+    "theme": "Science",
+    "summary": "Explore how the brain stores and recalls memories, and learn to add information with defining and non-defining relative clauses (who, which, that, whose, where).",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-minimalism",
+    "level": "B2",
+    "title": "Consumerism and Minimalism",
+    "theme": "Society",
+    "summary": "Explore why modern societies buy so much and how minimalism offers an alternative, while practising the first and second conditionals to talk about real and imagined consequences.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-cinema",
+    "level": "B2",
+    "title": "Film and Storytelling",
+    "theme": "Culture",
+    "summary": "Explore how films tell powerful stories, and learn to use reported speech to say what directors, critics and characters told us.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-nutrition",
+    "level": "B2",
+    "title": "Food, Diet and Nutrition",
+    "theme": "Health",
+    "summary": "Explore what it really means to eat well, and master quantifiers (too much/too many, (not) enough, a little/a few) together with so and such.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-crime-justice",
+    "level": "B2",
+    "title": "Crime and Justice",
+    "theme": "Society",
+    "summary": "Explore how crimes are investigated and judged, and learn to express certainty and possibility with modals of deduction such as 'must', 'can't' and 'might'.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "b2-globalization",
+    "level": "B2",
+    "title": "Globalization",
+    "theme": "Economy",
+    "summary": "Explore how the world economy is becoming more connected, and master comparative structures and linking words to compare ideas and signal contrast.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
     "id": "c1-environment",
     "level": "C1",
     "title": "Environment & Climate Change",
     "theme": "Environment",
     "summary": "Engage with abstract arguments about sustainability and climate policy, and use advanced conditional structures (mixed and inverted conditionals) to discuss hypothetical consequences.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-ai-ethics",
+    "level": "C1",
+    "title": "Artificial Intelligence and Ethics",
+    "theme": "Ethics",
+    "summary": "Examine the moral dilemmas posed by artificial intelligence, and learn to speculate about past decisions using perfect modals (should have / must have / might have + past participle) alongside cautious, hedging language.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-inequality",
+    "level": "C1",
+    "title": "The Economics of Inequality",
+    "theme": "Economy",
+    "summary": "Examine the structural causes of economic inequality, and use cleft sentences ('It is ... that ...'; 'What ... is ...') to add emphasis to sophisticated arguments.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-language-identity",
+    "level": "C1",
+    "title": "Language and Identity",
+    "theme": "Language",
+    "summary": "Explore how the languages we speak shape who we are, and learn to use inversion after negative and limiting adverbials (Never have I...; Not only... but also...; Rarely does...) for emphasis in formal English.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-bioethics",
+    "level": "C1",
+    "title": "Bioethics and Genetic Engineering",
+    "theme": "Science",
+    "summary": "Examine the moral controversies surrounding genetic engineering, and learn to report opinions objectively using impersonal and personal passive structures (It is believed that ...; X is said to ...).",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-decision-making",
+    "level": "C1",
+    "title": "The Psychology of Decision-Making",
+    "theme": "Psychology",
+    "summary": "Explore how the mind weighs choices, and master mixed conditionals to connect past conditions with present results and present conditions with past results.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-sustainability",
+    "level": "C1",
+    "title": "Sustainability and the Circular Economy",
+    "theme": "Environment",
+    "summary": "Examine how a circular economy could replace the wasteful take-make-dispose model, and learn to write with greater economy yourself using participle clauses (Having finished..., Designed to last..., products made from...).",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-democracy",
+    "level": "C1",
+    "title": "The Future of Democracy",
+    "theme": "Politics",
+    "summary": "Examine abstract debates about the health of democratic institutions, and use hypothetical and unreal structures (wish, if only, would rather, it's time + past) to express regret, preference and overdue change.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-art",
+    "level": "C1",
+    "title": "What is Art?",
+    "theme": "Culture",
+    "summary": "Explore competing definitions of art, and learn to add extra information with non-defining relative clauses and advanced noun phrases.",
+    "vocabCount": 6,
+    "quizCount": 5
+  },
+  {
+    "id": "c1-consciousness",
+    "level": "C1",
+    "title": "The Nature of Consciousness",
+    "theme": "Science",
+    "summary": "Explore competing scientific accounts of consciousness, and learn to hedge claims and link ideas with academic language such as 'it could be argued that', 'tends to', 'appears to', 'insofar as' and 'whereas'.",
     "vocabCount": 6,
     "quizCount": 5
   }
