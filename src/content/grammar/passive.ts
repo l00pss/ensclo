@@ -5,7 +5,7 @@ export const passive: GrammarGroup = {
   description:
     "The passive voice puts the focus on the action or the receiver, not the doer. Common in news, science and formal writing where who did it is unknown or unimportant.",
   azDescription:
-    "Passiv səs diqqəti işi görənə yox, işin özünə və ya işdən təsirlənənə yönəldir. Xəbərlərdə, elmdə və rəsmi yazıda — işi görən bilinməyəndə ya da vacib olmayanda işlənir.",
+    "Passiv səs (məchul növ) diqqəti işi GÖRƏNƏ yox, işin özünə və işdən təsirlənən obyektə yönəldir. Yəni cümlədə əsas yeri hərəkəti edən şəxs deyil, hərəkətin üzərinə düşdüyü şey tutur. Bu quruluş daha çox xəbərlərdə, elmi mətnlərdə və rəsmi yazıda — işi kimin gördüyü bilinmədikdə, aydın olduqda və ya əhəmiyyət daşımadıqda işlənir. Məsələn: 'The house was built in 1990' (Ev 1990-cı ildə tikildi) — burada evi kimin tikdiyi vacib deyil.",
   rules: [
     {
       title: "Passive: basic form",
@@ -13,7 +13,7 @@ export const passive: GrammarGroup = {
       explanation:
         "Form the passive with the verb 'be' (in the right tense) + the past participle. The object of the active sentence becomes the subject.",
       azNote:
-        "Passiv = 'be' (uyğun zamanda) + feilin 3-cü forması. Aktivdəki obyekt passivdə mübtəda olur.",
+        "Passiv səs belə qurulur: 'be' feili (cümlənin tələb etdiyi lazımi zamanda) + əsas feilin üçüncü forması (past participle, yəni keçmiş zaman feili sifəti). Aktiv cümlədəki tamamlıq (obyekt) passiv cümlədə mübtədaya çevrilir. Məsələn aktiv 'They built the house' cümləsindəki 'the house' passivdə cümlənin başına keçib mübtəda olur: 'The house was built'.",
       form: "subject + be + past participle (+ by + agent)",
       examples: [
         { en: "The house was built in 1990.", note: "active: 'They built the house...'" },
@@ -28,7 +28,7 @@ export const passive: GrammarGroup = {
       explanation:
         "Only the form of 'be' changes for the tense; the past participle stays the same.",
       azNote:
-        "Zamana görə yalnız 'be' dəyişir, 3-cü forma sabit qalır.",
+        "Passiv cümləni müxtəlif zamanlara salanda yalnız 'be' feilinin forması dəyişir; əsas feilin üçüncü forması (past participle) isə həmişə eyni qalır. Yəni zamanı dəyişmək üçün sadəcə 'be' feilini düzgün formaya sal: indiki zamanda 'is/are', keçmişdə 'was/were', bitmiş zamanda 'has/have been', davam edən zamanda 'is being', gələcəkdə 'will be'. Sondakı əsas feil isə dəyişmir.",
       form: "is/are · was/were · has been · is being · will be + past participle",
       examples: [
         { en: "The room is cleaned every day.", note: "present simple" },
@@ -43,7 +43,7 @@ export const passive: GrammarGroup = {
       explanation:
         "Add 'by + agent' only when the doer is important. Often we leave it out because it's unknown, obvious, or unimportant.",
       azNote:
-        "İşi görəni 'by' ilə yalnız vacib olanda yazırıq. Çox vaxt bilinmir/aydındır deyə buraxılır.",
+        "İşi görən şəxsi və ya qüvvəni (agent) cümləyə 'by + işi görən' şəklində yalnız onun kim olduğu vacib olanda əlavə edirik. Məsələn 'Hamlet was written by Shakespeare' — burada müəllifin kim olduğu önəmlidir. Çox vaxt isə işi görən bilinmədiyi, özlüyündə aydın olduğu və ya əhəmiyyət daşımadığı üçün 'by' hissəsini tamamilə buraxırıq: 'My car was stolen' (Maşınım oğurlandı) — kimin oğurladığı bilinmir.",
       examples: [
         { en: "Hamlet was written by Shakespeare.", note: "agent matters" },
         { en: "My car was stolen.", note: "agent unknown — no 'by'" },
@@ -56,7 +56,7 @@ export const passive: GrammarGroup = {
       explanation:
         "Use 'modal + be + past participle'. Common in rules and instructions.",
       azNote:
-        "Modal + be + 3-cü forma. Qayda və təlimatlarda çox işlənir.",
+        "Modal feillə (must, should, can, may və s.) passiv belə qurulur: modal + 'be' + əsas feilin üçüncü forması (past participle). Diqqət et — modaldan sonra 'be' həmişə dəyişməz qalır. Bu quruluş qaydalarda, təlimatlarda və göstərişlərdə çox işlənir. Məsələn: 'Helmets must be worn' (Dəbilqə taxılmalıdır).",
       form: "modal + be + past participle",
       examples: [
         { en: "Helmets must be worn at all times." },
@@ -70,7 +70,7 @@ export const passive: GrammarGroup = {
       explanation:
         "For reporting opinions/beliefs: 'It is said that…' (impersonal) or 'He is said to…' (personal). Common in journalism and formal English.",
       azNote:
-        "Fikir/inam ötürmək üçün: 'It is said that…' və ya 'He is said to…'. Jurnalistikada və rəsmi dildə.",
+        "Ümumi fikir, inanc və ya söz-söhbət ötürmək üçün — yəni 'deyilir ki…', 'hesab olunur ki…' məzmununu vermək üçün — iki quruluş işlənir. Şəxssiz (impersonal) quruluş: 'It is said/believed/thought that…' (Deyilir/zənn edilir ki…). Şəxsli (personal) quruluş: 'subyekt + is said to + feilin əsas forması', məsələn 'The CEO is said to be resigning' (Deyilir ki, direktor istefa verir). Bu üsul jurnalistikada və rəsmi dildə geniş istifadə olunur.",
       form: "It is said/believed/thought that …  ·  subject + is said to + base verb",
       examples: [
         { en: "It is believed that the painting is genuine." },

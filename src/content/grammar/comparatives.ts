@@ -3,13 +3,13 @@ import type { GrammarGroup } from "../types";
 export const comparatives: GrammarGroup = {
   id: "comparatives",
   description: "Comparatives and superlatives let us compare two or more things by degree.",
-  azDescription: "Müqayisə dərəcələri iki və ya daha çox şeyi keyfiyyət baxımından müqayisə etməyə imkan verir.",
+  azDescription: "Müqayisə dərəcələri (comparatives və superlatives) bir şeyi başqası ilə bir keyfiyyət baxımından tutuşdurmağa kömək edir. Comparative iki şeyi qarşılaşdıranda işlədilir (məsələn, biri o birindən daha böyük və ya daha ucuzdursa). Superlative isə bir şeyi bütöv bir qrupun içində ən üstün və ya ən aşağı kimi göstərir (məsələn, qrupda ən hündür). Bu bölmədə həmin formaları və onlardan necə istifadə olunduğunu öyrənəcəksən.",
   rules: [
     {
       title: "Comparative adjectives: short vs long",
       level: "B1",
       explanation: "Short adjectives take '-er'. Long adjectives (two or more syllables) use 'more'. We add 'than' to name the second thing.",
-      azNote: "Qısa sifətlərə '-er' əlavə olunur, uzun sifətlərdən əvvəl 'more' işlənir. Müqayisə olunan ikinci şeydən əvvəl 'than' gəlir.",
+      azNote: "İki şeyi tutuşdurarkən comparative işlədirik. Qısa (adətən bir hecalı) sifətlərə '-er' sonluğu əlavə olunur: cheap -> cheaper. Uzun (iki və daha çox hecalı) sifətlərin qarşısına isə 'more' qoyulur: interesting -> more interesting. Müqayisə olunan ikinci tərəfdən əvvəl 'than' (-dən/-dan) gəlir. Qeyd: hot kimi bəzi sifətlərdə son samit qoşalaşır (hot -> hotter).",
       form: "short adjective + -er + than  ·  more + long adjective + than",
       examples: [
         { en: "My bag is cheaper than yours.", note: "short adjective + -er" },
@@ -22,7 +22,7 @@ export const comparatives: GrammarGroup = {
       title: "Superlative adjectives: the -est / the most",
       level: "B1",
       explanation: "Superlatives compare one thing with a whole group. Short adjectives take 'the ...-est'; long adjectives take 'the most ...'.",
-      azNote: "Superlativ bir şeyi bütöv bir qrupla müqayisə edir. Qısa sifət 'the ...-est', uzun sifət 'the most ...' alır. Əvvəlində 'the' vacibdir.",
+      azNote: "Superlative bir şeyi bütöv bir qrupun içində ən üstün kimi göstərir (məsələn, sinifdə ən hündür). Qısa sifətə 'the ...-est' əlavə edirik: tall -> the tallest. Uzun sifətin qarşısına isə 'the most' qoyuruq: expensive -> the most expensive. Superlativdən əvvəl 'the' artikli demək olar ki, həmişə vacibdir. Diqqət: 'y' ilə bitən sifətlərdə 'y' -> 'i' olur (easy -> easiest).",
       form: "the + short adjective + -est  ·  the most + long adjective",
       examples: [
         { en: "She is the tallest student in the class.", note: "short adjective + -est" },
@@ -35,7 +35,7 @@ export const comparatives: GrammarGroup = {
       title: "as ... as (equality) and not as ... as",
       level: "B1",
       explanation: "Use 'as + adjective + as' to say two things are equal. 'not as ... as' shows they are not equal.",
-      azNote: "Bərabərlik üçün 'as + sifət + as' işlənir. Bərabər olmayanda 'not as ... as' deyilir, sifət dəyişmir.",
+      azNote: "İki şeyin hansısa keyfiyyətdə eyni (bərabər) olduğunu bildirmək üçün 'as + sifət + as' quruluşunu işlədirik: as tall as (qədər hündür). Bərabər olmadıqlarını demək üçün isə 'not as ... as' deyilir: not as fast as (qədər sürətli deyil). Vacib qayda: bu quruluşda sifət öz əsas (dəyişməmiş) formasında qalır, ona '-er' əlavə olunmur.",
       form: "as + adjective + as  ·  not as + adjective + as",
       examples: [
         { en: "He is as tall as his brother.", note: "equal" },
@@ -48,7 +48,7 @@ export const comparatives: GrammarGroup = {
       title: "Irregular comparatives and superlatives",
       level: "B1",
       explanation: "Some common adjectives have irregular forms that you must memorise: good/better/best, bad/worse/worst, far/further/furthest.",
-      azNote: "Bəzi vacib sifətlərin qaydasız formaları var, onları əzbərlə: good/better/best, bad/worse/worst, far/further/furthest.",
+      azNote: "Bəzi çox işlənən sifətlər müqayisə formalarını ümumi qaydaya görə düzəltmir, ona görə də onları olduğu kimi əzbərləmək lazımdır. Ən vaciblərini yadda saxla: good -> better -> the best (yaxşı -> daha yaxşı -> ən yaxşı), bad -> worse -> the worst (pis -> daha pis -> ən pis), far -> further -> the furthest (uzaq -> daha uzaq -> ən uzaq). Bu sifətlərə '-er' və ya 'more' əlavə edilmir.",
       form: "good -> better -> the best  ·  bad -> worse -> the worst  ·  far -> further -> the furthest",
       examples: [
         { en: "Her English is better than mine.", note: "good -> better" },
@@ -61,7 +61,7 @@ export const comparatives: GrammarGroup = {
       title: "Comparative and superlative of adverbs",
       level: "B2",
       explanation: "Most adverbs ending in '-ly' use 'more' and 'the most'. Some short adverbs take '-er' and 'the ...-est'.",
-      azNote: "'-ly' ilə bitən zərflər 'more' və 'the most' alır. Bəzi qısa zərflər ('hard', 'fast') '-er' və 'the ...-est' qəbul edir.",
+      azNote: "Zərflərin (hərəkətin necə icra olunduğunu bildirən sözlərin) də müqayisə dərəcələri var. '-ly' ilə bitən zərflərin qarşısına 'more' və 'the most' qoyulur: carefully -> more carefully -> the most carefully. Bəzi qısa zərflər ('hard', 'fast') isə sifət kimi '-er' və 'the ...-est' alır: hard -> harder. Zərfi sifətlə qarışdırma: hərəkəti təsvir edəndə zərf (carefully), şeyi təsvir edəndə sifət (careful) işlənir.",
       form: "more + adverb + than  ·  the most + adverb  ·  short adverb + -er",
       examples: [
         { en: "Please drive more carefully than before.", note: "-ly adverb + more" },
@@ -74,7 +74,7 @@ export const comparatives: GrammarGroup = {
       title: "Modifying comparatives: much / far / a bit / slightly",
       level: "B2",
       explanation: "We use 'much', 'far', 'a lot' for a big difference and 'a bit', 'a little', 'slightly' for a small difference before a comparative.",
-      azNote: "Böyük fərq üçün comparativdən əvvəl 'much', 'far', 'a lot'; kiçik fərq üçün 'a bit', 'a little', 'slightly' işlənir.",
+      azNote: "Comparative-in qarşısına söz əlavə edib fərqin nə qədər böyük və ya kiçik olduğunu göstərə bilərik. Böyük fərq üçün 'much', 'far' və ya 'a lot' işlədilir: much faster (xeyli sürətli). Kiçik fərq üçün isə 'a bit', 'a little' və ya 'slightly' qoyulur: a bit easier (bir az asan). Diqqət: 'very' sözü comparative ilə işlənmir; onun yerinə 'much' deyilir.",
       form: "much / far / a lot / a bit / slightly + comparative",
       examples: [
         { en: "This car is much faster than my old one.", note: "big difference" },
@@ -87,7 +87,7 @@ export const comparatives: GrammarGroup = {
       title: "the + comparative, the + comparative",
       level: "C1",
       explanation: "This structure shows that two things change together: when one increases, the other changes too.",
-      azNote: "Bu quruluş iki şeyin birlikdə dəyişdiyini göstərir: biri artdıqca, digəri də dəyişir. Hər iki hissədə 'the' işlənir.",
+      azNote: "Bu quruluş iki şeyin paralel, yəni birlikdə dəyişdiyini bildirir: biri artdıqca digəri də artır və ya azalır (məsələn, nə qədər çox məşq etsən, bir o qədər yaxşı olarsan). Cümlə iki hissədən ibarətdir və hər iki hissədə 'the + comparative' işlədilir: 'The more you practise, the better you get'. Vacib qayda: hər iki hissədə 'the' mütləq olmalıdır.",
       form: "The + comparative + clause, the + comparative + clause",
       examples: [
         { en: "The more you practise, the better you get.", note: "two changes linked together" },

@@ -5,7 +5,7 @@ export const gerundInfinitive: GrammarGroup = {
   description:
     "When one verb follows another, the second is either an -ing form (gerund) or 'to + verb' (infinitive). The first verb decides which — and sometimes the meaning changes.",
   azDescription:
-    "Bir feildən sonra başqa feil gələndə ikincisi ya -ing (gerund), ya da 'to + feil' (məsdər) olur. Hansının gələcəyini birinci feil müəyyən edir — bəzən məna da dəyişir.",
+    "İngiliscədə bir feildən sonra ikinci bir feil işlənəndə, ikinci feil ya -ing formasında (buna gerund deyilir, yəni feildən düzələn isimvari forma), ya da 'to + feil' formasında (buna məsdər/infinitive deyilir) gəlir. Hansı formanın gələcəyini həmişə birinci feil müəyyən edir, ona görə də feilləri qruplaşdıraraq öyrənmək lazımdır. Bəzi hallarda eyni feil hər iki forma ilə işlənə bilər, lakin onda cümlənin mənası dəyişir.",
   rules: [
     {
       title: "Verb + -ing (gerund)",
@@ -13,7 +13,7 @@ export const gerundInfinitive: GrammarGroup = {
       explanation:
         "Some verbs are always followed by the -ing form: enjoy, avoid, finish, mind, suggest, keep, practise, miss.",
       azNote:
-        "Bəzi feillərdən sonra həmişə -ing: enjoy, avoid, finish, mind, suggest, keep, practise, miss.",
+        "Bir sıra feillərdən sonra ikinci feil həmişə -ing formasında (gerund) gəlir: enjoy, avoid, finish, mind, suggest, keep, practise, miss. Məsələn: 'I enjoy cooking' (yox 'enjoy to cook'). Bu feilləri ayrıca siyahı kimi yadda saxlamaq lazımdır, çünki onlardan sonra heç vaxt 'to + feil' işlənmir.",
       form: "verb + verb-ing",
       examples: [
         { en: "I enjoy cooking." },
@@ -28,7 +28,7 @@ export const gerundInfinitive: GrammarGroup = {
       explanation:
         "Some verbs are always followed by 'to + verb': want, decide, hope, need, promise, offer, agree, learn, plan.",
       azNote:
-        "Bəzi feillərdən sonra həmişə 'to + feil': want, decide, hope, need, promise, offer, agree, learn, plan.",
+        "Bir sıra feillərdən sonra isə ikinci feil həmişə 'to + feil' (məsdər) formasında gəlir: want, decide, hope, need, promise, offer, agree, learn, plan. Məsələn: 'I want to go home' (yox 'want going'). Bu qrup adətən bir istək, qərar, plan və ya niyyət bildirən feillərdir.",
       form: "verb + to + base verb",
       examples: [
         { en: "I want to go home." },
@@ -43,7 +43,7 @@ export const gerundInfinitive: GrammarGroup = {
       explanation:
         "After any preposition (in, on, at, of, about, for, after, before, without…) the verb takes the -ing form.",
       azNote:
-        "İstənilən ön sözdən sonra feil -ing olur (in, on, of, about, after, without…).",
+        "İstənilən ön sözdən (preposition) sonra feil mütləq -ing formasında işlənir: in, on, at, of, about, for, after, before, without və s. Məsələn: 'good at drawing', 'without saying goodbye'. Yadda saxla: ön sözdən sonra heç vaxt 'to + feil' gəlmir, yalnız -ing formasından istifadə olunur.",
       form: "preposition + verb-ing",
       examples: [
         { en: "She's good at drawing." },
@@ -58,7 +58,7 @@ export const gerundInfinitive: GrammarGroup = {
       explanation:
         "Verbs like want, ask, tell, allow, expect, advise are followed by an object + to-infinitive.",
       azNote:
-        "want, ask, tell, allow, expect, advise → obyekt + 'to + feil'.",
+        "want, ask, tell, allow, expect, advise kimi feillərdən sonra əvvəlcə obyekt (kimə, kimi aid olduğunu göstərən söz), sonra isə 'to + feil' gəlir. Yəni quruluş belədir: feil + obyekt + 'to + feil'. Məsələn: 'I want you to call me' (yəni 'sənin mənə zəng etməyini istəyirəm'). Azərbaycan dilindəki 'istəyirəm ki, sən...' quruluşunu hərfi tərcümə etmə.",
       form: "verb + object + to + base verb",
       examples: [
         { en: "I want you to call me." },
@@ -73,7 +73,7 @@ export const gerundInfinitive: GrammarGroup = {
       explanation:
         "Some verbs take both forms, but the meaning changes. 'stop doing' = quit; 'stop to do' = pause in order to do. 'remember doing' = a memory; 'remember to do' = not forget a task.",
       azNote:
-        "Bəzi feillər hər ikisini qəbul edir, amma məna dəyişir: 'stop smoking' (tərgit) ≠ 'stop to smoke' (siqaret üçün dayan).",
+        "Bəzi feillər hər iki forma ilə işlənə bilər, lakin seçdiyin forma cümlənin mənasını tamamilə dəyişir. Məsələn: 'stop smoking' = siqareti tamamilə tərgitmək, amma 'stop to smoke' = siqaret çəkmək üçün bir anlıq dayanmaq. Eyni şəkildə 'remember to do' = bir işi unutmamaq (gələcək vəzifə), 'remember doing' = keçmişdə baş vermiş bir şeyi xatırlamaq. Ona görə də burada formanı kontekstə görə diqqətlə seç.",
       examples: [
         { en: "He stopped smoking.", note: "he quit" },
         { en: "He stopped to smoke.", note: "he paused in order to smoke" },

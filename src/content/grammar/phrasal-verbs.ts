@@ -3,13 +3,13 @@ import type { GrammarGroup } from "../types";
 export const phrasalVerbs: GrammarGroup = {
   id: "phrasal-verbs",
   description: "Phrasal verbs combine a verb with a particle, and the meaning is often idiomatic.",
-  azDescription: "Phrasal feillər feil ilə hissəcikdən (particle) ibarətdir və mənası çox vaxt idiomatik olur.",
+  azDescription: "Phrasal feillər bir feil ilə kiçik bir sözcüyün (particle, yəni hissəcik) birləşməsindən yaranır. Bu iki söz birlikdə işlənəndə çox vaxt tamamilə yeni, idiomatik məna verir; yəni mənanı feilin öz mənasına baxaraq təxmin etmək olmur. Buna görə də onları ayrı-ayrı sözlər kimi deyil, bütöv ifadə kimi öyrənmək lazımdır.",
   rules: [
     {
       title: "What a phrasal verb is",
       level: "B1",
       explanation: "A phrasal verb is a verb plus a small particle (a preposition or adverb). The two words together create a new meaning that you often cannot guess from the verb alone. For example, 'give up' means 'quit', not 'give'.",
-      azNote: "Phrasal feil = feil + kiçik hissəcik. Birlikdə yeni məna verir, məsələn 'give up' = tərk etmək.",
+      azNote: "Phrasal feil bir feil ilə kiçik bir hissəciyin (sözönü və ya zərf) birləşməsidir. Bu iki söz birlikdə tamamilə yeni məna yaradır və çox vaxt bu mənanı feilin özünə baxaraq tapmaq olmur. Məsələn, 'give' vermək deməkdir, amma 'give up' tərk etmək, əl çəkmək mənasını verir. Ona görə bütöv ifadəni bir məna kimi yadda saxlamaq lazımdır.",
       form: "verb + particle (e.g. give + up = give up)",
       examples: [
         { en: "Don't give up; you are almost there.", note: "give up = quit" },
@@ -18,10 +18,23 @@ export const phrasalVerbs: GrammarGroup = {
       pitfall: "Hissəciyin mənasını ayrıca tərcümə etmə; bütöv ifadəni öyrən.",
     },
     {
+      title: "Common phrasal verbs to know",
+      level: "B1",
+      explanation: "Here is a useful set of everyday phrasal verbs: give up (quit), find out (discover), carry on (continue), set up (start or arrange), and work out (solve or exercise). Learn them as whole units.",
+      azNote: "Gündəlik danışıqda tez-tez işlənən faydalı phrasal feillər bunlardır: give up (tərk etmək, əl çəkmək), find out (öyrənmək, aşkar etmək), carry on (davam etmək), set up (qurmaq, təşkil etmək) və work out (həll etmək və ya idman etmək). Bunların hər birini ayrı sözlər kimi deyil, hazır bütöv ifadə kimi əzbərləmək daha asandır, çünki mənaları feilin öz mənasından fərqlənir.",
+      form: "common verbs: give up, find out, carry on, set up, work out",
+      examples: [
+        { en: "I want to find out the truth.", note: "find out = discover" },
+        { en: "They set up a new company last year.", note: "set up = start or establish" },
+        { en: "Let's carry on with the lesson.", note: "carry on = continue" },
+      ],
+      pitfall: "Bu ifadələri tək söz kimi əzbərlə; mənaları feilin öz mənasından fərqlidir.",
+    },
+    {
       title: "Transitive separable phrasal verbs",
       level: "B2",
       explanation: "Many phrasal verbs take an object and can be separated. The noun object can go before or after the particle, but a pronoun object MUST go in the middle, between the verb and the particle.",
-      azNote: "Ayrılan phrasal feillərdə isim hər iki yerdə dura bilər, amma əvəzlik (it, them) MÜTLƏQ ortada olur.",
+      azNote: "Bir çox phrasal feil obyekt (tamamlıq) qəbul edir və onları AYIRMAQ olur. Obyekt isim olanda onu istər hissəcikdən sonra, istərsə də feillə hissəcik arasında qoymaq olar: 'turn off the light' və 'turn the light off' ikisi də düzgündür. Amma obyekt əvəzlik (it, them, him kimi) olanda o, MÜTLƏQ feillə hissəcik arasında, yəni ortada gəlməlidir: 'turn it off' düzgündür, 'turn off it' isə yanlışdır.",
       form: "verb + object + particle / verb + particle + object (pronoun always in the middle)",
       examples: [
         { en: "Please turn off the light.", note: "noun after the particle" },
@@ -34,7 +47,7 @@ export const phrasalVerbs: GrammarGroup = {
       title: "Transitive inseparable phrasal verbs",
       level: "B2",
       explanation: "Some phrasal verbs take an object but can never be split. The object, whether a noun or a pronoun, always comes after the whole phrasal verb.",
-      azNote: "Ayrılmayan phrasal feillərdə obyekt (isim və ya əvəzlik) həmişə feildən SONRA gəlir; bölünmür.",
+      azNote: "Bəzi phrasal feillər obyekt qəbul edir, amma onları heç vaxt AYIRMAQ olmaz. Obyekt istər isim, istər əvəzlik olsun, həmişə bütöv phrasal feildən SONRA gəlir; feillə hissəcik arasına heç nə girə bilməz. Məsələn: 'look after the kids' və 'look after them' düzgündür, amma 'look them after' yanlışdır.",
       form: "verb + particle + object (never split)",
       examples: [
         { en: "I look after the kids on Saturdays.", note: "look after = take care of" },
@@ -46,7 +59,7 @@ export const phrasalVerbs: GrammarGroup = {
       title: "Intransitive phrasal verbs",
       level: "B2",
       explanation: "Intransitive phrasal verbs have no object at all. The verb and the particle stay together and nothing comes between them.",
-      azNote: "Bəzi phrasal feillərin obyekti yoxdur. Feil və hissəcik birlikdə qalır, ortaya heç nə girmir.",
+      azNote: "Bəzi phrasal feillərin heç bir obyekti (tamamlığı) olmur; onlar təkbaşına işlənir. Bu zaman feil və hissəcik həmişə bir yerdə qalır və aralarına heç nə girmir. Məsələn 'break down' (xarab olmaq), 'take off' (havaya qalxmaq) və 'grow up' (böyümək) belə feillərdir; onlara obyekt əlavə etmək lazım deyil.",
       form: "verb + particle (no object)",
       examples: [
         { en: "My car broke down on the motorway.", note: "break down = stop working" },
@@ -59,7 +72,7 @@ export const phrasalVerbs: GrammarGroup = {
       title: "Three-part phrasal verbs",
       level: "B2",
       explanation: "Three-part (or three-word) phrasal verbs have a verb plus two particles. They are inseparable, and the object always comes after the second particle.",
-      azNote: "Üç hissəli phrasal feillər: feil + iki hissəcik. Bölünmür, obyekt sonda gəlir.",
+      azNote: "Üç hissəli phrasal feillər bir feil ilə iki hissəcikdən ibarətdir, məsələn 'look forward to' və ya 'put up with'. Bu feilləri heç vaxt ayırmaq olmaz; obyekt həmişə ikinci hissəcikdən sonra, yəni ifadənin sonunda gəlir. Məsələn: 'I look forward to the weekend' və 'I can't put up with this noise'.",
       form: "verb + particle + particle + object",
       examples: [
         { en: "I look forward to the weekend.", note: "look forward to = feel excited about" },
@@ -67,19 +80,6 @@ export const phrasalVerbs: GrammarGroup = {
         { en: "She gets on with her colleagues.", note: "get on with = have a good relationship" },
       ],
       pitfall: "'Look forward to' sonrasında feil gələrsə, '-ing' işlənir: 'look forward to seeing you'.",
-    },
-    {
-      title: "Common phrasal verbs to know",
-      level: "B1",
-      explanation: "Here is a useful set of everyday phrasal verbs: give up (quit), find out (discover), carry on (continue), set up (start or arrange), and work out (solve or exercise). Learn them as whole units.",
-      azNote: "Faydalı phrasal feillər: give up (tərk etmək), find out (öyrənmək), carry on (davam etmək), set up (qurmaq), work out (həll etmək).",
-      form: "common verbs: give up, find out, carry on, set up, work out",
-      examples: [
-        { en: "I want to find out the truth.", note: "find out = discover" },
-        { en: "They set up a new company last year.", note: "set up = start or establish" },
-        { en: "Let's carry on with the lesson.", note: "carry on = continue" },
-      ],
-      pitfall: "Bu ifadələri tək söz kimi əzbərlə; mənaları feilin öz mənasından fərqlidir.",
     },
   ],
   practice: [

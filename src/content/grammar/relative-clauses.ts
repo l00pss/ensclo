@@ -5,7 +5,7 @@ export const relativeClauses: GrammarGroup = {
   description:
     "Relative clauses add information about a noun using who, which, that, whose, where and when. They let you combine two ideas into one smooth sentence.",
   azDescription:
-    "Nisbi budaq cümlələr who, which, that, whose, where, when ilə bir ismə əlavə məlumat verir. İki fikri bir hamar cümlədə birləşdirməyə imkan verir.",
+    "Nisbi budaq cümlələr (relative clauses) bir isim haqqında əlavə məlumat vermək üçün who, which, that, whose, where və when sözlərindən istifadə edir. Onların köməyi ilə iki ayrı fikri təkrarçılıq olmadan bir səlis cümlədə birləşdirə bilərsiniz. Məsələn, 'I know a man. He speaks five languages.' əvəzinə 'I know a man who speaks five languages.' deyirik.",
   rules: [
     {
       title: "Defining relative clauses",
@@ -13,7 +13,7 @@ export const relativeClauses: GrammarGroup = {
       explanation:
         "Give essential information that identifies the noun. Without it, the sentence loses its meaning. No commas. Use who (people), which (things), that (both).",
       azNote:
-        "İsmi MÜƏYYƏNLƏŞDİRƏN vacib məlumat. Onsuz cümlə mənasını itirir. Vergül YOX. who (insan), which (əşya), that (hər ikisi).",
+        "Defining (müəyyənləşdirici) budaq cümlə ismin hansı olduğunu dəqiqləşdirən VACİB məlumat verir. Bu məlumat olmasa, cümlənin mənası tam olmur, ona görə də onu çıxarmaq olmaz. Bu cümlələrdə vergül İŞLƏNMİR. İnsanlar üçün 'who', əşyalar üçün 'which', hər ikisi üçün isə 'that' işlədilir: 'The man who lives next door is a doctor.'",
       form: "noun + who/which/that + clause (no commas)",
       examples: [
         { en: "The man who lives next door is a doctor." },
@@ -27,7 +27,7 @@ export const relativeClauses: GrammarGroup = {
       explanation:
         "Add extra, non-essential information. The sentence still makes sense without it. Always use commas, and NEVER use 'that' — use who/which.",
       azNote:
-        "ƏLAVƏ, vacib olmayan məlumat. Onsuz da cümlə tamdır. Həmişə vergül; 'that' İŞLƏNMİR — who/which.",
+        "Non-defining (qeyri-müəyyənləşdirici) budaq cümlə yalnız ƏLAVƏ, o qədər də vacib olmayan məlumat verir. Bu məlumatı çıxarsanız belə, cümlə yenə də tam və başa düşülən qalır. Belə cümlələrdə bu hissə həmişə vergüllə ayrılır və burada 'that' HEÇ VAXT İŞLƏNMİR — yalnız insanlar üçün 'who', əşyalar üçün 'which' işlədilir: 'My brother, who lives in Paris, is a chef.'",
       form: "noun, who/which + clause, …",
       examples: [
         { en: "My brother, who lives in Paris, is a chef." },
@@ -41,7 +41,7 @@ export const relativeClauses: GrammarGroup = {
       explanation:
         "In a defining clause, you can drop who/which/that when it is the OBJECT of the clause (not the subject).",
       azNote:
-        "Defining clause-da əgər nisbi əvəzlik OBYEKTdirsə, onu atmaq olar (mübtədadırsa atmaq olmaz).",
+        "Defining (müəyyənləşdirici) budaq cümlədə nisbi əvəzlik (who/which/that) budaq cümlənin OBYEKTİdirsə, yəni hərəkəti edən deyil, hərəkətin yönəldiyi söz isə, onu tamamilə atmaq olar: 'The film (that) we saw' — burada 'that' düşə bilər. Amma əvəzlik MÜBTƏDAdırsa, yəni özü hərəkəti edirsə, onu atmaq olmaz: 'The man who called you' cümləsində 'who' mütləq qalmalıdır.",
       examples: [
         { en: "The film (that) we saw was great.", note: "object → can omit" },
         { en: "The man who called you is here.", note: "subject → cannot omit" },
@@ -54,7 +54,7 @@ export const relativeClauses: GrammarGroup = {
       explanation:
         "'whose' shows possession; 'where' refers to a place; 'when' refers to a time.",
       azNote:
-        "'whose' — sahiblik; 'where' — yer; 'when' — vaxt.",
+        "Bu üç söz fərqli məlumatları bildirir: 'whose' sahibliyi göstərir, yəni nəyinsə kiməsə aid olduğunu bildirir (kimin) — 'the writer whose book won'. 'where' bir yerə işarə edir (harada) — 'the café where we met'. 'when' isə bir vaxta, zamana işarə edir (nə vaxt) — 'the day when we moved here'.",
       examples: [
         { en: "That's the writer whose book won the prize." },
         { en: "This is the café where we first met." },
@@ -68,7 +68,7 @@ export const relativeClauses: GrammarGroup = {
       explanation:
         "In formal English the preposition can go before the pronoun ('the person to whom I spoke'). In everyday English it usually goes at the end ('the person I spoke to').",
       azNote:
-        "Rəsmi dildə ön söz əvəzlikdən əvvəl ('to whom'), gündəlik dildə cümlə sonunda gəlir.",
+        "İngiliscədə ön söz (preposition) budaq cümlədə iki cür yerləşə bilər. Rəsmi, kitab dilində ön söz əvəzlikdən ƏVVƏL gəlir və bu zaman 'whom' işlədilir: 'the person to whom I spoke'. Gündəlik, danışıq dilində isə ön söz adətən cümlənin SONUNA atılır: 'the person I spoke to'. Hər ikisi düzgündür, sadəcə üslub fərqlidir.",
       examples: [
         { en: "The colleague with whom I work is retiring.", note: "formal" },
         { en: "The colleague I work with is retiring.", note: "everyday" },

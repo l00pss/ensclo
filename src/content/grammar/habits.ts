@@ -5,7 +5,7 @@ export const habits: GrammarGroup = {
   description:
     "Talking about past habits and about being or getting accustomed to things.",
   azDescription:
-    "Keçmiş vərdişlər və bir şeyə alışmaq/öyrəşmək haqqında danışmaq.",
+    "Bu mövzu keçmişdəki vərdişlər haqqında danışmağı və bir şeyə alışmış olmağı və ya yavaş-yavaş alışmağı ifadə etməyi öyrədir. İngiliscədə bunlar üçün 'used to', 'would', 'be used to' və 'get used to' strukturlarından istifadə olunur. Bu strukturlar bir-birinə çox oxşadığı üçün asanlıqla qarışdırılır, ona görə də hər birinin nə vaxt və hansı mənada işləndiyini ayrıca öyrənmək vacibdir.",
   rules: [
     {
       title: "used to + base verb (past habits and states)",
@@ -13,7 +13,7 @@ export const habits: GrammarGroup = {
       explanation:
         "Use 'used to' for habits or states that were true in the past but are not true now.",
       azNote:
-        "Keçmişdə doğru olan, indi isə doğru olmayan vərdiş və ya hal üçün işlədilir.",
+        "'used to + feilin əsas forması' keçmişdə müntəzəm olan, amma indi artıq davam etməyən vərdişi və ya o vaxt mövcud olub indi mövcud olmayan halı bildirir. Yəni keçmişlə indi arasında dəyişiklik olduğunu göstərir: 'I used to smoke' (əvvəllər çəkirdim, indi yox). Həm təkrarlanan hərəkətlər, həm də uzunmüddətli vəziyyətlər (məsələn, harada yaşamaq) üçün işlədilir.",
       form: "subject + used to + base verb",
       examples: [
         { en: "I used to smoke, but I quit last year.", note: "past habit, now over" },
@@ -29,7 +29,7 @@ export const habits: GrammarGroup = {
       explanation:
         "Use 'would' for repeated past actions, like a story about routines. Do not use it for past states.",
       azNote:
-        "Keçmişdə təkrarlanan hərəkətlər üçün. Hal (state) feilləri ilə işlənmir.",
+        "'would + feilin əsas forması' keçmişdə təkrar-təkrar baş verən hərəkətləri, adətən xatirə danışarkən təsvir etmək üçün işlədilir: 'Every summer we would visit our grandparents'. Burada 'would' təxminən 'edərdik' mənasını verir. Diqqət: bu struktur yalnız hərəkət bildirən feillərlə işlənir; hal və vəziyyət bildirən feillərlə (have, be, know, like kimi) işlənmir, onların yerinə 'used to' istifadə olunur.",
       form: "subject + would + base verb",
       examples: [
         { en: "Every summer we would visit our grandparents.", note: "repeated action" },
@@ -45,7 +45,7 @@ export const habits: GrammarGroup = {
       explanation:
         "Use 'be used to' to say something is normal and familiar for you now. It is followed by a noun or the -ing form.",
       azNote:
-        "İndi bir şeyin sənin üçün adi və tanış olduğunu bildirir. Sonra isim və ya -ing gəlir.",
+        "'be used to' (am/is/are used to) bir şeyin hazırda sənin üçün adi, tanış və normal olduğunu bildirir, yəni artıq ona alışmısan: 'I am used to the cold weather' (soyuq havaya öyrəşmişəm). Burada 'to' köməkçi feil deyil, ön sözdür, ona görə də ondan sonra ya isim, ya da feilin -ing forması gəlir. Bunu keçmiş haqqında olan 'used to' ilə qarışdırma.",
       form: "subject + be (am/is/are) + used to + noun / -ing",
       examples: [
         { en: "I am used to the cold weather here.", note: "noun after 'used to'" },
@@ -61,7 +61,7 @@ export const habits: GrammarGroup = {
       explanation:
         "Use 'get used to' to describe the process of becoming accustomed to something new over time.",
       azNote:
-        "Yeni bir şeyə tədricən alışmaq prosesini bildirir. Sonra isim və ya -ing gəlir.",
+        "'get used to' yeni bir şeyə zaman keçdikcə yavaş-yavaş alışmaq, öyrəşmək prosesini bildirir: 'It took me a month to get used to the new job' (yeni işə alışmağım bir ay çəkdi). Fərqə diqqət et: 'be used to' artıq alışmış olmağı, 'get used to' isə alışma prosesini göstərir. Burada da 'to' ön söz olduğu üçün ondan sonra isim və ya feilin -ing forması gəlir.",
       form: "subject + get used to + noun / -ing",
       examples: [
         { en: "It took me a month to get used to the new job.", note: "process of adapting" },
@@ -77,7 +77,7 @@ export const habits: GrammarGroup = {
       explanation:
         "'used to + base verb' talks about the past. 'be used to + noun/-ing' talks about familiarity now. Watch the form after them.",
       azNote:
-        "'used to + feil' keçmiş haqqındadır; 'be used to + isim/-ing' indiki tanışlıq haqqındadır.",
+        "Bu iki strukturu qarışdırmamaq üçün əsas fərqi yadda saxla: 'used to + feilin əsas forması' keçmişdəki vərdiş və ya halı bildirir ('I used to get up early' - əvvəllər tez qalxardım). 'be used to + isim/-ing' isə indi bir şeyin sənin üçün tanış və adi olduğunu bildirir ('I am used to getting up early' - tez qalxmağa öyrəşmişəm). Yoxlamaq üçün cümlədə 'be' (am/is/are) feilinin olub-olmadığına bax.",
       form: "used to + base verb  |  be used to + noun / -ing",
       examples: [
         { en: "I used to get up early.", note: "past habit, now changed" },

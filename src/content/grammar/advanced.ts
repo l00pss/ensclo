@@ -3,7 +3,7 @@ import type { GrammarGroup } from "../types";
 export const advanced: GrammarGroup = {
   id: "advanced",
   description: "Advanced C1 structures for emphasis, formality and concise writing.",
-  azDescription: "Vurğu, rəsmilik və yığcam ifadə üçün qabaqcıl C1 strukturları.",
+  azDescription: "Bu bölmədə fikri qüvvətləndirmək (vurğu), rəsmi və ədəbi üslub yaratmaq, eləcə də cümləni daha yığcam ifadə etmək üçün işlədilən qabaqcıl C1 strukturları toplanıb. Burada söz sırasının dəyişməsi (inversiya), cümlənin bir hissəsini önə çıxarmaq (cleft) və feli birləşmələrlə cümləni qısaltma kimi mövzular izah olunur. Bu strukturlar əsasən yazılı və rəsmi dildə rast gəlinir.",
   rules: [
     {
       title: "Inversion after negative and limiting adverbials",
@@ -11,7 +11,7 @@ export const advanced: GrammarGroup = {
       explanation:
         "When a negative or limiting adverbial starts a sentence, the subject and auxiliary swap places, like in a question. This adds emphasis and sounds formal.",
       azNote:
-        "Cümlə inkar/məhdudlaşdırıcı zərflə başlayanda köməkçi feil ilə subyekt yer dəyişir (sual kimi). Vurğu üçündür.",
+        "Fikri qüvvətləndirmək üçün inkar və ya məhdudlaşdırıcı zərf (never, rarely, seldom, not only) cümlənin əvvəlinə keçəndə söz sırası sual kimi tərsinə çevrilir, yəni inversiya baş verir: köməkçi feil mübtədadan (subyektdən) əvvələ keçir. Məsələn: 'Never have I seen...' (yox 'Never I have seen'). Bu quruluş rəsmi və ədəbi dilə xas olub fikrə güclü vurğu verir.",
       form: "Negative adverbial + auxiliary + subject + main verb",
       examples: [
         { en: "Never have I seen such a beautiful sunset.", note: "Never + have I seen" },
@@ -28,7 +28,7 @@ export const advanced: GrammarGroup = {
       explanation:
         "In formal English you can drop 'if' and invert the subject and auxiliary. This works with 'had', 'were' and 'should'.",
       azNote:
-        "Rəsmi dildə 'if' atılır və kömkçi feil ilə subyekt yer dəyişir: 'had', 'were', 'should' ilə.",
+        "Rəsmi dildə şərt cümləsində 'if' sözünü tamamilə ataraq onun yerinə köməkçi feil ilə mübtədanı yerini dəyişmək olar (inversiya). Bu yalnız 'had', 'were' və 'should' feilləri ilə mümkündür. Məsələn: 'Had I known' = 'If I had known', 'Were I you' = 'If I were you', 'Should you need' = 'If you should need'. Bu üsul cümləni daha rəsmi və zərif səsləndirir.",
       form: "Had / Were / Should + subject + ... , + main clause",
       examples: [
         { en: "Had I known earlier, I would have helped.", note: "= If I had known" },
@@ -43,7 +43,7 @@ export const advanced: GrammarGroup = {
       explanation:
         "An it-cleft splits a sentence to highlight one part. You put the focused element after 'it was/is' and the rest in a relative clause.",
       azNote:
-        "It-cleft cümləni bölüb bir hissəni qabardır: 'It was John who called' (məhz John).",
+        "It-cleft (it ilə qurulan ayırıcı cümlə) cümləni iki hissəyə bölərək bir hissəni xüsusi olaraq önə çıxarmaq, yəni vurğulamaq üçün işlədilir. Önə çıxarılan söz 'it was/is' birləşməsindən sonra gəlir, cümlənin qalan hissəsi isə 'who' və ya 'that' ilə davam edir. Məsələn: 'It was John who called, not Tom' (məhz John zəng etdi). Belə cümlə 'kimin, nəyin' məhz mühüm olduğunu aydın göstərir.",
       form: "It + be + focused part + who / that + rest",
       examples: [
         { en: "It was John who called, not Tom.", note: "focus on John" },
@@ -58,7 +58,7 @@ export const advanced: GrammarGroup = {
       explanation:
         "A what-cleft uses 'what' as the subject to emphasise the rest of the sentence. The verb is usually a form of 'be'.",
       azNote:
-        "What-cleft 'what' ilə başlayıb qalan hissəni vurğulayır: 'What I need is a holiday'.",
+        "What-cleft (what ilə qurulan ayırıcı cümlə) 'what' sözü ilə başlayır və cümlənin əsas hissəsini önə çıxararaq vurğulayır. Bu zaman 'what' mübtəda rolunu oynayır, sonra adətən 'be' feilinin müvafiq forması (is/was) gəlir və vurğulanan hissə onun ardınca yerləşir. Məsələn: 'What I need is a holiday' (mənə lazım olan şey — məhz tətildir). Belə cümlə tələbi və ya hissi daha təsirli ifadə edir.",
       form: "What + clause + be + emphasised part",
       examples: [
         { en: "What I need is a holiday.", note: "focus on a holiday" },
@@ -72,7 +72,7 @@ export const advanced: GrammarGroup = {
       explanation:
         "Participle clauses make writing shorter by replacing a full clause. Use '-ing' for active meaning and 'having + past participle' for an earlier action.",
       azNote:
-        "Participle clause cümləni qısaldır: '-ing' eyni zaman, 'having + III forma' əvvəlki hərəkət.",
+        "Feli birləşmə (participle clause) tam tabe cümlənin yerinə işlənərək yazını daha qısa və yığcam edir. Eyni vaxtda baş verən və ya aktiv mənalı hərəkət üçün feilin '-ing' forması, ondan əvvəl baş vermiş hərəkət üçün isə 'having + feilin III forması' işlədilir. Məsələn: 'Walking home, I saw a friend' (evə gedərkən) və 'Having finished her work, she left' (işini bitirdikdən sonra). Hər iki hissənin mübtədası eyni şəxs olmalıdır.",
       form: "Present participle (-ing) / Having + past participle + main clause",
       examples: [
         { en: "Walking home, I saw an old friend.", note: "= While I was walking home" },
@@ -88,7 +88,7 @@ export const advanced: GrammarGroup = {
       explanation:
         "You can shorten a relative clause by dropping the relative pronoun and 'be'. Use an '-ing' form for active and a past participle for passive meaning.",
       azNote:
-        "Relative clause qısaldıla bilər: aktiv üçün '-ing', passiv üçün III forma; 'who is / which was' atılır.",
+        "Təyini budaq cümləni (relative clause) qısaltmaq olar: bunun üçün əlaqələndirici əvəzlik və 'be' feili (who is, which was kimi) atılır. Aktiv məna üçün feilin '-ing' forması, passiv məna üçün isə feilin III forması saxlanılır. Məsələn: 'The man standing there' = 'who is standing there', 'The book written in 1990' = 'which was written in 1990'. Bu üsul cümləni qısaldır və yazıya rəvanlıq verir.",
       form: "Noun + present participle (-ing) / past participle",
       examples: [
         { en: "The man standing there is my teacher.", note: "= who is standing there" },

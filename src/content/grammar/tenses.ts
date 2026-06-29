@@ -5,7 +5,7 @@ export const tenses: GrammarGroup = {
   description:
     "The core verb tenses: how to talk about the present, the past, and the link between them. Getting these right is the foundation of clear English.",
   azDescription:
-    "Əsas zamanlar: indi, keçmiş və onların əlaqəsi. Düzgün zaman seçimi aydın ingiliscənin təməlidir.",
+    "Bu bölmə ingilis dilinin əsas feil zamanlarını əhatə edir: indiki, keçmiş və gələcək hadisələrdən, həmçinin keçmişlə indini bir-birinə bağlayan zamanlardan necə danışmağı. Hər bir zaman işin nə vaxt baş verdiyini və hələ də davam edib-etmədiyini göstərir. Zamanları düzgün seçmək aydın və səlis ingiliscə danışmağın təməlidir.",
   rules: [
     {
       title: "Present Simple",
@@ -13,7 +13,7 @@ export const tenses: GrammarGroup = {
       explanation:
         "Use it for habits, routines, facts, and things that are generally true. Often used with adverbs of frequency (always, usually, often, never).",
       azNote:
-        "Vərdişlər, faktlar və ümumi həqiqətlər üçün. 3-cü şəxs təkdə feilə -s əlavə olunur.",
+        "Present Simple (Sadə İndiki Zaman) təkrarlanan vərdişlər, gündəlik işlər, faktlar və həmişə doğru olan ümumi həqiqətlər üçün istifadə olunur. Çox vaxt always (həmişə), usually (adətən), often (tez-tez), never (heç vaxt) kimi tezlik zərfləri ilə gəlir. Diqqət: üçüncü şəxs təkdə (he, she, it) feilə -s şəkilçisi əlavə olunur, məsələn: he works.",
       form: "subject + base verb (+ -s for he/she/it)",
       examples: [
         { en: "Water boils at 100 °C.", note: "general fact" },
@@ -28,7 +28,7 @@ export const tenses: GrammarGroup = {
       explanation:
         "Use it for actions happening now or around now, and for temporary situations. Also for fixed future arrangements.",
       azNote:
-        "İndi (və ya bu günlərdə) baş verən, müvəqqəti işlər üçün. Stative feillərlə (know, want, like) işlənmir.",
+        "Present Continuous (Davamlı İndiki Zaman) elə indi, danışdığımız anda və ya bu günlərdə baş verən, müvəqqəti xarakter daşıyan işləri bildirir. Onu həmçinin əvvəlcədən razılaşdırılmış gələcək planlar üçün də işlədirik. Vacib qayda: bilik və hiss bildirən stative (vəziyyət) feilləri — məsələn know (bilmək), want (istəmək), like (xoşlamaq) — bu zamanda işlənmir.",
       form: "subject + am/is/are + verb-ing",
       examples: [
         { en: "I'm reading a great book at the moment." },
@@ -43,7 +43,7 @@ export const tenses: GrammarGroup = {
       explanation:
         "Use it for finished actions at a specific time in the past. The time is known or stated (yesterday, in 2010, last week).",
       azNote:
-        "Keçmişdə bitmiş, vaxtı bəlli iş üçün. Qaydalı feillərə -ed, qaydasızlar ayrıca öyrənilir.",
+        "Past Simple (Sadə Keçmiş Zaman) keçmişdə müəyyən bir vaxtda baş verib bitmiş işləri bildirir. Bu zamanı işin vaxtı bilinəndə və ya birbaşa deyiləndə işlədirik, məsələn: yesterday (dünən), in 2010 (2010-cu ildə), last week (keçən həftə). Qaydalı feillərə -ed şəkilçisi əlavə olunur, qaydasız feillərin keçmiş forması isə ayrıca əzbərlənməlidir.",
       form: "subject + past form (verb-ed / irregular)",
       examples: [
         { en: "I visited Rome last year." },
@@ -53,12 +53,26 @@ export const tenses: GrammarGroup = {
       pitfall: "Sual/inkarda 'did' + əsas feil: 'Did you went?' YOX → 'Did you go?'.",
     },
     {
+      title: "Past Continuous",
+      level: "B2",
+      explanation:
+        "Describes an action in progress at a past moment, often interrupted by a shorter Past Simple action.",
+      azNote:
+        "Past Continuous (Davamlı Keçmiş Zaman) keçmişdə müəyyən bir anda davam etməkdə olan, hələ bitməmiş işi təsvir edir. Çox vaxt bu uzun iş gedərkən onu yarıda kəsən başqa, daha qısa bir iş baş verir və o qısa iş Past Simple (Sadə Keçmiş Zaman) ilə ifadə olunur. Məsələn: yemək bişirirdim (davamlı), telefon zəng çaldı (qısa iş).",
+      form: "subject + was/were + verb-ing",
+      examples: [
+        { en: "I was cooking when the phone rang.", note: "longer action + interruption" },
+        { en: "At 8 p.m. they were watching TV." },
+      ],
+      pitfall: "Uzun + qısa iş: kəsilən iş continuous, kəsən iş simple olur.",
+    },
+    {
       title: "Present Perfect",
       level: "B2",
       explanation:
         "Connects the past with now: an action finished, but the time is not stated, or it still matters. Common with ever, never, already, yet, just, for, since.",
       azNote:
-        "Keçmişlə indini bağlayır — vaxtı dəqiq deyil ya da nəticəsi indi vacibdir. Vaxt bildirilmir.",
+        "Present Perfect (İndiki Bitmiş Zaman) keçmişdə baş vermiş işi indiki anla bağlayır. Onu o zaman işlədirik ki, işin dəqiq vaxtı vacib deyil ya da bilinmir, yaxud işin nəticəsi indi hələ də hiss olunur. Bu zamanda konkret keçmiş vaxt deyilmir. Çox vaxt ever (heç vaxt, sual üçün), never (heç vaxt), already (artıq), yet (hələ), just (təzəcə), for (müddət üçün), since (-dən bəri) sözləri ilə gəlir.",
       form: "subject + have/has + past participle",
       examples: [
         { en: "I have visited Rome.", note: "no time given — experience" },
@@ -74,7 +88,7 @@ export const tenses: GrammarGroup = {
       explanation:
         "Past Simple = finished time (yesterday, in 2019). Present Perfect = unspecified or continuing time connected to now.",
       azNote:
-        "Vaxt bəllidirsə → Past Simple. Vaxt bəlli deyil ya da indiyə bağlıdırsa → Present Perfect.",
+        "Bu iki zaman arasındakı əsas fərq vaxtdır. Əgər işin baş verdiyi konkret keçmiş vaxt bilinir və ya deyilir (yesterday, in 2019), Past Simple (Sadə Keçmiş Zaman) işlədilir. Əgər vaxt deyilmirsə, ya da iş indiyə qədər davam edir və indiki anla bağlıdırsa, Present Perfect (İndiki Bitmiş Zaman) işlədilir. Qısası: vaxt vacibdirsə Past Simple, nəticə və əlaqə vacibdirsə Present Perfect.",
       examples: [
         { en: "I lost my keys. (Present Perfect: I still can't find them.)" },
         { en: "I lost my keys yesterday. (Past Simple: finished time.)" },
@@ -83,55 +97,12 @@ export const tenses: GrammarGroup = {
       pitfall: "'When' sualı həmişə Past Simple istəyir: 'When have you arrived?' YOX → 'When did you arrive?'.",
     },
     {
-      title: "Past Continuous",
-      level: "B2",
-      explanation:
-        "Describes an action in progress at a past moment, often interrupted by a shorter Past Simple action.",
-      azNote:
-        "Keçmişdə müəyyən anda davam edən iş. Çox vaxt onu kəsən qısa iş Past Simple ilə gəlir.",
-      form: "subject + was/were + verb-ing",
-      examples: [
-        { en: "I was cooking when the phone rang.", note: "longer action + interruption" },
-        { en: "At 8 p.m. they were watching TV." },
-      ],
-      pitfall: "Uzun + qısa iş: kəsilən iş continuous, kəsən iş simple olur.",
-    },
-    {
-      title: "Past Perfect",
-      level: "B2",
-      explanation:
-        "Shows that one past action happened before another past action. The 'earlier past'.",
-      azNote:
-        "İki keçmiş işdən ƏVVƏL baş vermişi göstərir — 'keçmişdən də əvvəl'.",
-      form: "subject + had + past participle",
-      examples: [
-        { en: "The train had already left when we arrived." },
-        { en: "She had never seen snow before that trip." },
-      ],
-      pitfall: "Yalnız ardıcıllıq qarışanda lazımdır; sadə xronologiyada Past Simple bəs edir.",
-    },
-    {
-      title: "Future: will vs going to",
-      level: "B1",
-      explanation:
-        "'will' for instant decisions, promises and predictions; 'going to' for plans/intentions already made and predictions based on present evidence.",
-      azNote:
-        "'will' — qərarı elə indi verirsən, söz verirsən. 'going to' — əvvəlcədən planlaşdırılıb ya da gözünün qabağında dəlil var.",
-      form: "will + base verb  /  am/is/are going to + base verb",
-      examples: [
-        { en: "It's cold — I'll close the window.", note: "instant decision" },
-        { en: "We're going to paint the house next month.", note: "plan" },
-        { en: "Look at those clouds — it's going to rain.", note: "evidence" },
-      ],
-      pitfall: "Planlaşdırılmış işdə 'will' qəribə səslənir: artıq qərar verilibsə 'going to' işlət.",
-    },
-    {
       title: "Present Perfect Continuous",
       level: "B2",
       explanation:
         "Emphasises the duration of an activity that started in the past and is still going on (or has just stopped), often with for/since. Focus is on the action, not the result.",
       azNote:
-        "Keçmişdə başlayıb indiyə qədər davam edən (ya da indicə bitmiş) işin MÜDDƏTİnə vurğu. for/since ilə işlənir.",
+        "Present Perfect Continuous (İndiki Bitmiş Davamlı Zaman) keçmişdə başlayıb indiyə qədər davam edən, ya da elə indicə bitmiş bir işin nə qədər müddət davam etdiyini vurğulayır. Burada diqqət işin nəticəsinə yox, prosesinə və müddətinə yönəlir. Adətən for (müddət bildirir, məsələn iki saatdır) və since (başlanğıc nöqtəsini bildirir, məsələn səhərdən) sözləri ilə işlənir.",
       form: "subject + have/has + been + verb-ing",
       examples: [
         { en: "I have been waiting for two hours.", note: "duration emphasised" },
@@ -141,12 +112,26 @@ export const tenses: GrammarGroup = {
       pitfall: "Stative feillərlə işlənmir: 'I have been knowing' YOX → 'I have known'.",
     },
     {
+      title: "Past Perfect",
+      level: "B2",
+      explanation:
+        "Shows that one past action happened before another past action. The 'earlier past'.",
+      azNote:
+        "Past Perfect (Keçmiş Bitmiş Zaman) iki keçmiş hadisədən hansının daha əvvəl baş verdiyini göstərir. Yəni keçmişdə bir iş olmuşdusa, ondan da əvvəl tamamlanmış işi bu zamanla ifadə edirik — buna sadəcə 'keçmişdən də əvvəl' demək olar. Quruluşu had sözü və feilin üçüncü forması (past participle) ilə yaranır, məsələn: had left (qatar artıq getmişdi).",
+      form: "subject + had + past participle",
+      examples: [
+        { en: "The train had already left when we arrived." },
+        { en: "She had never seen snow before that trip." },
+      ],
+      pitfall: "Yalnız ardıcıllıq qarışanda lazımdır; sadə xronologiyada Past Simple bəs edir.",
+    },
+    {
       title: "Past Perfect Continuous",
       level: "C1",
       explanation:
         "Shows an activity that was in progress over a period before another past moment — the 'earlier past', with emphasis on duration.",
       azNote:
-        "Keçmişdə müəyyən andan ƏVVƏL bir müddət davam edən iş — müddətə vurğu ilə 'keçmişdən də əvvəl'.",
+        "Past Perfect Continuous (Keçmiş Bitmiş Davamlı Zaman) keçmişdəki müəyyən bir andan əvvəl bir müddət ərzində davam etmiş işi bildirir. Yəni 'keçmişdən də əvvəl' baş verən, lakin müddəti və davamlılığı vurğulanan işi göstərir. Məsələn: maşın xarab olanda onlar artıq saatlarla yol gedirdilər — burada yol getmənin nə qədər çəkdiyi önə çıxır.",
       form: "subject + had + been + verb-ing",
       examples: [
         { en: "She was exhausted because she had been working all night." },
@@ -155,12 +140,27 @@ export const tenses: GrammarGroup = {
       pitfall: "Yalnız müddət/davam vacib olanda; sadə ardıcıllıqda Past Perfect bəs edir.",
     },
     {
+      title: "Future: will vs going to",
+      level: "B1",
+      explanation:
+        "'will' for instant decisions, promises and predictions; 'going to' for plans/intentions already made and predictions based on present evidence.",
+      azNote:
+        "Hər ikisi gələcəkdən danışır, amma fərqli hallarda. will-i o anda, danışarkən verdiyin ani qərarlar, vədlər və ümumi proqnozlar üçün işlədirik. going to-nu isə danışmazdan əvvəl artıq qurduğun planlar, niyyətlər üçün, həmçinin gözünün qabağındakı dəlilə əsaslanan proqnozlar üçün işlədirik. Sadə dillə: indi qərar verirsənsə will, əvvəlcədən planlamısansa going to.",
+      form: "will + base verb  /  am/is/are going to + base verb",
+      examples: [
+        { en: "It's cold — I'll close the window.", note: "instant decision" },
+        { en: "We're going to paint the house next month.", note: "plan" },
+        { en: "Look at those clouds — it's going to rain.", note: "evidence" },
+      ],
+      pitfall: "Planlaşdırılmış işdə 'will' qəribə səslənir: artıq qərar verilibsə 'going to' işlət.",
+    },
+    {
       title: "Future Continuous",
       level: "B2",
       explanation:
         "Describes an action that will be in progress at a specific time in the future. Also used for polite enquiries about plans.",
       azNote:
-        "Gələcəkdə müəyyən anda davam edəcək iş. Həmçinin planlar barədə nəzakətli sual üçün.",
+        "Future Continuous (Davamlı Gələcək Zaman) gələcəkdə müəyyən bir anda davam etməkdə olacaq işi təsvir edir — yəni o vaxt iş artıq başlamış və hələ bitməmiş olacaq. Bu zamanı həmçinin başqasının planları barədə nəzakətlə soruşmaq üçün də işlədirik. Quruluşu will be və feilin -ing formasından ibarətdir, məsələn: will be flying (uçuş halında olacağam).",
       form: "subject + will be + verb-ing",
       examples: [
         { en: "This time tomorrow I will be flying to Rome." },
@@ -174,7 +174,7 @@ export const tenses: GrammarGroup = {
       explanation:
         "Shows an action that will be completed before a specific time in the future. Often with 'by' (by then, by 2030, by the time…).",
       azNote:
-        "Gələcəkdə müəyyən vaxta QƏDƏR tamamlanacaq iş. Çox vaxt 'by' ilə (by 2030, by then).",
+        "Future Perfect (Gələcək Bitmiş Zaman) gələcəkdəki müəyyən bir vaxta qədər tamamlanmış olacaq işi bildirir. Yəni o an gəlib çatanda iş artıq bitmiş olacaq. Çox vaxt by sözü ilə işlənir, məsələn: by 2030 (2030-cu ilə qədər), by then (o vaxta qədər). Quruluşu will have və feilin üçüncü forması (past participle) ilə yaranır.",
       form: "subject + will have + past participle",
       examples: [
         { en: "By next year, I will have finished my degree." },

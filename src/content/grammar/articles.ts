@@ -5,7 +5,7 @@ export const articles: GrammarGroup = {
   description:
     "Articles (a, an, the) and the choice of no article tell the listener whether a noun is general or specific, known or new. Small words, but they shape meaning.",
   azDescription:
-    "Artikllar (a, an, the) və ya artiklsizlik dinləyiciyə ismin ümumi yoxsa konkret, tanış yoxsa yeni olduğunu bildirir. Kiçik sözlərdir, amma mənanı formalaşdırır.",
+    "Artikllar (a, an, the) və ya artiklın olmaması (artiklsizlik) dinləyiciyə ismin ümumi, yoxsa konkret bir şey olduğunu, dinləyicinin onu tanıyıb-tanımadığını başa salır. Bu sözlər kiçik görünsə də, cümlənin mənasını ciddi şəkildə dəyişir. Bu səbəbdən düzgün artiklı seçmək çox vacibdir.",
   rules: [
     {
       title: "a / an — first mention, one of many",
@@ -13,7 +13,7 @@ export const articles: GrammarGroup = {
       explanation:
         "Use 'a/an' with singular countable nouns when you mention them for the first time or mean 'one of many / any'. 'an' goes before a vowel SOUND.",
       azNote:
-        "Tək, sayıla bilən isim ilk dəfə deyiləndə ya da 'biri/hər hansı' mənasında 'a/an'. Saitlə BAŞLAYAN SƏS-dən əvvəl 'an'.",
+        "'a/an' artiklını tək və sayıla bilən isimlərlə işlədirik. Onu o zaman seçirik ki, isimdən ilk dəfə danışılır, yaxud 'çoxlarından biri / hər hansı bir' mənası verilir. Burada əsas qayda səsdir: saitlə BAŞLAYAN səsdən əvvəl 'an' (an apple), samitlə başlayan səsdən əvvəl isə 'a' (a book) gəlir.",
       form: "a + consonant sound · an + vowel sound",
       examples: [
         { en: "I saw a dog in the park." },
@@ -28,7 +28,7 @@ export const articles: GrammarGroup = {
       explanation:
         "Use 'the' when the listener knows exactly which one — because it was mentioned before, is unique, or is clear from context.",
       azNote:
-        "Dinləyici hansı olduğunu dəqiq biləndə 'the' — əvvəl deyilib, tək/yeganədir ya da kontekstdən aydındır.",
+        "'the' artiklını o zaman işlədirik ki, dinləyici söhbətin hansı konkret əşyadan getdiyini dəqiq bilir. Bu, üç səbəbə görə ola bilər: həmin isim əvvəlcədən bir dəfə deyilib, dünyada təkdir və yeganədir (məsələn, günəş), yaxud şəraitdən hansı olduğu aydındır. Yəni 'the' həm danışana, həm dinləyiciyə tanış olan konkret şeyi göstərir.",
       form: "the + (singular/plural/uncountable noun)",
       examples: [
         { en: "I bought a shirt. The shirt was too small.", note: "2nd mention" },
@@ -43,7 +43,7 @@ export const articles: GrammarGroup = {
       explanation:
         "Use no article for plural and uncountable nouns when talking generally, and for most names of meals, languages, and abstract ideas.",
       azNote:
-        "Cəm və sayılmayan isimlər ümumi mənada artikl götürmür; yemək adları, dillər, mücərrəd anlayışlar da çox vaxt artiklsiz.",
+        "Cəm halda olan isimlər və sayılmayan isimlər ümumi, bütöv bir anlayışdan danışanda heç bir artikl götürmür. Yəni konkret deyil, ümumiyyətlə nəyisə nəzərdə tutanda artikl qoyulmur. Eyni qayda yemək adlarına (breakfast, lunch), dillərə (English) və mücərrəd anlayışlara (love, freedom) da çox vaxt aiddir.",
       form: "(no article) + plural / uncountable noun",
       examples: [
         { en: "Dogs are loyal animals.", note: "dogs in general" },
@@ -58,7 +58,7 @@ export const articles: GrammarGroup = {
       explanation:
         "Use 'the' with rivers, seas, oceans, mountain ranges, deserts, and many countries with plural/'state' names (the USA, the Netherlands), plus 'the' + superlative.",
       azNote:
-        "Çaylar, dənizlər, okeanlar, dağ silsilələri, səhralar, cəm/dövlət adlı ölkələr (the USA), həmçinin superlativ ilə 'the'.",
+        "Bəzi coğrafi adlarla həmişə 'the' işlədilir: çayların, dənizlərin, okeanların, dağ silsilələrinin (bir-birinə bağlı dağlar qrupu) və səhraların adları ilə. Həmçinin adında cəm və ya 'dövlət/birlik' sözü olan ölkələrlə də 'the' gəlir (the USA, the Netherlands). Bundan başqa, superlativ, yəni ən üstün dərəcə bildirən sözlərdən əvvəl də həmişə 'the' qoyulur (the longest, the best).",
       examples: [
         { en: "The Nile is the longest river in Africa." },
         { en: "They sailed across the Atlantic." },
@@ -72,7 +72,7 @@ export const articles: GrammarGroup = {
       explanation:
         "Tricky cases: no 'the' with most single countries, cities, streets, and with institutions used for their purpose ('go to school'); 'the' when you mean the building.",
       azNote:
-        "İncə hallar: əksər ölkə/şəhər/küçə adlarında 'the' yox; məqsədə görə müəssisədə yox ('go to school'), bina nəzərdə tutulanda var.",
+        "Bunlar daha incə, çaşdırıcı hallardır. Əksər ayrıca ölkə, şəhər və küçə adları ilə 'the' işlədilmir (France, London, Oxford Street). Müəssisələrdə əsas fərq məna ilə bağlıdır: müəssisədən öz təyinatına görə danışanda 'the' qoyulmur ('go to school' yəni oxumaq üçün, 'in hospital' yəni xəstə kimi), amma sırf binanın özünü nəzərdə tutanda 'the' işlədilir (go to the hospital, yəni binaya getmək).",
       examples: [
         { en: "She's in hospital.", note: "as a patient — purpose" },
         { en: "He went to the hospital to visit her.", note: "the building" },

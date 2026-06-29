@@ -5,15 +5,29 @@ export const reportedSpeech: GrammarGroup = {
   description:
     "Reported (indirect) speech tells someone what another person said without quoting them. Tenses usually shift 'one step back' and pronouns and time words change.",
   azDescription:
-    "Dolayı nitq başqasının dediyini sitat gətirmədən çatdırır. Zaman adətən 'bir addım geriyə' sürüşür, əvəzliklər və vaxt sözləri dəyişir.",
+    "Dolayı nitq (reported speech) başqasının dediyini eynən sitat gətirmədən, öz sözlərinlə çatdırmaq üçün istifadə olunur. Yəni dırnaq işarələri qoymadan deyirsən. Adətən üç şey dəyişir: tabe cümlədəki feilin zamanı bir addım geriyə sürüşür (məsələn Present Simple Past Simple olur), əvəzliklər yeni danışana uyğunlaşır, vaxt və yer sözləri isə fərqli formaya keçir.",
   rules: [
+    {
+      title: "say vs tell",
+      level: "B1",
+      explanation:
+        "'tell' needs a person object (tell someone); 'say' does not (say something). Don't mix them up.",
+      azNote:
+        "'tell' feili özündən sonra mütləq kimə deyildiyini, yəni bir insan obyektini tələb edir: tell me, tell him. 'say' feili isə insan obyekti istəmir, sadəcə nə deyildiyini bildirir: say something. Bu ikisini bir-biri ilə qarışdırma. Məsələn: 'She told me' düzgündür, amma birbaşa 'She said me' demək olmaz.",
+      form: "tell + somebody + that …  ·  say (that) …",
+      examples: [
+        { en: "She told me that she was busy.", note: "tell + person" },
+        { en: "She said that she was busy.", note: "say (no person)" },
+      ],
+      pitfall: "'She said me' YOX → 'She told me' ya da 'She said to me'.",
+    },
     {
       title: "Backshift of tenses",
       level: "B2",
       explanation:
         "When the reporting verb is in the past (said, told), the verb usually moves one tense back: present → past, past → past perfect, will → would.",
       azNote:
-        "Reporting feili keçmişdədirsə (said, told), feil bir zaman geri sürüşür: present → past, will → would.",
+        "Başqasının sözünü nəql edəndə, əgər nəql feili (reporting verb) keçmiş zamandadırsa (said, told), tabe cümlədəki feil bir zaman geriyə sürüşür. Yəni Present Simple Past Simple olur, Past Simple Past Perfect olur, will isə would olur. Məsələn: 'I am tired' → He said he WAS tired. Bu sürüşməyə backshift deyilir.",
       form: "said (that) + clause (one tense back)",
       examples: [
         { en: '"I am tired." → He said he was tired.' },
@@ -23,26 +37,12 @@ export const reportedSpeech: GrammarGroup = {
       pitfall: "Ümumi/həmişə doğru faktlarda backshift məcburi deyil: 'She said the Earth is round.'",
     },
     {
-      title: "say vs tell",
-      level: "B1",
-      explanation:
-        "'tell' needs a person object (tell someone); 'say' does not (say something). Don't mix them up.",
-      azNote:
-        "'tell' insan obyekti istəyir (tell me), 'say' istəmir (say something). Qarışdırma.",
-      form: "tell + somebody + that …  ·  say (that) …",
-      examples: [
-        { en: "She told me that she was busy.", note: "tell + person" },
-        { en: "She said that she was busy.", note: "say (no person)" },
-      ],
-      pitfall: "'She said me' YOX → 'She told me' ya da 'She said to me'.",
-    },
-    {
       title: "Pronouns & time/place words",
       level: "B2",
       explanation:
         "Pronouns change to fit the new speaker, and time/place words shift: now → then, today → that day, tomorrow → the next day, here → there.",
       azNote:
-        "Əvəzliklər yeni danışana uyğunlaşır; vaxt/yer sözləri dəyişir: now→then, tomorrow→the next day, here→there.",
+        "Nəql edəndə əvəzliklər (I, you, my, here kimi sözlər) artıq yeni danışanın baxış bucağına uyğunlaşmalıdır. Eyni zamanda vaxt və yer bildirən sözlər də dəyişir: now → then, today → that day, tomorrow → the next day, here → there. Yəni keçmişdən danışdığın üçün 'indi' əvəzinə 'o zaman' deyirsən.",
       examples: [
         { en: '"I\'ll see you here tomorrow." → He said he\'d see me there the next day.' },
         { en: '"I did it today." → She said she had done it that day.' },
@@ -55,7 +55,7 @@ export const reportedSpeech: GrammarGroup = {
       explanation:
         "Use 'if/whether' for yes/no questions and the question word for wh-questions. The word order becomes statement order (subject + verb), with NO auxiliary 'do' and no question mark.",
       azNote:
-        "Yes/no sualda 'if/whether', wh-sualda sual sözü. Söz sırası TƏSDİQ kimi olur, 'do' və sual işarəsi yoxdur.",
+        "Sualları nəql edərkən: cavabı bəli/xeyr olan suallarda 'if' və ya 'whether' işlət, wh-suallarında isə sual sözünü (where, what, when) saxla. Söz sırası artıq sual kimi yox, adi təsdiq cümləsi kimi olur — yəni əvvəl mübtəda, sonra feil gəlir. Köməkçi 'do/does/did' işlədilmir və sonda sual işarəsi qoyulmur. Məsələn: 'Where do you live?' → She asked where I LIVED.",
       form: "asked (+ object) + if/whether/wh- + subject + verb",
       examples: [
         { en: '"Where do you live?" → She asked where I lived.' },
@@ -69,7 +69,7 @@ export const reportedSpeech: GrammarGroup = {
       explanation:
         "Use 'tell/ask someone (not) to + verb' for orders and requests — no backshift needed.",
       azNote:
-        "Əmr/xahiş üçün 'tell/ask somebody (not) to + feil'. Burada backshift lazım deyil.",
+        "Əmrləri və xahişləri nəql edərkən 'tell/ask somebody (not) to + feilin əsas forması' qəlibindən istifadə et. Yəni feili keçmiş zamana sürüşdürmək (backshift) burada lazım deyil, sadəcə 'to + feil' işlədilir. Məsələn: 'Sit down' → The teacher told us TO SIT down. İnkar üçün isə 'not' sözünü 'to'-dan əvvəl qoyursan: told me NOT TO go.",
       form: "told/asked + somebody + (not) to + base verb",
       examples: [
         { en: '"Sit down." → The teacher told us to sit down.' },
