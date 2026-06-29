@@ -1,7 +1,17 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { BookOpenText, Flame, GraduationCap, Moon, Spline, Sun, Zap } from "lucide-react";
+import { BookOpenText, Flame, Moon, Repeat, Sun, Zap } from "lucide-react";
+import { sections } from "./sections";
 import { useStats } from "./store/progress";
 import { useTheme } from "./store/theme";
+
+// Bütün naviqasiya linkləri — Topics + reference bölmələri (registr-dən) + Review.
+// Yeni bölmə əlavə etmək: yalnız registr-ə əlavə et, bura avtomatik düşür.
+const NAV_LINK_CLASS = ({ isActive }: { isActive: boolean }) =>
+  `inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition ${
+    isActive
+      ? "bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300"
+      : "text-muted hover:bg-surface-2 hover:text-fg"
+  }`;
 
 export default function App() {
   return (
@@ -39,38 +49,21 @@ function Header() {
         </Link>
 
         <nav className="flex items-center gap-1">
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              `rounded-full px-3 py-1.5 text-sm font-medium transition ${
-                isActive ? "bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300" : "text-muted hover:bg-surface-2 hover:text-fg"
-              }`
-            }
-          >
+          <NavLink to="/" end className={NAV_LINK_CLASS}>
             Topics
           </NavLink>
-          <NavLink
-            to="/connectors"
-            className={({ isActive }) =>
-              `inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition ${
-                isActive ? "bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300" : "text-muted hover:bg-surface-2 hover:text-fg"
-              }`
-            }
-          >
-            <Spline size={15} />
-            <span className="hidden sm:inline">Connectors</span>
-          </NavLink>
-          <NavLink
-            to="/grammar"
-            className={({ isActive }) =>
-              `inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition ${
-                isActive ? "bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300" : "text-muted hover:bg-surface-2 hover:text-fg"
-              }`
-            }
-          >
-            <GraduationCap size={15} />
-            <span className="hidden sm:inline">Grammar</span>
+          {sections.map((s) => {
+            const Icon = s.nav.icon;
+            return (
+              <NavLink key={s.key} to={`/${s.key}`} className={NAV_LINK_CLASS}>
+                <Icon size={15} />
+                <span className="hidden sm:inline">{s.nav.label}</span>
+              </NavLink>
+            );
+          })}
+          <NavLink to="/review" className={NAV_LINK_CLASS}>
+            <Repeat size={15} />
+            <span className="hidden sm:inline">Review</span>
           </NavLink>
         </nav>
 

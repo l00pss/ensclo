@@ -226,3 +226,41 @@ export interface GrammarGroup {
   /** Kateqoriya üzrə tapşırıq (mövcud `Quiz` komponenti ilə işlənir). */
   practice: QuizQuestion[];
 }
+
+// ---------------------------------------------------------------------------
+// Idioms & Functional Phrases — generik reference bölmələri.
+//
+// Hər ikisi `ReferenceItem` şərtinə (level) cavab verir və `ReferenceGroup<T>`
+// (src/content/reference.ts) içində saxlanılır. Data faylları bu tiplərə uyğun
+// `ReferenceGroup` obyektləri ixrac edir.
+// ---------------------------------------------------------------------------
+
+/** Bir idiom / sabit ifadə. */
+export interface Idiom {
+  /** İfadənin özü, məs. "break the ice". */
+  idiom: string;
+  level: Level;
+  /** İngiliscə məna/izah. */
+  meaning: string;
+  /** Azərbaycanca ƏTRAFLI məna və izah. */
+  azMeaning: string;
+  /** Təbii nümunə cümlə — idiom cümlənin içində GERÇƏK işlənməlidir. */
+  example: string;
+  register?: Register;
+  /** Əlavə Azərbaycanca İSTİFADƏ qeydi (detallı). */
+  azNote?: string;
+}
+
+/** Bir funksional ifadə (= "language for ..."). */
+export interface FunctionalPhrase {
+  /** İfadə, məs. "I'm afraid I disagree." */
+  phrase: string;
+  level: Level;
+  /** İngiliscə: nə vaxt/nə üçün işlənir. */
+  use: string;
+  /** Azərbaycanca ƏTRAFLI izah: nə vaxt və niyə işlənir. */
+  azUse: string;
+  /** Təbii nümunə (dialoq parçası ola bilər). */
+  example: string;
+  register?: Register;
+}

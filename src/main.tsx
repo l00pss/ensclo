@@ -4,14 +4,17 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import HomePage from "./pages/HomePage";
 import TopicPage from "./pages/TopicPage";
-import ConnectorsPage from "./pages/ConnectorsPage";
-import ConnectorGroupPage from "./pages/ConnectorGroupPage";
-import GrammarPage from "./pages/GrammarPage";
-import GrammarGroupPage from "./pages/GrammarGroupPage";
+import ReferenceListPage from "./pages/ReferenceListPage";
+import ReferenceDetailPage from "./pages/ReferenceDetailPage";
+import ReviewPage from "./pages/ReviewPage";
 import "./index.css";
 
 // HashRouter (URL-də #) — GitHub Pages-də server-side routing tələb etmir,
 // ona görə subrout refresh-də 404 olmur.
+//
+// Reference bölmələri (connectors/grammar/idioms/functional) TƏK cüt generik
+// route ilə işlənir: `:sectionKey` və `:sectionKey/:groupId`. Yeni bölmə
+// əlavə etmək üçün route deyil, yalnız registr dəyişir (Open/Closed).
 const router = createHashRouter([
   {
     path: "/",
@@ -19,10 +22,9 @@ const router = createHashRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "topic/:id", element: <TopicPage /> },
-      { path: "connectors", element: <ConnectorsPage /> },
-      { path: "connectors/:groupId", element: <ConnectorGroupPage /> },
-      { path: "grammar", element: <GrammarPage /> },
-      { path: "grammar/:groupId", element: <GrammarGroupPage /> },
+      { path: "review", element: <ReviewPage /> },
+      { path: ":sectionKey", element: <ReferenceListPage /> },
+      { path: ":sectionKey/:groupId", element: <ReferenceDetailPage /> },
     ],
   },
 ]);

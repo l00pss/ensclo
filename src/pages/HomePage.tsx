@@ -7,10 +7,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Flame,
-  GraduationCap,
   ListChecks,
   Search,
-  Spline,
   Zap,
 } from "lucide-react";
 import { LEVELS, getThemes, topicMeta as topics } from "../content/catalog";
@@ -23,7 +21,8 @@ import LevelBadge from "../components/LevelBadge";
 import ProgressRing from "../components/ProgressRing";
 import FilterPills from "../components/FilterPills";
 import { LEVEL_META, themeIcon } from "../lib/theme";
-import { useProgress, useStats } from "../store/progress";
+import { sections } from "../sections";
+import { useProgress, useStats, countSectionDone } from "../store/progress";
 
 function greeting(): string {
   const h = new Date().getHours();
@@ -161,52 +160,33 @@ export default function HomePage() {
         })}
       </section>
 
-      {/* CONNECTORS */}
-      <section className="animate-fade-in-up">
-        <Link
-          to="/connectors"
-          className="group flex items-center gap-4 overflow-hidden rounded-2xl border border-brand-200 bg-brand-50/60 p-4 shadow-card transition hover:shadow-card-hover dark:border-brand-500/30 dark:bg-brand-500/5 sm:p-5"
-        >
-          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-600 text-white sm:h-14 sm:w-14">
-            <Spline size={26} />
-          </span>
-          <div className="min-w-0 flex-1">
-            <p className="font-display text-base font-semibold text-fg sm:text-lg">
-              Connectors <span className="font-normal text-faint">· Bağlayıcılar</span>
-            </p>
-            <p className="truncate text-sm text-muted">
-              Linking words — fikirləri bağla, esse və danışığı təbii et
-            </p>
-            <p className="mt-0.5 text-xs text-faint tnum">
-              {stats.connectorGroupsDone}/{stats.totalConnectorGroups} qrup tamamlandı
-            </p>
-          </div>
-          <ArrowRight size={20} className="shrink-0 text-faint group-hover:text-brand-600" />
-        </Link>
-      </section>
-
-      {/* GRAMMAR */}
-      <section className="animate-fade-in-up">
-        <Link
-          to="/grammar"
-          className="group flex items-center gap-4 overflow-hidden rounded-2xl border border-brand-200 bg-brand-50/60 p-4 shadow-card transition hover:shadow-card-hover dark:border-brand-500/30 dark:bg-brand-500/5 sm:p-5"
-        >
-          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-600 text-white sm:h-14 sm:w-14">
-            <GraduationCap size={26} />
-          </span>
-          <div className="min-w-0 flex-1">
-            <p className="font-display text-base font-semibold text-fg sm:text-lg">
-              Grammar <span className="font-normal text-faint">· Qrammatika</span>
-            </p>
-            <p className="truncate text-sm text-muted">
-              Zamanlar, modallar, şərtlər — qaydaları kateqoriyaya görə öyrən
-            </p>
-            <p className="mt-0.5 text-xs text-faint tnum">
-              {stats.grammarGroupsDone}/{stats.totalGrammarGroups} kateqoriya tamamlandı
-            </p>
-          </div>
-          <ArrowRight size={20} className="shrink-0 text-faint group-hover:text-brand-600" />
-        </Link>
+      {/* REFERENCE BÖLMƏLƏRİ — registr-dən avtomatik */}
+      <section className="animate-fade-in-up space-y-3">
+        {sections.map((s) => {
+          const Icon = s.nav.icon;
+          const done = countSectionDone(state, s.key);
+          return (
+            <Link
+              key={s.key}
+              to={`/${s.key}`}
+              className="group flex items-center gap-4 overflow-hidden rounded-2xl border border-brand-200 bg-brand-50/60 p-4 shadow-card transition hover:shadow-card-hover dark:border-brand-500/30 dark:bg-brand-500/5 sm:p-5"
+            >
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-600 text-white sm:h-14 sm:w-14">
+                <Icon size={26} />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="font-display text-base font-semibold text-fg sm:text-lg">
+                  {s.hero.kicker}
+                </p>
+                <p className="truncate text-sm text-muted">{s.hero.title}</p>
+                <p className="mt-0.5 text-xs text-faint tnum">
+                  {done}/{s.groups.length} qrup tamamlandı
+                </p>
+              </div>
+              <ArrowRight size={20} className="shrink-0 text-faint group-hover:text-brand-600" />
+            </Link>
+          );
+        })}
       </section>
 
       {/* TOPICLƏR + FİLTERLƏR */}

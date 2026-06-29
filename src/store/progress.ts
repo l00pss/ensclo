@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { topicMeta } from "../content/catalog";
-import { connectorGroups } from "../content/connectors";
-import { grammarGroups } from "../content/grammar";
 
 // ---------------------------------------------------------------------------
 // Progres + geymifikasiya — hələlik localStorage.
 // Best practice (Duolingo): görünən proqres, XP, streak (loss aversion),
 // "kiçik qələbələr". Gələcəkdə backend/DB gələndə yalnız bu fayl dəyişəcək.
+//
+// Reference bölmələri (connectors/grammar/idioms/functional) ARTIQ ayrıca yox,
+// vahid `sections[key][groupId]` altında saxlanılır (DRY) — açar = section.key.
 // ---------------------------------------------------------------------------
 
 const KEY = "ensclo.progress.v2";
@@ -19,22 +20,33 @@ export interface TopicProgress {
   learnedWords?: string[];
 }
 
-/** Bağlayıcı (connector) qrupu üzrə proqres. */
-export interface ConnectorProgress {
+/** Bir reference qrupu (connector/grammar/idiom/...) üzrə proqres. */
+export interface SectionGroupProgress {
   completed: boolean;
   /** Sonuncu practice nəticəsi (faiz). */
   lastScore?: number;
 }
 
-/** Qrammatika kateqoriyası üzrə proqres (connector ilə eyni forma). */
-export type GrammarProgress = ConnectorProgress;
+/** Aralıqlı təkrar (SRS) kartının vəziyyəti — açar = `${topicId}:${word}`. */
+export interface SrsCardState {
+  /** Asanlıq əmsalı (SM-2), default 2.5. */
+  ease: number;
+  /** Növbəti interval (gün). */
+  intervalDays: number;
+  /** Uğurlu ardıcıl təkrar sayı. */
+  reps: number;
+  /** Növbəti təkrar tarixi — "YYYY-MM-DD". */
+  due: string;
+  /** Səhv sayı (lapse). */
+  lapses: number;
+}
 
 export interface ProgressState {
   topics: Record<string, TopicProgress>;
-  /** Bağlayıcı qrupları üzrə proqres (açar = ConnectorFunction id-si). */
-  connectors: Record<string, ConnectorProgress>;
-  /** Qrammatika kateqoriyaları üzrə proqres (açar = GrammarCategory id-si). */
-  grammar: Record<string, GrammarProgress>;
+  /** Bütün reference bölmələri: sections[sectionKey][groupId]. */
+  sections: Record<string, Record<string, SectionGroupProgress>>;
+  /** SRS kartlarının vəziyyəti. */
+  srs: Record<string, SrsCardState>;
   /** Ümumi toplanmış XP. */
   xp: number;
   /** Cari ardıcıl gün sayı (streak). */
@@ -43,11 +55,9 @@ export interface ProgressState {
   lastStudyDay?: string;
 }
 
-// Qeyd: köhnə saxlanmış state-də `connectors` olmaya bilər — `read()`-dəki
-// `{ ...EMPTY, ...parsed }` sayəsində default `{}` qalır (miqrasiya lazım deyil).
-const EMPTY: ProgressState = { topics: {}, connectors: {}, grammar: {}, xp: 0, streak: 0 };
+const EMPTY: ProgressState = { topics: {}, sections: {}, srs: {}, xp: 0, streak: 0 };
 
-function todayKey(): string {
+export function todayKey(): string {
   // Yerli tarix, gün dəqiqliyində.
   return new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD
 }
@@ -57,11 +67,27 @@ function dayDiff(a: string, b: string): number {
   return Math.round(ms / 86_400_000);
 }
 
+/** v2 (connectors/grammar ayrıca) → vahid `sections` formatına miqrasiya. */
+function migrate(parsed: Record<string, unknown>): ProgressState {
+  const state: ProgressState = {
+    ...EMPTY,
+    ...(parsed as Partial<ProgressState>),
+    sections: { ...((parsed.sections as ProgressState["sections"]) ?? {}) },
+    srs: { ...((parsed.srs as ProgressState["srs"]) ?? {}) },
+  };
+  const legacy = parsed as { connectors?: ProgressState["sections"][string]; grammar?: ProgressState["sections"][string] };
+  if (legacy.connectors && !state.sections.connectors) state.sections.connectors = legacy.connectors;
+  if (legacy.grammar && !state.sections.grammar) state.sections.grammar = legacy.grammar;
+  delete (state as unknown as Record<string, unknown>).connectors;
+  delete (state as unknown as Record<string, unknown>).grammar;
+  return state;
+}
+
 function read(): ProgressState {
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { ...EMPTY };
-    return { ...EMPTY, ...(JSON.parse(raw) as ProgressState) };
+    return migrate(JSON.parse(raw) as Record<string, unknown>);
   } catch {
     return { ...EMPTY };
   }
@@ -91,10 +117,8 @@ function touchStreak(state: ProgressState): ProgressState {
 
 /** Topic ilk dəfə tamamlananda verilən XP. */
 const XP_TOPIC_COMPLETE = 50;
-/** Bağlayıcı qrupu ilk dəfə tamamlananda verilən XP. */
-const XP_CONNECTOR_GROUP_COMPLETE = 30;
-/** Qrammatika kateqoriyası ilk dəfə tamamlananda verilən XP. */
-const XP_GRAMMAR_GROUP_COMPLETE = 40;
+/** İstənilən reference qrupu ilk dəfə tamamlananda verilən XP. */
+const XP_SECTION_GROUP_COMPLETE = 35;
 /** Quiz nəticəsindən (faiz) qazanılan XP. */
 const quizXp = (scorePercent: number) => Math.round(scorePercent / 2);
 
@@ -119,6 +143,24 @@ function completeEntity<T extends { completed: boolean }>(
     entities: { ...entities, [id]: { ...current, completed } },
     firstTime: completed && !current.completed,
   };
+}
+
+/** Bir section qrupuna patch tətbiq et (iç-içə record). */
+function patchSection(
+  sections: ProgressState["sections"],
+  sectionKey: string,
+  groupId: string,
+  patch: Partial<SectionGroupProgress>,
+): ProgressState["sections"] {
+  const groupRec = sections[sectionKey] ?? {};
+  return { ...sections, [sectionKey]: upsertEntity(groupRec, groupId, patch) };
+}
+
+/** Bir section qrupunda tamamlanmış elementlərin sayı (saf selektor). */
+export function countSectionDone(state: ProgressState, sectionKey: string): number {
+  const rec = state.sections[sectionKey];
+  if (!rec) return 0;
+  return Object.values(rec).filter((g) => g.completed).length;
 }
 
 export function useProgress() {
@@ -186,55 +228,46 @@ export function useProgress() {
     [mutate],
   );
 
-  /** Bağlayıcı qrupunun practice nəticəsini yaz (+XP = nəticənin yarısı). */
-  const recordConnectorQuiz = useCallback(
-    (groupId: string, score: number) =>
+  /** İstənilən reference qrupunun practice nəticəsini yaz (+XP = nəticənin yarısı). */
+  const recordSectionQuiz = useCallback(
+    (sectionKey: string, groupId: string, score: number) =>
       mutate((s) =>
         touchStreak({
           ...s,
           xp: s.xp + quizXp(score),
-          connectors: upsertEntity(s.connectors, groupId, { lastScore: score }),
+          sections: patchSection(s.sections, sectionKey, groupId, { lastScore: score }),
         }),
       ),
     [mutate],
   );
 
-  /** Bağlayıcı qrupunu "öyrənildi" işarələ — ilk dəfə XP. */
-  const setConnectorGroupDone = useCallback(
-    (groupId: string, completed: boolean) =>
+  /** İstənilən reference qrupunu "öyrənildi" işarələ — ilk dəfə XP. */
+  const setSectionGroupDone = useCallback(
+    (sectionKey: string, groupId: string, completed: boolean) =>
       mutate((s) => {
-        const { entities, firstTime } = completeEntity(s.connectors, groupId, completed);
-        const next: ProgressState = { ...s, connectors: entities };
+        const groupRec = s.sections[sectionKey] ?? {};
+        const { entities, firstTime } = completeEntity(groupRec, groupId, completed);
+        const next: ProgressState = {
+          ...s,
+          sections: { ...s.sections, [sectionKey]: entities },
+        };
         return firstTime
-          ? touchStreak({ ...next, xp: next.xp + XP_CONNECTOR_GROUP_COMPLETE })
+          ? touchStreak({ ...next, xp: next.xp + XP_SECTION_GROUP_COMPLETE })
           : next;
       }),
     [mutate],
   );
 
-  /** Qrammatika kateqoriyasının practice nəticəsini yaz (+XP = nəticənin yarısı). */
-  const recordGrammarQuiz = useCallback(
-    (groupId: string, score: number) =>
+  /** SRS: bir kartın yeni planlanmış vəziyyətini yaz (+XP = kiçik mükafat). */
+  const reviewCard = useCallback(
+    (cardId: string, nextState: SrsCardState, xp = 2) =>
       mutate((s) =>
         touchStreak({
           ...s,
-          xp: s.xp + quizXp(score),
-          grammar: upsertEntity(s.grammar, groupId, { lastScore: score }),
+          xp: s.xp + Math.max(0, xp),
+          srs: { ...s.srs, [cardId]: nextState },
         }),
       ),
-    [mutate],
-  );
-
-  /** Qrammatika kateqoriyasını "öyrənildi" işarələ — ilk dəfə XP. */
-  const setGrammarGroupDone = useCallback(
-    (groupId: string, completed: boolean) =>
-      mutate((s) => {
-        const { entities, firstTime } = completeEntity(s.grammar, groupId, completed);
-        const next: ProgressState = { ...s, grammar: entities };
-        return firstTime
-          ? touchStreak({ ...next, xp: next.xp + XP_GRAMMAR_GROUP_COMPLETE })
-          : next;
-      }),
     [mutate],
   );
 
@@ -245,14 +278,13 @@ export function useProgress() {
     setCompleted,
     recordQuiz,
     toggleWord,
-    recordConnectorQuiz,
-    setConnectorGroupDone,
-    recordGrammarQuiz,
-    setGrammarGroupDone,
+    recordSectionQuiz,
+    setSectionGroupDone,
+    reviewCard,
   };
 }
 
-/** Dashboard üçün törəmə statistika. */
+/** Dashboard üçün törəmə statistika (topic + XP/streak/level). */
 export function useStats() {
   const { state } = useProgress();
   return useMemo(() => {
@@ -262,12 +294,6 @@ export function useStats() {
       0,
     );
     const totalWords = topicMeta.reduce((sum, t) => sum + t.vocabCount, 0);
-    const connectorGroupsDone = connectorGroups.filter(
-      (g) => state.connectors[g.id]?.completed,
-    ).length;
-    const grammarGroupsDone = grammarGroups.filter(
-      (g) => state.grammar[g.id]?.completed,
-    ).length;
     // Sadə "level" sistemi: hər 100 XP = 1 level.
     const level = Math.floor(state.xp / 100) + 1;
     const xpIntoLevel = state.xp % 100;
@@ -276,10 +302,6 @@ export function useStats() {
       totalTopics: topicMeta.length,
       wordsLearned,
       totalWords,
-      connectorGroupsDone,
-      totalConnectorGroups: connectorGroups.length,
-      grammarGroupsDone,
-      totalGrammarGroups: grammarGroups.length,
       xp: state.xp,
       streak: state.streak,
       level,

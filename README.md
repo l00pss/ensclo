@@ -61,6 +61,28 @@ eager idxal, manifest/lazy-load yoxdur). Bir fayl = bir kateqoriya.
 Hər kateqoriyada qaydalar (`rules[]`) + `practice[]` quiz olur; səhifə, səviyyə
 filtri, kart və quiz avtomatik yaranır.
 
+## Reference bölmələri (Connectors / Grammar / Idioms / Functional Phrases)
+
+Bu dörd bölmə **vahid generik abstraksiya** üzərində qurulub (DRY) — eyni
+kart/səhifə/progress məntiqi təkrarlanmır:
+
+- Domain tipləri: `src/content/reference.ts` (`ReferenceItem`, `ReferenceGroup<T>`).
+- Bölmə konfiqurasiyası + `ItemCard` strategiyası: `src/sections/*.tsx`
+  (`createSection(...)`), registr: `src/sections/index.ts`.
+- Generik səhifələr: `src/pages/ReferenceListPage.tsx` və `ReferenceDetailPage.tsx`
+  (route: `:sectionKey` və `:sectionKey/:groupId`).
+- Progress: `progress.sections[sectionKey][groupId]` (vahid).
+
+**Yeni reference bölməsi əlavə etmək:** data qruplarını yarat, `src/sections/`-də
+`createSection({...})` ilə konfiqurasiya + `ItemCard` ver, registrə əlavə et.
+Route/nav/ana-səhifə kartı **avtomatik** düşür (Open/Closed) — səhifələr dəyişmir.
+
+## SRS / Təkrar (aralıqlı təkrar)
+
+`/review` — bütün topic-lərdə "öyrənildi" işarələnmiş sözlərdən vahid təkrar
+kolodası. Planlayıcı (SM-2-lite) saf funksiyalardır: `src/srs/scheduler.ts`.
+Kart vəziyyəti `progress.srs[`${topicId}:${word}`]`-də saxlanılır.
+
 ## GitHub Pages-ə deploy
 
 Layihə avtomatik deploy üçün hazırdır:

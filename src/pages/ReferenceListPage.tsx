@@ -1,11 +1,20 @@
-import { Link } from "react-router-dom";
-import { CheckCircle2, GraduationCap } from "lucide-react";
-import { grammarGroups, GRAMMAR_META, totalGrammarRules } from "../content/grammar";
+import { Link, useParams } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
+import { getSection } from "../sections";
 import { useProgress } from "../store/progress";
+import SectionNotFound from "../components/SectionNotFound";
 
-export default function GrammarPage() {
+/** Bir reference bölməsinin qrup siyahısı (Connectors/Grammar/Idioms/Functional). */
+export default function ReferenceListPage() {
+  const { sectionKey } = useParams();
+  const section = getSection(sectionKey);
   const { state } = useProgress();
-  const done = grammarGroups.filter((g) => state.grammar[g.id]?.completed).length;
+
+  if (!section) return <SectionNotFound />;
+
+  const progress = state.sections[section.key] ?? {};
+  const done = section.groups.filter((g) => progress[g.id]?.completed).length;
+  const HeroIcon = section.nav.icon;
 
   return (
     <div className="space-y-8">
@@ -13,40 +22,34 @@ export default function GrammarPage() {
       <section className="animate-fade-in-up overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 via-brand-600 to-brand-700 p-5 text-white shadow-card sm:p-8">
         <div className="flex items-center gap-2.5">
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-white/15">
-            <GraduationCap size={18} />
+            <HeroIcon size={18} />
           </span>
-          <span className="text-sm font-medium text-brand-100">Grammar · Qrammatika</span>
+          <span className="text-sm font-medium text-brand-100">{section.hero.kicker}</span>
         </div>
-        <h1 className="mt-3 font-display text-2xl font-bold sm:text-3xl">
-          Qaydaları bir yerdə öyrən
-        </h1>
-        <p className="mt-2 max-w-2xl text-sm text-brand-100">
-          Əsas qrammatika kateqoriyaya görə qruplanıb. Hər qrupda qaydanın strukturu, səviyyə
-          (B1–C1), nümunələr, tez-tez edilən səhvlər (pitfall) və practice var.
-        </p>
+        <h1 className="mt-3 font-display text-2xl font-bold sm:text-3xl">{section.hero.title}</h1>
+        <p className="mt-2 max-w-2xl text-sm text-brand-100">{section.hero.subtitle}</p>
         <div className="mt-5 flex flex-wrap gap-2.5">
           <span className="rounded-full bg-white/10 px-3 py-1.5 text-sm font-medium backdrop-blur-sm tnum">
-            {grammarGroups.length} kateqoriya
+            {section.groups.length} qrup
           </span>
           <span className="rounded-full bg-white/10 px-3 py-1.5 text-sm font-medium backdrop-blur-sm tnum">
-            {totalGrammarRules} qayda
+            {section.totalItems} {section.unitAz}
           </span>
           <span className="rounded-full bg-white/10 px-3 py-1.5 text-sm font-medium backdrop-blur-sm tnum">
-            {done}/{grammarGroups.length} tamamlandı
+            {done}/{section.groups.length} tamamlandı
           </span>
         </div>
       </section>
 
-      {/* KATEQORİYA KARTLARI */}
+      {/* QRUP KARTLARI */}
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {grammarGroups.map((g, i) => {
-          const meta = GRAMMAR_META[g.id];
-          const Icon = meta.icon;
-          const completed = state.grammar[g.id]?.completed;
+        {section.groups.map((g, i) => {
+          const Icon = g.icon;
+          const completed = progress[g.id]?.completed;
           return (
             <Link
               key={g.id}
-              to={`/grammar/${g.id}`}
+              to={`/${section.key}/${g.id}`}
               style={{ animationDelay: `${i * 35}ms` }}
               className="group relative flex animate-fade-in-up flex-col overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-card transition hover:-translate-y-0.5 hover:shadow-card-hover"
             >
@@ -60,14 +63,14 @@ export default function GrammarPage() {
                   </span>
                 ) : (
                   <span className="rounded-full bg-surface-2 px-2 py-0.5 text-xs font-medium text-faint tnum">
-                    {g.rules.length}
+                    {g.items.length}
                   </span>
                 )}
               </div>
               <h3 className="font-display text-lg font-semibold text-fg group-hover:text-brand-600 dark:group-hover:text-brand-400">
-                {meta.label}
+                {g.label}
               </h3>
-              <p className="text-sm font-medium text-faint">{meta.azLabel}</p>
+              <p className="text-sm font-medium text-faint">{g.azLabel}</p>
               <p className="mt-2 line-clamp-2 flex-1 text-sm text-muted">{g.description}</p>
             </Link>
           );
